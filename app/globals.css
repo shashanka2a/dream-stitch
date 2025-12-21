@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #f8f7f4;
+  --text-dark: #1a1a1a;
+  --accent: #8b735b;
+}
+
+* {
+  cursor: none;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  scroll-behavior: initial;
+}
+
+h1, h2, h3, .serif {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Custom Cursor */
+#cursor {
+  width: 12px;
+  height: 12px;
+  background: black;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.15s ease-out, background 0.3s ease;
+}
+
+#cursor-follower {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Navbar Transition */
+nav {
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+nav.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  color: black !important;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.03);
+}
+
+.slider-container {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 2s ease-in-out, transform 15s linear;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.hero-text-shadow {
+  text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+
+/* Enhanced Reveals */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Micro-interactions: Image Zoom Container */
+.img-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.stagger-img {
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.img-container:hover .stagger-img {
+  transform: scale(1.08);
+}
+
+/* Hover card for process */
+.process-card {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 2rem;
+  margin: -2rem;
+  border-radius: 4px;
+}
+
+.process-card:hover {
+  background: white;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+  transform: translateY(-10px);
+}
+
+.stats-border {
+  border-right: 1px solid rgba(0,0,0,0.08);
+}
+@media (max-width: 768px) {
+  .stats-border {
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding-bottom: 2rem;
+  }
+}
+
+/* Progress Bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: black;
+  z-index: 10000;
+  width: 0%;
+  transition: width 0.1s ease;
+}
+
