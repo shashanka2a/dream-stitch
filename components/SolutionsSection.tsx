@@ -11,30 +11,30 @@ export function SolutionsSection() {
             <div className="img-container mb-12">
               <Image
                 src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&q=80&w=1200"
-                alt="Detail"
+                alt="Design & Development"
                 width={1200}
                 height={1500}
                 className="w-full aspect-[4/5] object-cover stagger-img"
               />
             </div>
-            <h3 className="text-4xl font-light mb-6">Precision Sampling</h3>
+            <h3 className="text-4xl font-light mb-6">Flexible Services</h3>
             <p className="text-gray-500 text-base font-light max-w-sm leading-relaxed">
-              Flawless translation from design to physical prototype, ensuring every stitch carries your brand's intent.
+              Choose full end-to-end support or individual services—design, sample development, fabric sourcing, manufacturing, or marketing. We adapt to your needs, not the other way around.
             </p>
           </div>
           <div className="reveal md:mt-80">
             <div className="img-container mb-12">
               <Image
                 src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&q=80&w=1200"
-                alt="Bulk Production"
+                alt="Startup Support"
                 width={1200}
                 height={1500}
                 className="w-full aspect-[4/5] object-cover stagger-img"
               />
             </div>
-            <h3 className="text-4xl font-light mb-6">Volume Output</h3>
+            <h3 className="text-4xl font-light mb-6">Startup-Friendly</h3>
             <p className="text-gray-500 text-base font-light max-w-sm leading-relaxed">
-              Optimized workflows for large-scale fashion distribution without sacrificing the soul of craftsmanship.
+              Low minimum order quantities make quality production accessible from day one. Scale at your pace, with transparent pricing and support that grows with your brand.
             </p>
           </div>
         </div>
@@ -42,4 +42,5 @@ export function SolutionsSection() {
     </section>
   )
 }
+
 

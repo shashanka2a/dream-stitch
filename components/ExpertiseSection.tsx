@@ -3,38 +3,38 @@
 const processes = [
   {
     number: '01',
-    title: 'Consultation',
-    description: 'Aligning brand vision with manufacturing feasibility and strategic roadmaps.',
+    title: 'Design & Development',
+    description: 'From concept to creation—we design from scratch or refine your existing ideas into production-ready collections.',
     delay: '0ms',
   },
   {
     number: '02',
-    title: 'Material Sourcing',
-    description: 'Leveraging global networks to procure ethical, high-quality fabrics and trims.',
+    title: 'Fabric Sourcing',
+    description: 'Leveraging global networks to source the perfect materials that align with your brand vision and budget.',
     delay: '100ms',
   },
   {
     number: '03',
-    title: 'Technical Design',
-    description: 'Translating concepts into precise tech packs and digitized pattern modules.',
+    title: 'Sample Development',
+    description: 'Professional prototype creation ensuring perfect fit, quality, and alignment with your design intent.',
     delay: '200ms',
   },
   {
     number: '04',
-    title: 'Proto Development',
-    description: 'Meticulous sample creation to verify fit, silhouette, and material behavior.',
+    title: 'Manufacturing',
+    description: 'Scalable production with low MOQs, maintaining craftsmanship standards from small batches to full volume runs.',
     delay: '300ms',
   },
   {
     number: '05',
-    title: 'Scaled Assembly',
-    description: 'Transitioning to state-of-the-art production lines for bulk manufacturing.',
+    title: 'Photoshoots & Content',
+    description: 'Bringing your collection to market with professional photoshoots, lookbooks, and visual content that captures your brand identity.',
     delay: '400ms',
   },
   {
     number: '06',
-    title: 'Quality Audit',
-    description: 'Final rigorous inspection and logistics orchestration for global delivery.',
+    title: 'Marketing Support',
+    description: 'Complete brand presentation services to ensure your designs are not only well-made but market-ready and launch-ready.',
     delay: '500ms',
   },
 ]
@@ -45,7 +45,7 @@ export function ExpertiseSection() {
       <div className="max-w-7xl mx-auto">
         <div className="mb-32 reveal text-center md:text-left">
           <span className="uppercase tracking-[0.3em] text-[10px] opacity-40 block mb-6">The Process</span>
-          <h2 className="text-4xl md:text-7xl font-light">Our Production Cycle</h2>
+          <h2 className="text-4xl md:text-7xl font-light">Your Complete Journey</h2>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-32">
@@ -67,4 +67,5 @@ export function ExpertiseSection() {
     </section>
   )
 }
+
 

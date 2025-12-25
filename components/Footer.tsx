@@ -7,7 +7,7 @@ export function Footer() {
         <div className="md:col-span-2">
           <div className="text-lg tracking-[0.4em] uppercase font-light mb-16 opacity-70">Dream Stitch</div>
           <h3 className="text-6xl md:text-8xl font-light mb-20 leading-tight">
-            Scale your<br /><span className="italic">production.</span>
+            Ready to launch<br /><span className="italic">your brand?</span>
           </h3>
           <a 
             href="mailto:hello@dreamstitch.com" 
@@ -22,10 +22,12 @@ export function Footer() {
           <div>
             <h5 className="uppercase text-[10px] tracking-[0.4em] opacity-30 mb-8">Services</h5>
             <ul className="text-sm space-y-6 font-light opacity-50">
-              <li className="hover:opacity-100 transition-opacity"><a href="#">Sourcing</a></li>
-              <li className="hover:opacity-100 transition-opacity"><a href="#">Development</a></li>
-              <li className="hover:opacity-100 transition-opacity"><a href="#">Production</a></li>
-              <li className="hover:opacity-100 transition-opacity"><a href="#">Logistics</a></li>
+              <li className="hover:opacity-100 transition-opacity"><a href="#">Design Services</a></li>
+              <li className="hover:opacity-100 transition-opacity"><a href="#">Sample Development</a></li>
+              <li className="hover:opacity-100 transition-opacity"><a href="#">Fabric Sourcing</a></li>
+              <li className="hover:opacity-100 transition-opacity"><a href="#">Manufacturing</a></li>
+              <li className="hover:opacity-100 transition-opacity"><a href="#">Photoshoots</a></li>
+              <li className="hover:opacity-100 transition-opacity"><a href="#">Marketing Support</a></li>
             </ul>
           </div>
         </div>
@@ -56,4 +58,5 @@ export function Footer() {
     </footer>
   )
 }
+
 

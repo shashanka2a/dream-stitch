@@ -21,3 +21,4 @@ export function ScrollProgress() {
   return <div id="scroll-progress" />
 }
 
+

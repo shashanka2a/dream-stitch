@@ -18,12 +18,12 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Dream Stitch | Precision Manufacturing',
-  description: 'Manufacturing excellence for modern fashion. Reliable infrastructure for growing brands with precision craftsmanship and global sourcing.',
-  keywords: ['fashion manufacturing', 'precision manufacturing', 'garment production', 'fashion production', 'textile manufacturing', 'Dream Stitch'],
-  authors: [{ name: 'Dream Stitch' }],
-  creator: 'Dream Stitch',
-  publisher: 'Dream Stitch',
+  title: 'DreamStich | End-to-End Fashion Design, Production & Brand Support',
+  description: 'Complete fashion solutions for startups, emerging designers, and established brands. From design to launch—flexible services including design, sample development, manufacturing, photoshoots, and marketing support with low MOQs.',
+  keywords: ['fashion design', 'fashion manufacturing', 'fashion startup support', 'low MOQ manufacturing', 'fashion photoshoots', 'fashion brand support', 'sample development', 'fabric sourcing', 'fashion production', 'DreamStich'],
+  authors: [{ name: 'DreamStich' }],
+  creator: 'DreamStich',
+  publisher: 'DreamStich',
   formatDetection: {
     email: false,
     address: false,
@@ -34,17 +34,17 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Dream Stitch | Precision Manufacturing',
-    description: 'Manufacturing excellence for modern fashion. Reliable infrastructure for growing brands.',
+    title: 'DreamStich | End-to-End Fashion Design, Production & Brand Support',
+    description: 'Complete fashion solutions from idea to market. Design, production, photoshoots, and marketing support for fashion startups and established brands.',
     url: 'https://dreamstitch.com',
-    siteName: 'Dream Stitch',
+    siteName: 'DreamStich',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dream Stitch | Precision Manufacturing',
-    description: 'Manufacturing excellence for modern fashion. Reliable infrastructure for growing brands.',
+    title: 'DreamStich | End-to-End Fashion Design, Production & Brand Support',
+    description: 'Complete fashion solutions from idea to market. Design, production, photoshoots, and marketing support for fashion startups and established brands.',
   },
   robots: {
     index: true,
