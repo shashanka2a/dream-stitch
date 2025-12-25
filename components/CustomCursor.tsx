@@ -1,56 +1,93 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 export function CustomCursor() {
+  const cursorRef = useRef<HTMLDivElement>(null)
+  const followerRef = useRef<HTMLDivElement>(null)
+  const mouseRef = useRef({ x: 0, y: 0 })
+  const cursorPosRef = useRef({ x: 0, y: 0 })
+  const followerPosRef = useRef({ x: 0, y: 0 })
+  const isHoveringRef = useRef(false)
+  const animationFrameRef = useRef<number | null>(null)
+
   useEffect(() => {
-    const cursor = document.getElementById('cursor')
-    const follower = document.getElementById('cursor-follower')
+    const cursor = cursorRef.current
+    const follower = followerRef.current
     if (!cursor || !follower) return
 
-    let mouseX = 0, mouseY = 0
-    let followerX = 0, followerY = 0
+    let isAnimating = true
 
     const handleMouseMove = (e: MouseEvent) => {
-      mouseX = e.clientX
-      mouseY = e.clientY
-      cursor.style.transform = `translate3d(${mouseX - 6}px, ${mouseY - 6}px, 0)`
+      mouseRef.current.x = e.clientX
+      mouseRef.current.y = e.clientY
     }
 
-    const animateFollower = () => {
-      followerX += (mouseX - followerX - 20) * 0.1
-      followerY += (mouseY - followerY - 20) * 0.1
-      follower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0)`
-      requestAnimationFrame(animateFollower)
+    const animate = () => {
+      if (!isAnimating) return
+
+      const { x: mouseX, y: mouseY } = mouseRef.current
+      const cursorPos = cursorPosRef.current
+      const followerPos = followerPosRef.current
+
+      // Smooth cursor position (immediate but with easing for follower)
+      cursorPos.x = mouseX - 6
+      cursorPos.y = mouseY - 6
+      cursor.style.transform = `translate3d(${cursorPos.x}px, ${cursorPos.y}px, 0) scale(${isHoveringRef.current ? 0.5 : 1})`
+
+      // Smooth follower position with easing
+      const ease = 0.15
+      followerPos.x += (mouseX - 20 - followerPos.x) * ease
+      followerPos.y += (mouseY - 20 - followerPos.y) * ease
+      follower.style.transform = `translate3d(${followerPos.x}px, ${followerPos.y}px, 0) scale(${isHoveringRef.current ? 1.5 : 1})`
+
+      animationFrameRef.current = requestAnimationFrame(animate)
     }
 
-    document.addEventListener('mousemove', handleMouseMove)
-    animateFollower()
+    // Start animation loop
+    animate()
+
+    // Throttled mouse move handler
+    document.addEventListener('mousemove', handleMouseMove, { passive: true })
 
     // Cursor interactions
+    const handleMouseEnter = () => {
+      isHoveringRef.current = true
+      if (follower) {
+        follower.style.background = 'rgba(0,0,0,0.02)'
+      }
+    }
+
+    const handleMouseLeave = () => {
+      isHoveringRef.current = false
+      if (follower) {
+        follower.style.background = 'none'
+      }
+    }
+
     const links = document.querySelectorAll('a, button, .process-card')
     links.forEach(link => {
-      link.addEventListener('mouseenter', () => {
-        follower.style.transform += ' scale(1.5)'
-        follower.style.background = 'rgba(0,0,0,0.02)'
-        cursor.style.transform += ' scale(0.5)'
-      })
-      link.addEventListener('mouseleave', () => {
-        follower.style.background = 'none'
-        const currentTransform = cursor.style.transform
-        cursor.style.transform = currentTransform.replace(' scale(0.5)', '')
-      })
+      link.addEventListener('mouseenter', handleMouseEnter)
+      link.addEventListener('mouseleave', handleMouseLeave)
     })
 
     return () => {
+      isAnimating = false
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current)
+      }
       document.removeEventListener('mousemove', handleMouseMove)
+      links.forEach(link => {
+        link.removeEventListener('mouseenter', handleMouseEnter)
+        link.removeEventListener('mouseleave', handleMouseLeave)
+      })
     }
   }, [])
 
   return (
     <>
-      <div id="cursor" />
-      <div id="cursor-follower" />
+      <div ref={cursorRef} id="cursor" />
+      <div ref={followerRef} id="cursor-follower" />
     </>
   )
 }

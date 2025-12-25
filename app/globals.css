@@ -33,7 +33,11 @@ h1, h2, h3, .serif {
   position: fixed;
   pointer-events: none;
   z-index: 9999;
-  transition: transform 0.15s ease-out, background 0.3s ease;
+  top: 0;
+  left: 0;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transition: background 0.2s ease;
 }
 
 #cursor-follower {
@@ -44,7 +48,11 @@ h1, h2, h3, .serif {
   position: fixed;
   pointer-events: none;
   z-index: 9998;
-  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  top: 0;
+  left: 0;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transition: background 0.2s ease;
 }
 
 /* Navbar Transition */
