@@ -19,7 +19,7 @@ export function SolutionsSection() {
             </div>
             <h3 className="text-4xl font-light mb-6">Flexible Services</h3>
             <p className="text-gray-500 text-base font-light max-w-sm leading-relaxed">
-              Choose full end-to-end support or individual services—design, sample development, fabric sourcing, manufacturing, or marketing. We adapt to your needs, not the other way around.
+              Choose full end-to-end support or individual services: design, sample development, fabric sourcing, manufacturing, or marketing. We adapt to your needs, not the other way around.
             </p>
           </div>
           <div className="reveal md:mt-80">

@@ -4,7 +4,7 @@ const processes = [
   {
     number: '01',
     title: 'Design & Development',
-    description: 'From concept to creation—we design from scratch or refine your existing ideas into production-ready collections.',
+    description: 'From concept to creation, we design from scratch or refine your existing ideas into production-ready collections.',
     delay: '0ms',
   },
   {

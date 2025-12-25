@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: 'DreamStich | End-to-End Fashion Design, Production & Brand Support',
-  description: 'Complete fashion solutions for startups, emerging designers, and established brands. From design to launch—flexible services including design, sample development, manufacturing, photoshoots, and marketing support with low MOQs.',
+  description: 'Complete fashion solutions for startups, emerging designers, and established brands. From design to launch, flexible services including design, sample development, manufacturing, photoshoots, and marketing support with low MOQs.',
   keywords: ['fashion design', 'fashion manufacturing', 'fashion startup support', 'low MOQ manufacturing', 'fashion photoshoots', 'fashion brand support', 'sample development', 'fabric sourcing', 'fashion production', 'DreamStich'],
   authors: [{ name: 'DreamStich' }],
   creator: 'DreamStich',
