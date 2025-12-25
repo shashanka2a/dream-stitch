@@ -9,14 +9,14 @@ export function PartnersSection() {
         <div className="md:col-span-7 reveal">
           <span className="uppercase tracking-[0.3em] text-[10px] opacity-40 block mb-8">The Partner</span>
           <h2 className="text-4xl md:text-6xl mb-12 leading-[1.1] font-light">
-            Your complete fashion partner—from concept to launch.
+            Your complete fashion partner from concept to launch.
           </h2>
           <div className="space-y-10 text-xl leading-relaxed text-gray-600 max-w-xl font-light">
             <p>
-              DreamStich supports fashion startups, emerging designers, and established brands at every stage. Whether you need designs created from scratch, professional sample development, reliable manufacturing, or help bringing your collection to market—we provide flexible, customizable solutions tailored to your journey.
+              DreamStich supports fashion startups, emerging designers, and established brands at every stage. We provide flexible, customizable solutions whether you need designs created from scratch, professional sample development, reliable manufacturing, or help bringing your collection to market.
             </p>
             <p>
-              With low minimum order quantities, transparent processes, and end-to-end support including photoshoots and marketing, we make fashion production accessible and scalable for brands ready to grow.
+              Low minimum order quantities, transparent processes, and complete support including photoshoots and marketing make fashion production accessible and scalable for brands ready to grow.
             </p>
           </div>
         </div>
