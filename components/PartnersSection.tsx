@@ -23,43 +23,43 @@ export function PartnersSection() {
         <div className="md:col-span-5 reveal" style={{ transitionDelay: '300ms' }}>
           <div className="grid grid-cols-2 gap-4">
             {/* Top-Left: Fashion Design Sketches */}
-            <div className="img-container">
+            <div className="img-container overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=600"
                 alt="Fashion Design Sketches"
                 width={600}
                 height={400}
-                className="w-full h-[300px] object-cover stagger-img"
+                className="w-full aspect-[4/3] object-cover stagger-img"
               />
             </div>
             {/* Top-Right: Fabric Sourcing - Person walking through fabric warehouse */}
-            <div className="img-container">
+            <div className="img-container overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=600"
                 alt="Fabric Sourcing"
                 width={600}
                 height={400}
-                className="w-full h-[300px] object-cover stagger-img"
+                className="w-full aspect-[4/3] object-cover stagger-img"
               />
             </div>
             {/* Bottom-Left: Manufacturing Floor */}
-            <div className="img-container">
+            <div className="img-container overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80&w=600"
                 alt="Manufacturing Floor"
                 width={600}
                 height={400}
-                className="w-full h-[300px] object-cover stagger-img"
+                className="w-full aspect-[4/3] object-cover stagger-img"
               />
             </div>
             {/* Bottom-Right: Photoshoot Setup */}
-            <div className="img-container">
+            <div className="img-container overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600"
                 alt="Photoshoot Setup"
                 width={600}
                 height={400}
-                className="w-full h-[300px] object-cover stagger-img"
+                className="w-full aspect-[4/3] object-cover stagger-img"
               />
             </div>
           </div>

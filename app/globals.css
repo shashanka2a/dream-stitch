@@ -60,12 +60,13 @@ nav {
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 nav.scrolled {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgb(255, 255, 255) !important;
   backdrop-filter: blur(10px);
   color: black !important;
   padding-top: 1rem;
   padding-bottom: 1rem;
   box-shadow: 0 4px 30px rgba(0,0,0,0.03);
+  mix-blend-mode: normal !important;
 }
 
 .slider-container {
