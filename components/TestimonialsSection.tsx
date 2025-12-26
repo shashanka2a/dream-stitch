@@ -42,7 +42,7 @@ export function TestimonialsSection() {
   }
 
   return (
-    <section className="py-32 md:py-56 px-8 bg-white">
+    <section className="py-32 md:py-56 px-8 bg-[#efeeea]">
       <div className="max-w-7xl mx-auto">
         <div className="mb-32 reveal text-center md:text-left">
           <span className="uppercase tracking-[0.3em] text-[10px] opacity-40 block mb-6">THE PROCESS</span>

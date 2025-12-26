@@ -31,8 +31,8 @@ export function Navigation() {
       id="main-nav" 
       className="fixed top-0 w-full z-50 mix-blend-difference text-white px-8 py-10 flex justify-between items-center"
     >
-      <div className="border border-current px-4 py-2 transition-all duration-500 hover:opacity-80">
-        <Logo width={180} height={40} className="text-white" />
+      <div className={`border border-current px-4 py-2 transition-all duration-500 hover:opacity-80 ${scrolled ? 'border-black' : 'border-white'}`}>
+        <Logo width={180} height={40} className={scrolled ? 'text-black' : 'text-white'} />
       </div>
       <div className="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.3em] font-light">
         <a href="#about" className="nav-link">Partners</a>

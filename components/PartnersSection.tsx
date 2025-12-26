@@ -9,7 +9,7 @@ export function PartnersSection() {
         <div className="md:col-span-7 reveal">
           <span className="uppercase tracking-[0.3em] text-[10px] opacity-40 block mb-8">THE PARTNER</span>
           <h2 className="text-4xl md:text-6xl mb-12 leading-[1.1] font-light">
-            Your complete fashion partner from concept to launch.
+            Your fashion partner from concept to launch.
           </h2>
           <div className="space-y-10 text-xl leading-relaxed text-gray-600 max-w-xl font-light">
             <p>
@@ -25,7 +25,7 @@ export function PartnersSection() {
             {/* Top-Left: Fashion Design Sketches */}
             <div className="img-container">
               <Image
-                src="https://images.unsplash.com/photo-1582142306909-195724d0a9d4?auto=format&fit=crop&q=80&w=600"
+                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=600"
                 alt="Fashion Design Sketches"
                 width={600}
                 height={400}
