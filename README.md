@@ -105,3 +105,4 @@ The favicon is defined in `app/icon.tsx` using a Lucide icon. Replace the SVG co
 
 
 
+
