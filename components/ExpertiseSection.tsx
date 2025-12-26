@@ -41,25 +41,25 @@ const processes = [
 
 export function ExpertiseSection() {
   return (
-    <section id="expertise" className="bg-white py-32 md:py-56 px-8">
+    <section id="expertise" className="bg-white py-16 md:py-32 lg:py-56 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-32 reveal text-center md:text-left">
-          <span className="uppercase tracking-[0.3em] text-[10px] opacity-40 block mb-6">The Process</span>
-          <h2 className="text-4xl md:text-7xl font-light">Your Complete Journey</h2>
+        <div className="mb-16 md:mb-24 lg:mb-32 reveal text-center md:text-left">
+          <span className="uppercase tracking-[0.3em] text-[10px] opacity-40 block mb-4 md:mb-6">The Process</span>
+          <h2 className="text-3xl md:text-4xl lg:text-7xl font-light">Your Complete Journey</h2>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 md:gap-x-12 md:gap-y-16 lg:gap-x-16 lg:gap-y-24">
           {processes.map((process) => (
             <div 
               key={process.number} 
               className="reveal process-card"
               style={{ transitionDelay: process.delay }}
             >
-              <div className="text-5xl mb-12 font-thin opacity-10 serif italic transition-opacity hover:opacity-30">
+              <div className="text-4xl md:text-5xl mb-8 md:mb-12 font-thin opacity-10 serif italic transition-opacity hover:opacity-30">
                 {process.number}
               </div>
-              <h4 className="text-xs uppercase tracking-[0.3em] mb-6 font-medium">{process.title}</h4>
-              <p className="text-gray-500 text-sm leading-relaxed font-light">{process.description}</p>
+              <h4 className="text-xs uppercase tracking-[0.3em] mb-4 md:mb-6 font-medium">{process.title}</h4>
+              <p className="text-gray-500 text-sm md:text-base leading-relaxed font-light">{process.description}</p>
             </div>
           ))}
         </div>

@@ -4,9 +4,9 @@ import Image from 'next/image'
 
 export function SolutionsSection() {
   return (
-    <section id="solutions" className="py-48 px-8 bg-white">
+    <section id="solutions" className="py-16 md:py-32 lg:py-48 px-4 md:px-8 bg-white">
       <div className="max-w-[1400px] mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 lg:gap-24 items-start">
           <div className="reveal">
             <div className="mb-8">
               <Image
@@ -17,8 +17,8 @@ export function SolutionsSection() {
                 className="w-full aspect-[3/4] object-cover rounded-lg border border-gray-100 shadow-sm"
               />
             </div>
-            <h3 className="text-4xl md:text-5xl font-light mb-6 text-gray-900">Flexible Services</h3>
-            <p className="text-gray-500 text-base md:text-lg font-light leading-relaxed">
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 md:mb-6 text-gray-900">Flexible Services</h3>
+            <p className="text-gray-500 text-sm md:text-base lg:text-lg font-light leading-relaxed">
               Choose full end-to-end support or individual services: design, sample development, fabric sourcing, manufacturing, or marketing. We adapt to your needs, not the other way around.
             </p>
           </div>
@@ -32,8 +32,8 @@ export function SolutionsSection() {
                 className="w-full aspect-[3/4] object-cover rounded-lg border border-gray-100 shadow-sm"
               />
             </div>
-            <h3 className="text-4xl md:text-5xl font-light mb-6 text-gray-900">Startup-Friendly</h3>
-            <p className="text-gray-500 text-base md:text-lg font-light leading-relaxed">
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 md:mb-6 text-gray-900">Startup-Friendly</h3>
+            <p className="text-gray-500 text-sm md:text-base lg:text-lg font-light leading-relaxed">
               Low minimum order quantities make quality production accessible from day one. Scale at your pace, with transparent pricing and support that grows with your brand.
             </p>
           </div>

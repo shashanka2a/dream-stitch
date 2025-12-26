@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 const testimonials = [
@@ -26,51 +26,66 @@ const testimonials = [
 
 export function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  const getItemsPerView = () => isMobile ? 1 : 2
 
   const nextTestimonial = () => {
     setCurrentIndex((prev) => {
-      // Calculate max index: can show 2 items starting from index 0 to (length - 2)
-      const maxIndex = testimonials.length > 2 ? testimonials.length - 2 : 0
+      const itemsPerView = getItemsPerView()
+      const maxIndex = Math.max(0, testimonials.length - itemsPerView)
       return (prev + 1) % (maxIndex + 1)
     })
   }
 
   const prevTestimonial = () => {
     setCurrentIndex((prev) => {
-      // Calculate max index: can show 2 items starting from index 0 to (length - 2)
-      const maxIndex = testimonials.length > 2 ? testimonials.length - 2 : 0
+      const itemsPerView = getItemsPerView()
+      const maxIndex = Math.max(0, testimonials.length - itemsPerView)
       return prev === 0 ? maxIndex : prev - 1
     })
   }
 
+  const itemsPerView = getItemsPerView()
+  const visibleTestimonials = testimonials.slice(currentIndex, currentIndex + itemsPerView)
+
   return (
-    <section className="py-32 md:py-56 px-8 bg-[#efeeea]">
+    <section className="py-16 md:py-32 lg:py-56 px-4 md:px-8 bg-[#efeeea]">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-32 reveal text-center md:text-left">
-          <span className="uppercase tracking-[0.3em] text-[10px] opacity-40 block mb-6">THE PROCESS</span>
-          <h2 className="text-4xl md:text-7xl font-light">Testimonials</h2>
+        <div className="mb-16 md:mb-32 reveal text-center md:text-left">
+          <span className="uppercase tracking-[0.3em] text-[10px] opacity-40 block mb-4 md:mb-6">THE PROCESS</span>
+          <h2 className="text-3xl md:text-4xl lg:text-7xl font-light">Testimonials</h2>
         </div>
 
         <div className="relative reveal">
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-4 md:gap-8">
             <button
               onClick={prevTestimonial}
-              className="flex-shrink-0 text-gray-400 hover:text-black transition-colors"
+              className="flex-shrink-0 text-gray-400 hover:text-black transition-colors p-2 -ml-2 md:ml-0"
               aria-label="Previous testimonial"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
 
-            <div className="flex-1 grid md:grid-cols-2 gap-8">
-              {testimonials.slice(currentIndex, currentIndex + 2).map((testimonial, idx) => (
+            <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {visibleTestimonials.map((testimonial, idx) => (
                 <div 
                   key={`${currentIndex}-${testimonial.name}-${idx}`} 
-                  className="bg-white p-8 rounded-lg shadow-sm border border-black/5"
+                  className="bg-white p-6 md:p-8 rounded-lg shadow-sm border border-black/5"
                 >
-                  <div className="flex flex-col items-center text-center mb-6">
-                    <div className="relative w-20 h-20 rounded-full overflow-hidden mb-4">
+                  <div className="flex flex-col items-center text-center mb-4 md:mb-6">
+                    <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden mb-3 md:mb-4">
                       <Image
                         src={testimonial.image}
                         alt={testimonial.name}
@@ -78,17 +93,17 @@ export function TestimonialsSection() {
                         className="object-cover"
                       />
                     </div>
-                    <p className="text-xs uppercase tracking-[0.2em] text-gray-500 mb-2 font-light">
+                    <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-500 mb-2 font-light">
                       {testimonial.role}
                     </p>
-                    <h4 className="text-lg font-semibold text-gray-900">{testimonial.name}</h4>
+                    <h4 className="text-base md:text-lg font-semibold text-gray-900">{testimonial.name}</h4>
                   </div>
-                  <p className="text-gray-600 leading-relaxed mb-6 font-light text-center">
+                  <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-4 md:mb-6 font-light text-center">
                     {testimonial.text}
                   </p>
                   <div className="flex justify-center gap-1">
                     {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <svg key={i} className="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     ))}
@@ -99,10 +114,10 @@ export function TestimonialsSection() {
 
             <button
               onClick={nextTestimonial}
-              className="flex-shrink-0 text-gray-400 hover:text-black transition-colors"
+              className="flex-shrink-0 text-gray-400 hover:text-black transition-colors p-2 -mr-2 md:mr-0"
               aria-label="Next testimonial"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
               </svg>
             </button>
