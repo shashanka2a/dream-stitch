@@ -55,12 +55,12 @@ export function PartnersSection() {
               />
             </div>
             
-            {/* Image 4: Photoshoot Setup - 7 columns, bottom-right (row 3, columns 6-12) */}
-            <div className="col-span-7 col-start-6 row-start-3 img-container overflow-hidden">
+            {/* Image 4: Photoshoot Setup - Full width, 12 columns, bottom row */}
+            <div className="col-span-12 row-start-3 img-container overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800"
+                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1200"
                 alt="Photoshoot Setup"
-                width={800}
+                width={1200}
                 height={400}
                 className="w-full h-full object-cover stagger-img"
               />
