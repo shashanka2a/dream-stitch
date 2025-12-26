@@ -7,7 +7,7 @@ export function PartnersSection() {
     <section id="about" className="py-32 md:py-56 px-8 max-w-7xl mx-auto">
       <div className="grid md:grid-cols-12 gap-16 items-center">
         <div className="md:col-span-7 reveal">
-          <span className="uppercase tracking-[0.3em] text-[10px] opacity-40 block mb-8">The Partner</span>
+          <span className="uppercase tracking-[0.3em] text-[10px] opacity-40 block mb-8">THE PARTNER</span>
           <h2 className="text-4xl md:text-6xl mb-12 leading-[1.1] font-light">
             Your complete fashion partner from concept to launch.
           </h2>
@@ -22,24 +22,27 @@ export function PartnersSection() {
         </div>
         <div className="md:col-span-5 reveal" style={{ transitionDelay: '300ms' }}>
           <div className="grid grid-cols-2 gap-4">
+            {/* Top-Left: Fashion Design Sketches */}
             <div className="img-container">
               <Image
                 src="https://images.unsplash.com/photo-1582142306909-195724d0a9d4?auto=format&fit=crop&q=80&w=600"
-                alt="Fashion Sketches"
+                alt="Fashion Design Sketches"
                 width={600}
                 height={400}
                 className="w-full h-[300px] object-cover stagger-img"
               />
             </div>
+            {/* Top-Right: Fabric Sourcing - Person walking through fabric warehouse */}
             <div className="img-container">
               <Image
                 src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=600"
-                alt="Fabric Selection"
+                alt="Fabric Sourcing"
                 width={600}
                 height={400}
                 className="w-full h-[300px] object-cover stagger-img"
               />
             </div>
+            {/* Bottom-Left: Manufacturing Floor */}
             <div className="img-container">
               <Image
                 src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80&w=600"
@@ -49,6 +52,7 @@ export function PartnersSection() {
                 className="w-full h-[300px] object-cover stagger-img"
               />
             </div>
+            {/* Bottom-Right: Photoshoot Setup */}
             <div className="img-container">
               <Image
                 src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600"

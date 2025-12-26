@@ -36,7 +36,7 @@ export function HeroSlider() {
           key={index}
           className={`slide ${index === currentSlide ? 'active' : ''}`}
           style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url(${slide})`,
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url(${slide})`,
           }}
         />
       ))}
