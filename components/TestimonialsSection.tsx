@@ -29,15 +29,17 @@ export function TestimonialsSection() {
 
   const nextTestimonial = () => {
     setCurrentIndex((prev) => {
-      const maxIndex = testimonials.length - 2
-      return prev >= maxIndex ? 0 : prev + 1
+      // Calculate max index: can show 2 items starting from index 0 to (length - 2)
+      const maxIndex = testimonials.length > 2 ? testimonials.length - 2 : 0
+      return (prev + 1) % (maxIndex + 1)
     })
   }
 
   const prevTestimonial = () => {
     setCurrentIndex((prev) => {
-      const maxIndex = testimonials.length - 2
-      return prev <= 0 ? maxIndex : prev - 1
+      // Calculate max index: can show 2 items starting from index 0 to (length - 2)
+      const maxIndex = testimonials.length > 2 ? testimonials.length - 2 : 0
+      return prev === 0 ? maxIndex : prev - 1
     })
   }
 
@@ -64,7 +66,7 @@ export function TestimonialsSection() {
             <div className="flex-1 grid md:grid-cols-2 gap-8">
               {testimonials.slice(currentIndex, currentIndex + 2).map((testimonial, idx) => (
                 <div 
-                  key={`${currentIndex}-${idx}`} 
+                  key={`${currentIndex}-${testimonial.name}-${idx}`} 
                   className="bg-white p-8 rounded-lg shadow-sm border border-black/5"
                 >
                   <div className="flex flex-col items-center text-center mb-6">
