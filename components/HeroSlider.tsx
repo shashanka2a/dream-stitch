@@ -42,7 +42,7 @@ export function HeroSlider() {
       ))}
       
       <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4 md:px-8">
-        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-light mb-6 md:mb-8 reveal active hero-text-shadow leading-tight overflow-hidden">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-light mb-6 md:mb-8 reveal active hero-text-shadow leading-tight overflow-hidden">
           <span className="block translate-y-full transition-transform duration-1000 delay-300">From Idea</span>
           <span className="block italic translate-y-full transition-transform duration-1000 delay-500">to Market.</span>
         </h1>
