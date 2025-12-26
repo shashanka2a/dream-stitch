@@ -25,8 +25,8 @@ export function Footer() {
   }
 
   return (
-    <footer id="contact" className="bg-[#111] text-white py-40 px-8">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 border-b border-white/5 pb-32">
+    <footer id="contact" className="bg-[#111] text-white pt-40 pb-8 px-8">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 border-b border-white/5 pb-16">
         <div>
           <div className="text-lg tracking-[0.4em] uppercase font-light mb-16 opacity-70">Dream Stitch</div>
           <h3 className="text-6xl md:text-8xl font-light mb-20 leading-tight">
@@ -135,7 +135,7 @@ export function Footer() {
           </form>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto pt-16 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.5em] opacity-30">
+      <div className="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.5em] opacity-30">
         <p>© 2024 Dream Stitch. All Rights Reserved.</p>
         <div className="flex space-x-16 mt-8 md:mt-0">
           <a href="#" className="hover:opacity-100 transition-opacity">Privacy</a>
