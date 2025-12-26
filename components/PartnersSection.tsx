@@ -21,14 +21,43 @@ export function PartnersSection() {
           </div>
         </div>
         <div className="md:col-span-5 reveal" style={{ transitionDelay: '300ms' }}>
-          <div className="img-container shadow-2xl">
-            <Image
-              src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=1000"
-              alt="Garment Craftsmanship"
-              width={1000}
-              height={750}
-              className="w-full h-[750px] object-cover stagger-img"
-            />
+          <div className="grid grid-cols-2 gap-4">
+            <div className="img-container">
+              <Image
+                src="https://images.unsplash.com/photo-1582142306909-195724d0a9d4?auto=format&fit=crop&q=80&w=600"
+                alt="Fashion Sketches"
+                width={600}
+                height={400}
+                className="w-full h-[300px] object-cover stagger-img"
+              />
+            </div>
+            <div className="img-container">
+              <Image
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=600"
+                alt="Fabric Selection"
+                width={600}
+                height={400}
+                className="w-full h-[300px] object-cover stagger-img"
+              />
+            </div>
+            <div className="img-container">
+              <Image
+                src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80&w=600"
+                alt="Manufacturing Floor"
+                width={600}
+                height={400}
+                className="w-full h-[300px] object-cover stagger-img"
+              />
+            </div>
+            <div className="img-container">
+              <Image
+                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600"
+                alt="Photoshoot Setup"
+                width={600}
+                height={400}
+                className="w-full h-[300px] object-cover stagger-img"
+              />
+            </div>
           </div>
         </div>
       </div>

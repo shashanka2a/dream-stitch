@@ -30,8 +30,8 @@ export function Navigation() {
       id="main-nav" 
       className="fixed top-0 w-full z-50 mix-blend-difference text-white px-8 py-10 flex justify-between items-center"
     >
-      <div className="text-xl font-light tracking-[0.2em] uppercase transition-all duration-500 hover:tracking-[0.3em]">
-        Dream Stitch
+      <div className="text-xl font-light tracking-[0.2em] uppercase transition-all duration-500 hover:tracking-[0.3em] border border-current px-4 py-2">
+        DREAMSTICH
       </div>
       <div className="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.3em] font-light">
         <a href="#about" className="nav-link">Partners</a>

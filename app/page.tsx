@@ -6,6 +6,7 @@ import { PartnersSection } from '@/components/PartnersSection'
 import { ExpertiseSection } from '@/components/ExpertiseSection'
 import { StatsSection } from '@/components/StatsSection'
 import { SolutionsSection } from '@/components/SolutionsSection'
+import { TestimonialsSection } from '@/components/TestimonialsSection'
 import { Footer } from '@/components/Footer'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 
@@ -42,6 +43,7 @@ export default function Home() {
       <ExpertiseSection />
       <StatsSection />
       <SolutionsSection />
+      <TestimonialsSection />
       <Footer />
     </main>
   )
