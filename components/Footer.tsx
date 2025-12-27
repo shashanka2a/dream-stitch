@@ -138,7 +138,7 @@ export function Footer() {
             </div>
             <button
               type="submit"
-              className="px-8 py-3 border-[0.5px] border-white text-white text-sm uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all mt-6"
+              className="px-8 py-3 border-[0.5px] border-white text-white text-sm uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all mt-8"
             >
               Send
             </button>
