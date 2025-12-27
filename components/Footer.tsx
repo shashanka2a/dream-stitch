@@ -81,7 +81,7 @@ export function Footer() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full bg-transparent border border-white px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors"
+                className="w-full bg-transparent border-[0.5px] border-white px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors"
                 placeholder="Name*"
               />
               <input
@@ -91,7 +91,7 @@ export function Footer() {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="w-full bg-transparent border border-white px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors"
+                className="w-full bg-transparent border-[0.5px] border-white px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors"
                 placeholder="Phone*"
               />
             </div>
@@ -102,7 +102,7 @@ export function Footer() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full bg-transparent border border-white px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors"
+              className="w-full bg-transparent border-[0.5px] border-white px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors"
               placeholder="Email*"
             />
             <textarea
@@ -112,7 +112,7 @@ export function Footer() {
               onChange={handleChange}
               required
               rows={4}
-              className="w-full bg-transparent border border-white px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors resize-none"
+              className="w-full bg-transparent border-[0.5px] border-white px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors resize-none"
               placeholder="Message*"
             />
             <div className="flex items-center gap-3">
@@ -138,7 +138,7 @@ export function Footer() {
             </div>
             <button
               type="submit"
-              className="px-8 py-3 border border-white text-white text-sm uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all mt-4"
+              className="px-8 py-3 border-[0.5px] border-white text-white text-sm uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all mt-6"
             >
               Send
             </button>
