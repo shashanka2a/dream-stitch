@@ -14,7 +14,7 @@ export function SolutionsSection() {
                 alt="Flexible Services"
                 width={1200}
                 height={800}
-                className="w-full aspect-[3/4] object-cover rounded-lg border border-gray-100 shadow-sm"
+                className="w-full aspect-[3/2] object-cover rounded-lg border border-gray-100 shadow-sm"
               />
             </div>
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-light mb-4 md:mb-6 text-gray-900">Flexible Services</h3>
@@ -29,7 +29,7 @@ export function SolutionsSection() {
                 alt="Startup-Friendly"
                 width={1200}
                 height={800}
-                className="w-full aspect-[3/4] object-cover rounded-lg border border-gray-100 shadow-sm"
+                className="w-full aspect-[3/2] object-cover rounded-lg border border-gray-100 shadow-sm"
               />
             </div>
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-light mb-4 md:mb-6 text-gray-900">Startup-Friendly</h3>

@@ -43,7 +43,16 @@ export function HeroSlider() {
       
       <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4 md:px-8">
         <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 reveal active hero-text-shadow">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-light leading-tight overflow-hidden">
+          <h1 
+            className="overflow-hidden"
+            style={{
+              fontFamily: 'var(--font-cormorant)',
+              fontWeight: 600,
+              fontSize: 'clamp(48px, 8vw, 128px)',
+              lineHeight: 1,
+              letterSpacing: '0%',
+            }}
+          >
             <span className="inline-block translate-y-full transition-transform duration-1000 delay-300">From Idea</span>
             <span className="inline-block italic translate-y-full transition-transform duration-1000 delay-500 ml-2 md:ml-3">to Market.</span>
           </h1>
