@@ -42,7 +42,7 @@ export function HeroSlider() {
       ))}
       
       <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4 md:px-8 py-8 md:py-12">
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:gap-4 reveal active hero-text-shadow max-w-[95%] md:max-w-none">
+        <div className="flex flex-col items-center justify-center gap-2 sm:gap-3 md:gap-4 reveal active hero-text-shadow max-w-[95%] md:max-w-none">
           <h1 
             className="overflow-hidden"
             style={{

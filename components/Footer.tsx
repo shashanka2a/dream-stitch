@@ -117,7 +117,7 @@ export function Footer() {
                 placeholder=""
               />
             </div>
-            <div className="flex items-start gap-3">
+            <div className="flex items-center gap-3">
               <input
                 type="checkbox"
                 id="agree"
@@ -125,7 +125,7 @@ export function Footer() {
                 checked={formData.agree}
                 onChange={handleChange}
                 required
-                className="mt-1 w-5 h-5 bg-transparent border-2 border-white/30 rounded-lg checked:bg-white checked:border-white focus:outline-none focus:ring-0 cursor-pointer"
+                className="w-5 h-5 bg-transparent border-2 border-white/30 rounded-lg checked:bg-white checked:border-white focus:outline-none focus:ring-0 cursor-pointer"
                 style={{
                   borderRadius: '8px',
                   appearance: 'none',
@@ -140,7 +140,7 @@ export function Footer() {
             </div>
             <button
               type="submit"
-              className="px-8 py-3 border border-white text-sm uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all"
+              className="px-8 py-3 border border-white text-sm uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all mt-4"
             >
               Send
             </button>
