@@ -21,7 +21,7 @@ export function PartnersSection() {
             <p
               style={{
                 fontFamily: 'var(--font-poppins)',
-                fontWeight: 400,
+                fontWeight: 300,
                 fontSize: '20px',
                 lineHeight: '30px',
                 letterSpacing: '0%',
@@ -32,7 +32,7 @@ export function PartnersSection() {
             <p
               style={{
                 fontFamily: 'var(--font-poppins)',
-                fontWeight: 400,
+                fontWeight: 300,
                 fontSize: '20px',
                 lineHeight: '30px',
                 letterSpacing: '0%',

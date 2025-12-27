@@ -41,7 +41,7 @@ export function SolutionsSection() {
             <div className="mb-8">
               <Image
                 src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&q=80&w=1200"
-                alt="Startup-Friendly"
+                alt="Startup Friendly"
                 width={1200}
                 height={800}
                 className="w-full aspect-[3/2] object-cover rounded-lg border border-gray-100 shadow-sm"
@@ -54,7 +54,7 @@ export function SolutionsSection() {
                 fontWeight: 600,
               }}
             >
-              Startup-Friendly
+              Startup Friendly
             </h3>
             <p 
               className="text-sm md:text-base lg:text-lg leading-relaxed"
