@@ -8,19 +8,37 @@ const testimonials = [
     name: 'Anoki',
     role: 'Founder of Mirakhi',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200',
-    text: 'Our wedding day was nothing short of magical, and it\'s all thanks to the Elevate Events team. From our first meeting to the final send-off, they were there every step of the way, ensuring everything was perfect. A day we\'ll cherish forever!',
-  },
-  {
-    name: 'Anoki',
-    role: 'Founder of Mirakhi',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200',
-    text: 'Our wedding day was nothing short of magical, and it\'s all thanks to the Elevate Events team. From our first meeting to the final send-off, they were there every step of the way, ensuring everything was perfect. A day we\'ll cherish forever!',
-  },
-  {
-    name: 'Sarah',
-    role: 'Founder of Luxe Apparel',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200',
     text: 'DreamStich transformed our vision into reality. Their attention to detail, from design to production, exceeded our expectations. The low MOQ made it possible for us to launch our first collection without breaking the bank.',
+  },
+  {
+    name: 'Sarah Chen',
+    role: 'Creative Director at Luxe Apparel',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200',
+    text: 'Working with DreamStich has been a game-changer. Their end-to-end support, including photoshoots and marketing, helped us launch our brand successfully. Highly recommend their services.',
+  },
+  {
+    name: 'Michael Rodriguez',
+    role: 'Founder of Urban Threads',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200',
+    text: 'The team at DreamStich understood our brand from day one. Their flexible approach allowed us to scale at our own pace, and the quality has been consistently outstanding.',
+  },
+  {
+    name: 'Emma Thompson',
+    role: 'Designer at Minimalist Studio',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200',
+    text: 'From initial sketches to final production, DreamStich guided us through every step. Their expertise in fabric sourcing and sample development saved us countless hours and headaches.',
+  },
+  {
+    name: 'James Park',
+    role: 'CEO of Streetwear Co.',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200',
+    text: 'The low minimum order quantities were perfect for our startup. We could test the market without huge upfront costs, and the quality matched our expectations every time.',
+  },
+  {
+    name: 'Lisa Anderson',
+    role: 'Founder of Sustainable Fashion Co.',
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200',
+    text: 'DreamStich\'s transparent processes and ethical sourcing aligned perfectly with our brand values. They helped us create beautiful, sustainable fashion without compromising on quality.',
   },
 ]
 
@@ -42,8 +60,13 @@ export function TestimonialsSection() {
   const nextTestimonial = () => {
     setCurrentIndex((prev) => {
       const itemsPerView = getItemsPerView()
+      // Calculate how many positions we can move forward
+      // If showing 2 items, we can start at positions 0, 1, 2, 3, 4 (for 6 testimonials)
       const maxIndex = Math.max(0, testimonials.length - itemsPerView)
-      return (prev + 1) % (maxIndex + 1)
+      if (prev >= maxIndex) {
+        return 0 // Wrap to beginning
+      }
+      return prev + 1
     })
   }
 
@@ -51,19 +74,31 @@ export function TestimonialsSection() {
     setCurrentIndex((prev) => {
       const itemsPerView = getItemsPerView()
       const maxIndex = Math.max(0, testimonials.length - itemsPerView)
-      return prev === 0 ? maxIndex : prev - 1
+      if (prev <= 0) {
+        return maxIndex // Wrap to end
+      }
+      return prev - 1
     })
   }
 
   const itemsPerView = getItemsPerView()
-  const visibleTestimonials = testimonials.slice(currentIndex, currentIndex + itemsPerView)
+  // Get visible testimonials, wrapping around if needed
+  const getVisibleTestimonials = () => {
+    const visible = []
+    for (let i = 0; i < itemsPerView; i++) {
+      const index = (currentIndex + i) % testimonials.length
+      visible.push(testimonials[index])
+    }
+    return visible
+  }
+  const visibleTestimonials = getVisibleTestimonials()
 
   return (
-    <section className="py-16 md:py-32 lg:py-56 px-4 md:px-8 bg-[#efeeea]">
+    <section className="py-16 md:py-32 lg:py-56 px-4 md:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 md:mb-32 reveal text-center md:text-left">
-          <span className="uppercase tracking-[0.3em] text-[10px] opacity-40 block mb-4 md:mb-6">THE PROCESS</span>
-          <h2 className="text-3xl md:text-4xl lg:text-7xl font-light">Testimonials</h2>
+          <span className="uppercase tracking-[0.3em] text-[10px] opacity-40 block mb-4 md:mb-6">REVIEWS</span>
+          <h2 className="text-3xl md:text-4xl lg:text-6xl font-light">Testimonials</h2>
         </div>
 
         <div className="relative reveal">
@@ -79,9 +114,11 @@ export function TestimonialsSection() {
             </button>
 
             <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              {visibleTestimonials.map((testimonial, idx) => (
+              {visibleTestimonials.map((testimonial, idx) => {
+                const actualIndex = (currentIndex + idx) % testimonials.length
+                return (
                 <div 
-                  key={`${currentIndex}-${testimonial.name}-${idx}`} 
+                  key={`${actualIndex}-${testimonial.name}`} 
                   className="bg-white p-6 md:p-8 rounded-lg shadow-sm border border-black/5"
                 >
                   <div className="flex flex-col items-center text-center mb-4 md:mb-6">
@@ -109,7 +146,8 @@ export function TestimonialsSection() {
                     ))}
                   </div>
                 </div>
-              ))}
+                )
+              })}
             </div>
 
             <button

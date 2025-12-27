@@ -45,7 +45,7 @@ export function ExpertiseSection() {
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 md:mb-24 lg:mb-32 reveal text-center md:text-left">
           <span className="uppercase tracking-[0.3em] text-[10px] opacity-40 block mb-4 md:mb-6">The Process</span>
-          <h2 className="text-3xl md:text-4xl lg:text-7xl font-light">Your Complete Journey</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-6xl font-light">Your Complete Journey</h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 md:gap-x-12 md:gap-y-16 lg:gap-x-16 lg:gap-y-24">

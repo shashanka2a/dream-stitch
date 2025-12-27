@@ -8,7 +8,7 @@ export function PartnersSection() {
       <div className="grid md:grid-cols-12 gap-8 md:gap-16 items-center">
         <div className="md:col-span-7 reveal">
           <span className="uppercase tracking-[0.3em] text-[10px] opacity-40 block mb-4 md:mb-8">THE PARTNER</span>
-          <h2 className="text-3xl md:text-4xl lg:text-6xl mb-6 md:mb-12 leading-[1.1] font-light">
+          <h2 className="text-3xl md:text-4xl lg:text-7xl mb-6 md:mb-12 leading-[1.1] font-light">
             Your fashion partner from concept to launch.
           </h2>
           <div className="space-y-6 md:space-y-10 text-base md:text-lg lg:text-xl leading-relaxed text-gray-600 max-w-xl font-light">
