@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 
 const testimonials = [
@@ -45,6 +45,8 @@ const testimonials = [
 export function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
+  const [activeDotIndex, setActiveDotIndex] = useState(0)
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const checkMobile = () => {
@@ -54,6 +56,25 @@ export function TestimonialsSection() {
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
+
+  useEffect(() => {
+    if (!isMobile || !scrollContainerRef.current) return
+
+    const container = scrollContainerRef.current
+    const handleScroll = () => {
+      const scrollLeft = container.scrollLeft
+      const containerWidth = container.offsetWidth
+      const cardWidth = containerWidth - 48 // Account for padding and gap
+      const currentCard = Math.round(scrollLeft / cardWidth)
+      // Map to 3 dots: 0-1 -> dot 0, 2-3 -> dot 1, 4-5 -> dot 2
+      const dotIndex = Math.min(Math.floor(currentCard / 2), 2)
+      setActiveDotIndex(dotIndex)
+    }
+
+    container.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll() // Initial calculation
+    return () => container.removeEventListener('scroll', handleScroll)
+  }, [isMobile])
 
   const getItemsPerView = () => isMobile ? 1 : 2
 
@@ -114,14 +135,18 @@ export function TestimonialsSection() {
           </div>
           
           {/* Mobile: Horizontal Scroll */}
-          <div className="md:hidden overflow-x-auto pb-4 -mx-4 px-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          <div 
+            ref={scrollContainerRef}
+            className="md:hidden overflow-x-auto pb-4 -mx-4 px-4" 
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
             <div className="flex gap-4" style={{ width: 'max-content' }}>
               {testimonials.map((testimonial, idx) => (
                 <div 
                   key={`${idx}-${testimonial.name}`} 
                   className="bg-white p-6 rounded-lg border border-black/5 flex-shrink-0"
                   style={{
-                    boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
+                    boxShadow: '0px 4px 12px -2px rgba(0, 0, 0, 0.15)',
                     width: 'calc(100vw - 3rem)',
                     maxWidth: '400px',
                   }}
@@ -164,9 +189,17 @@ export function TestimonialsSection() {
           
           {/* Mobile: Scroll Indicator Dots */}
           <div className="md:hidden flex justify-center gap-2 mt-4">
-            <div className="w-2 h-2 rounded-full bg-gray-400"></div>
-            <div className="w-2 h-2 rounded-full bg-gray-400"></div>
-            <div className="w-2 h-2 rounded-full bg-gray-400"></div>
+            {[0, 1, 2].map((index) => (
+              <div 
+                key={index}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  activeDotIndex === index ? 'bg-white' : 'bg-gray-400'
+                }`}
+                style={{
+                  boxShadow: activeDotIndex === index ? '0 0 0 2px rgba(255, 255, 255, 0.5)' : 'none',
+                }}
+              ></div>
+            ))}
           </div>
 
           {/* Desktop: Arrow Navigation */}
