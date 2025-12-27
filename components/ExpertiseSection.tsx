@@ -66,12 +66,13 @@ export function ExpertiseSection() {
               <div className="text-4xl md:text-5xl mb-8 md:mb-12 font-thin opacity-10 serif italic transition-opacity hover:opacity-30">
                 {process.number}
               </div>
-              <h4 className="text-xs uppercase tracking-[0.3em] mb-4 md:mb-6 font-medium">{process.title}</h4>
+              <h4 className="text-sm md:text-base uppercase tracking-[0.3em] mb-4 md:mb-6 font-medium">{process.title}</h4>
               <p 
-                className="text-gray-500 text-sm md:text-base leading-relaxed"
+                className="text-sm md:text-base leading-relaxed"
                 style={{
                   fontFamily: 'var(--font-poppins)',
                   fontWeight: 400,
+                  color: '#6B7280',
                 }}
               >
                 {process.description}

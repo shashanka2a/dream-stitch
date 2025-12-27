@@ -17,7 +17,7 @@ export function PartnersSection() {
           >
             Your fashion partner from concept to launch.
           </h2>
-          <div className="space-y-6 md:space-y-10 text-gray-600 max-w-xl" style={{ textAlign: 'left' }}>
+          <div className="space-y-6 md:space-y-10 max-w-xl" style={{ textAlign: 'left', color: '#6B7280' }}>
             <p
               style={{
                 fontFamily: 'var(--font-poppins)',

@@ -72,10 +72,12 @@ export function StatsSection() {
               {stat.suffix}
             </div>
             <div 
-              className="uppercase tracking-[0.3em] text-[10px] opacity-40"
+              className="uppercase tracking-[0.3em] text-[10px]"
               style={{
                 fontFamily: 'var(--font-poppins)',
                 fontWeight: 400,
+                color: '#6B7280',
+                opacity: 1,
               }}
             >
               {stat.label}

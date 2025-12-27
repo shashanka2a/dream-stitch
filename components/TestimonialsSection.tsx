@@ -96,20 +96,20 @@ export function TestimonialsSection() {
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px] px-4 sm:px-6 md:px-8 bg-[#F8F7F4]">
       <div className="max-w-7xl mx-auto">
+        <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 reveal text-center md:text-left">
+          <span className="uppercase tracking-[0.3em] text-[9px] sm:text-[10px] opacity-40 block mb-3 sm:mb-4 md:mb-6">REVIEWS</span>
+          <h2 
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
+            style={{
+              fontFamily: 'var(--font-cormorant)',
+              fontWeight: 600,
+            }}
+          >
+            Testimonials
+          </h2>
+        </div>
+        
         <div className="relative reveal">
-          <div className="mb-6 md:mb-8 reveal text-center md:text-left">
-            <span className="uppercase tracking-[0.3em] text-[9px] sm:text-[10px] opacity-40 block mb-3 sm:mb-4 md:mb-6">REVIEWS</span>
-            <h2 
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
-              style={{
-                fontFamily: 'var(--font-cormorant)',
-                fontWeight: 600,
-              }}
-            >
-              Testimonials
-            </h2>
-          </div>
-          
           <div className="flex items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8">
             <button
               onClick={prevTestimonial}
@@ -147,10 +147,11 @@ export function TestimonialsSection() {
                     <h4 className="text-base md:text-lg font-semibold text-gray-900">{testimonial.name}</h4>
                   </div>
                   <p 
-                    className="text-sm md:text-base text-gray-600 leading-relaxed mb-4 md:mb-6 text-left"
+                    className="text-sm md:text-base leading-relaxed mb-4 md:mb-6 text-left"
                     style={{
                       fontFamily: 'var(--font-poppins)',
                       fontWeight: 400,
+                      color: '#6B7280',
                     }}
                   >
                     {testimonial.text}
