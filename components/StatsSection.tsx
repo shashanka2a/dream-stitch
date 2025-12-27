@@ -71,7 +71,15 @@ export function StatsSection() {
               </span>
               {stat.suffix}
             </div>
-            <div className="uppercase tracking-[0.3em] text-[10px] opacity-40">{stat.label}</div>
+            <div 
+              className="uppercase tracking-[0.3em] text-[10px] opacity-40"
+              style={{
+                fontFamily: 'var(--font-poppins)',
+                fontWeight: 400,
+              }}
+            >
+              {stat.label}
+            </div>
           </div>
         ))}
       </div>

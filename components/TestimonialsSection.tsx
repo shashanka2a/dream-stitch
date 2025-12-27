@@ -135,7 +135,13 @@ export function TestimonialsSection() {
                     </p>
                     <h4 className="text-base md:text-lg font-semibold text-gray-900">{testimonial.name}</h4>
                   </div>
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-4 md:mb-6 font-light text-left">
+                  <p 
+                    className="text-sm md:text-base text-gray-600 leading-relaxed mb-4 md:mb-6 text-left"
+                    style={{
+                      fontFamily: 'var(--font-poppins)',
+                      fontWeight: 400,
+                    }}
+                  >
                     {testimonial.text}
                   </p>
                   <div className="flex justify-start gap-1">

@@ -18,7 +18,13 @@ export function SolutionsSection() {
               />
             </div>
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-light mb-4 md:mb-6 text-gray-900">Flexible Services</h3>
-            <p className="text-gray-500 text-sm md:text-base lg:text-lg font-light leading-relaxed">
+            <p 
+              className="text-gray-500 text-sm md:text-base lg:text-lg leading-relaxed"
+              style={{
+                fontFamily: 'var(--font-poppins)',
+                fontWeight: 400,
+              }}
+            >
               Choose full end-to-end support or individual services: design, sample development, fabric sourcing, manufacturing, or marketing. We adapt to your needs, not the other way around.
             </p>
           </div>
@@ -33,7 +39,13 @@ export function SolutionsSection() {
               />
             </div>
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-light mb-4 md:mb-6 text-gray-900">Startup-Friendly</h3>
-            <p className="text-gray-500 text-sm md:text-base lg:text-lg font-light leading-relaxed">
+            <p 
+              className="text-gray-500 text-sm md:text-base lg:text-lg leading-relaxed"
+              style={{
+                fontFamily: 'var(--font-poppins)',
+                fontWeight: 400,
+              }}
+            >
               Low minimum order quantities make quality production accessible from day one. Scale at your pace, with transparent pricing and support that grows with your brand.
             </p>
           </div>

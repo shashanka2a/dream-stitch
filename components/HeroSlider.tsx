@@ -57,8 +57,12 @@ export function HeroSlider() {
             <span className="inline-block italic translate-y-full transition-transform duration-1000 delay-500 ml-1 sm:ml-2 md:ml-3 whitespace-nowrap">to Market.</span>
           </h1>
           <p 
-            className="text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.5em] uppercase font-light opacity-90" 
-            style={{ transitionDelay: '800ms' }}
+            className="text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.5em] uppercase opacity-90" 
+            style={{ 
+              transitionDelay: '800ms',
+              fontFamily: 'var(--font-poppins)',
+              fontWeight: 400,
+            }}
           >
             <span className="hidden sm:inline">End-to-end fashion design, production, and brand support</span>
             <span className="sm:hidden">End-to-end fashion design & production</span>
