@@ -119,9 +119,9 @@ export function TestimonialsSection() {
                 return (
                 <div 
                   key={`${actualIndex}-${testimonial.name}`} 
-                  className="bg-white p-6 md:p-8 rounded-lg shadow-sm border border-black/5"
+                  className="bg-white p-6 md:p-8 rounded-lg shadow-lg border border-black/5"
                 >
-                  <div className="flex flex-col items-center text-center mb-4 md:mb-6">
+                  <div className="flex flex-col items-start mb-4 md:mb-6">
                     <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden mb-3 md:mb-4">
                       <Image
                         src={testimonial.image}
@@ -135,7 +135,7 @@ export function TestimonialsSection() {
                     </p>
                     <h4 className="text-base md:text-lg font-semibold text-gray-900">{testimonial.name}</h4>
                   </div>
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-4 md:mb-6 font-light text-center">
+                  <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-4 md:mb-6 font-light text-left">
                     {testimonial.text}
                   </p>
                   <div className="flex justify-center gap-1">
