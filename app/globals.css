@@ -225,3 +225,30 @@ html, body {
   }
 }
 
+/* Custom checkbox styling */
+input[type="checkbox"] {
+  position: relative;
+}
+
+input[type="checkbox"]:checked {
+  background-color: white !important;
+  border-color: white !important;
+}
+
+input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 4px;
+  height: 8px;
+  border: solid #1a1a1a;
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -60%) rotate(45deg);
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: none;
+}
+

@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 
 export function Footer() {
   const [formData, setFormData] = useState({
@@ -29,16 +28,6 @@ export function Footer() {
     <footer id="contact" className="bg-[#111] text-white pt-12 sm:pt-16 md:pt-20 lg:pt-24 xl:pt-[120px] pb-6 sm:pb-8 px-4 sm:px-6 md:px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-14 lg:gap-20 xl:gap-24 border-b border-white/5 pb-8 sm:pb-12 md:pb-16">
         <div>
-          <div className="mb-8 md:mb-16">
-            <div className="relative w-[120px] h-[35px] md:w-[150px] md:h-[45px]">
-              <Image
-                src="/logo.svg"
-                alt="DreamStich"
-                fill
-                className="object-contain opacity-70"
-              />
-            </div>
-          </div>
           <h3 
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl mb-8 sm:mb-12 md:mb-16 lg:mb-20 leading-tight"
             style={{
@@ -136,7 +125,14 @@ export function Footer() {
                 checked={formData.agree}
                 onChange={handleChange}
                 required
-                className="mt-1 w-4 h-4 bg-transparent border border-white/20 checked:bg-white checked:border-white focus:outline-none"
+                className="mt-1 w-5 h-5 bg-transparent border-2 border-white/30 rounded-lg checked:bg-white checked:border-white focus:outline-none focus:ring-0 cursor-pointer"
+                style={{
+                  borderRadius: '8px',
+                  appearance: 'none',
+                  WebkitAppearance: 'none',
+                  MozAppearance: 'none',
+                  accentColor: 'transparent',
+                }}
               />
               <label htmlFor="agree" className="text-sm font-light opacity-70 leading-relaxed">
                 I agree that my submitted data is being collected and stored.
