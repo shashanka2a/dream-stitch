@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 export function Footer() {
   const [formData, setFormData] = useState({
@@ -28,7 +29,16 @@ export function Footer() {
     <footer id="contact" className="bg-[#111] text-white pt-16 md:pt-24 lg:pt-40 pb-8 px-4 md:px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-24 border-b border-white/5 pb-12 md:pb-16">
         <div>
-          <div className="text-sm md:text-lg tracking-[0.4em] uppercase font-light mb-8 md:mb-16 opacity-70">Dream Stitch</div>
+          <div className="mb-8 md:mb-16">
+            <div className="relative w-[120px] h-[35px] md:w-[150px] md:h-[45px]">
+              <Image
+                src="/logo.svg"
+                alt="DreamStich"
+                fill
+                className="object-contain opacity-70"
+              />
+            </div>
+          </div>
           <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-light mb-12 md:mb-20 leading-tight">
             Ready to launch<br /><span className="italic">your brand?</span>
           </h3>

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Logo } from './Logo'
+import Image from 'next/image'
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
@@ -32,8 +32,14 @@ export function Navigation() {
       className="fixed top-0 w-full z-50 mix-blend-difference text-white px-4 md:px-8 py-6 md:py-10 flex justify-between items-center"
     >
       <div className={`border border-current px-2 md:px-4 py-1.5 md:py-2 transition-all duration-500 hover:opacity-80 ${scrolled ? 'border-black' : 'border-white'}`}>
-        <div className={`${scrolled ? 'text-black' : 'text-white'} w-[140px] h-[32px] md:w-[180px] md:h-[40px]`}>
-          <Logo width={180} height={40} className="w-full h-full" />
+        <div className="w-[140px] h-[32px] md:w-[180px] md:h-[40px] relative">
+          <Image
+            src="/logo.svg"
+            alt="DreamStich"
+            fill
+            className="object-contain"
+            style={{ filter: scrolled ? 'brightness(0)' : 'brightness(0) invert(1)' }}
+          />
         </div>
       </div>
       <div className="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.3em] font-light">

@@ -42,16 +42,18 @@ export function HeroSlider() {
       ))}
       
       <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4 md:px-8">
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-light mb-6 md:mb-8 reveal active hero-text-shadow leading-tight overflow-hidden">
-          <span className="block translate-y-full transition-transform duration-1000 delay-300">From Idea</span>
-          <span className="block italic translate-y-full transition-transform duration-1000 delay-500">to Market.</span>
-        </h1>
-        <p 
-          className="text-[9px] sm:text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase font-light max-w-2xl opacity-90 reveal active hero-text-shadow mt-2 md:mt-4 px-4" 
-          style={{ transitionDelay: '800ms' }}
-        >
-          End-to-end fashion design, production, and brand support
-        </p>
+        <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 reveal active hero-text-shadow">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-light leading-tight overflow-hidden">
+            <span className="inline-block translate-y-full transition-transform duration-1000 delay-300">From Idea</span>
+            <span className="inline-block italic translate-y-full transition-transform duration-1000 delay-500 ml-2 md:ml-3">to Market.</span>
+          </h1>
+          <p 
+            className="text-[9px] sm:text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase font-light opacity-90" 
+            style={{ transitionDelay: '800ms' }}
+          >
+            End-to-end fashion design, production, and brand support
+          </p>
+        </div>
         <div className="mt-8 md:mt-16 reveal active" style={{ transitionDelay: '1000ms' }}>
             <a 
             href="#contact" 
