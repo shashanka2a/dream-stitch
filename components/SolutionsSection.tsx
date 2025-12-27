@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export function SolutionsSection() {
   return (
-    <section id="solutions" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px] px-4 sm:px-6 md:px-8 bg-white max-h-[800px] overflow-y-auto">
+    <section id="solutions" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px] px-4 sm:px-6 md:px-8 bg-white">
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-24 items-start">
           <div className="reveal">

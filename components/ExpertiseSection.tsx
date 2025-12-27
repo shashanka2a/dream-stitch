@@ -41,7 +41,7 @@ const processes = [
 
 export function ExpertiseSection() {
   return (
-    <section id="expertise" className="bg-white py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px] px-4 sm:px-6 md:px-8 max-h-[800px] overflow-y-auto">
+    <section id="expertise" className="bg-white py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px] px-4 sm:px-6 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32 reveal text-center md:text-left">
           <span className="uppercase tracking-[0.3em] text-[9px] sm:text-[10px] opacity-40 block mb-3 sm:mb-4 md:mb-6">The Process</span>
