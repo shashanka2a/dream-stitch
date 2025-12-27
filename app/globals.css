@@ -78,7 +78,7 @@ nav.scrolled {
   background: #000;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .slider-container {
     height: 800px;
     max-height: 800px;
@@ -86,11 +86,19 @@ nav.scrolled {
   }
 }
 
+@media (max-width: 768px) {
+  .slider-container {
+    height: 600px;
+    max-height: 600px;
+    min-height: 400px;
+  }
+}
+
 @media (max-width: 640px) {
   .slider-container {
-    height: 700px;
-    max-height: 700px;
-    min-height: 400px;
+    height: 500px;
+    max-height: 500px;
+    min-height: 350px;
   }
 }
 
@@ -222,6 +230,25 @@ html, body {
   h1, h2, h3 {
     word-wrap: break-word;
     overflow-wrap: break-word;
+  }
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  /* Ensure text doesn't overflow */
+  * {
+    max-width: 100%;
+  }
+  
+  /* Better spacing on mobile */
+  section {
+    overflow-x: hidden;
+  }
+  
+  /* Prevent horizontal scroll */
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
 

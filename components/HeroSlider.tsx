@@ -41,23 +41,23 @@ export function HeroSlider() {
         />
       ))}
       
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4 md:px-8 py-8 md:py-12">
-        <div className="flex flex-col items-center justify-center gap-2 sm:gap-3 md:gap-4 reveal active hero-text-shadow max-w-[95%] md:max-w-none">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4 md:px-8 py-6 sm:py-8 md:py-12">
+        <div className="flex flex-col items-center justify-center gap-2 sm:gap-3 md:gap-4 reveal active hero-text-shadow w-full max-w-[95%] md:max-w-none">
           <h1 
-            className="overflow-hidden"
+            className="overflow-hidden w-full"
             style={{
               fontFamily: 'var(--font-cormorant)',
               fontWeight: 600,
-              fontSize: 'clamp(36px, 6vw, 128px)',
+              fontSize: 'clamp(32px, 8vw, 128px)',
               lineHeight: 1.1,
               letterSpacing: '0%',
             }}
           >
-            <span className="inline-block translate-y-full transition-transform duration-1000 delay-300 whitespace-nowrap">From Idea</span>
-            <span className="inline-block italic translate-y-full transition-transform duration-1000 delay-500 ml-1 sm:ml-2 md:ml-3 whitespace-nowrap">to Market.</span>
+            <span className="inline-block translate-y-full transition-transform duration-1000 delay-300">From Idea</span>
+            <span className="inline-block italic translate-y-full transition-transform duration-1000 delay-500 ml-1 sm:ml-2 md:ml-3">to Market.</span>
           </h1>
           <p 
-            className="text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.5em] uppercase text-white" 
+            className="text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] lg:tracking-[0.5em] uppercase text-white px-2" 
             style={{ 
               transitionDelay: '800ms',
               fontFamily: 'var(--font-poppins)',
@@ -68,10 +68,10 @@ export function HeroSlider() {
             <span className="sm:hidden">End-to-end fashion design & production</span>
           </p>
         </div>
-        <div className="mt-6 sm:mt-8 md:mt-12 lg:mt-16 reveal active" style={{ transitionDelay: '1000ms' }}>
+        <div className="mt-4 sm:mt-6 md:mt-8 lg:mt-12 xl:mt-16 reveal active" style={{ transitionDelay: '1000ms' }}>
             <a 
             href="#contact" 
-            className="px-6 sm:px-8 md:px-12 py-2.5 sm:py-3 md:py-4 border border-white text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] hover:bg-white hover:text-black transition-all"
+            className="px-5 sm:px-6 md:px-8 lg:px-12 py-2 sm:py-2.5 md:py-3 lg:py-4 border border-white text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] hover:bg-white hover:text-black transition-all whitespace-nowrap"
           >
             Start Your Journey
           </a>

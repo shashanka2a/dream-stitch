@@ -17,13 +17,13 @@ export function PartnersSection() {
           >
             Your fashion partner from concept to launch.
           </h2>
-          <div className="space-y-6 md:space-y-10 max-w-xl" style={{ textAlign: 'left', color: '#6B7280' }}>
+          <div className="space-y-4 sm:space-y-6 md:space-y-10 max-w-xl" style={{ textAlign: 'left', color: '#6B7280' }}>
             <p
               style={{
                 fontFamily: 'var(--font-poppins)',
                 fontWeight: 300,
-                fontSize: '20px',
-                lineHeight: '30px',
+                fontSize: 'clamp(14px, 3vw, 20px)',
+                lineHeight: '1.5',
                 letterSpacing: '0%',
               }}
             >
@@ -33,8 +33,8 @@ export function PartnersSection() {
               style={{
                 fontFamily: 'var(--font-poppins)',
                 fontWeight: 300,
-                fontSize: '20px',
-                lineHeight: '30px',
+                fontSize: 'clamp(14px, 3vw, 20px)',
+                lineHeight: '1.5',
                 letterSpacing: '0%',
               }}
             >
