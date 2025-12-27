@@ -70,22 +70,26 @@ nav.scrolled {
 }
 
 .slider-container {
-  height: 100vh;
+  height: 900px;
   min-height: 600px;
-  max-height: 100vh;
+  max-height: 900px;
   position: relative;
   overflow: hidden;
   background: #000;
 }
 
-@media (max-height: 800px) {
+@media (max-width: 768px) {
   .slider-container {
+    height: 800px;
+    max-height: 800px;
     min-height: 500px;
   }
 }
 
-@media (max-height: 600px) {
+@media (max-width: 640px) {
   .slider-container {
+    height: 700px;
+    max-height: 700px;
     min-height: 400px;
   }
 }
