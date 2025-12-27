@@ -21,12 +21,16 @@ export function HeroSlider() {
   }, [])
 
   useEffect(() => {
-    // Hero Text Reveal
-    const heroSpans = document.querySelectorAll('h1 span')
-    heroSpans.forEach(span => {
-      const htmlSpan = span as HTMLElement
-      htmlSpan.style.transform = 'translateY(0)'
-    })
+    // Hero Text Reveal - Trigger animation after a brief delay
+    const timer = setTimeout(() => {
+      const heroSpans = document.querySelectorAll('h1 span')
+      heroSpans.forEach(span => {
+        const htmlSpan = span as HTMLElement
+        htmlSpan.style.transform = 'translateY(0)'
+      })
+    }, 50) // Small delay to ensure DOM is ready
+    
+    return () => clearTimeout(timer)
   }, [])
 
   return (
@@ -53,13 +57,13 @@ export function HeroSlider() {
               letterSpacing: '0%',
             }}
           >
-            <span className="inline-block translate-y-full transition-transform duration-1000 delay-300">From Idea</span>
-            <span className="inline-block italic translate-y-full transition-transform duration-1000 delay-500 ml-1 sm:ml-2 md:ml-3">to Market.</span>
+            <span className="inline-block translate-y-full transition-transform duration-[600ms] delay-100 ease-out">From Idea</span>
+            <span className="inline-block italic translate-y-full transition-transform duration-[600ms] delay-200 ease-out ml-1 sm:ml-2 md:ml-3">to Market.</span>
           </h1>
           <p 
             className="text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] lg:tracking-[0.5em] uppercase text-white px-2" 
             style={{ 
-              transitionDelay: '800ms',
+              transitionDelay: '400ms',
               fontFamily: 'var(--font-poppins)',
               fontWeight: 400,
             }}
@@ -68,7 +72,7 @@ export function HeroSlider() {
             <span className="sm:hidden">End-to-end fashion design & production</span>
           </p>
         </div>
-        <div className="mt-4 sm:mt-6 md:mt-8 lg:mt-12 xl:mt-16 reveal active" style={{ transitionDelay: '1000ms' }}>
+        <div className="mt-4 sm:mt-6 md:mt-8 lg:mt-12 xl:mt-16 reveal active" style={{ transitionDelay: '500ms' }}>
             <a 
             href="#contact" 
             className="px-5 sm:px-6 md:px-8 lg:px-12 py-2 sm:py-2.5 md:py-3 lg:py-4 border border-white text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] hover:bg-white hover:text-black transition-all whitespace-nowrap"
