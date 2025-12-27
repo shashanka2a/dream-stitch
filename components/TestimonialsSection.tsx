@@ -94,7 +94,7 @@ export function TestimonialsSection() {
   const visibleTestimonials = getVisibleTestimonials()
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px] px-4 sm:px-6 md:px-8 bg-[#F8F7F4]">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px] px-4 sm:px-6 md:px-8 bg-[#F8F7F4] max-h-[800px] overflow-y-auto">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 sm:mb-16 md:mb-24 lg:mb-32 reveal text-center md:text-left">
           <span className="uppercase tracking-[0.3em] text-[9px] sm:text-[10px] opacity-40 block mb-3 sm:mb-4 md:mb-6">REVIEWS</span>
