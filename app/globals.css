@@ -8,8 +8,11 @@
   --accent: #8b735b;
 }
 
-* {
-  cursor: none;
+/* Hide default cursor on desktop only */
+@media (min-width: 768px) {
+  * {
+    cursor: none;
+  }
 }
 
 body {
@@ -24,35 +27,45 @@ h1, h2, h3, .serif {
   font-family: 'Playfair Display', serif;
 }
 
-/* Custom Cursor */
-#cursor {
-  width: 12px;
-  height: 12px;
-  background: black;
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  will-change: transform;
-  transform: translate3d(0, 0, 0);
-  transition: background 0.2s ease;
+/* Custom Cursor - Desktop only */
+@media (min-width: 768px) {
+  #cursor {
+    width: 12px;
+    height: 12px;
+    background: black;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    transition: background 0.2s ease;
+  }
+
+  #cursor-follower {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    transition: background 0.2s ease;
+  }
 }
 
-#cursor-follower {
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(0,0,0,0.2);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9998;
-  top: 0;
-  left: 0;
-  will-change: transform;
-  transform: translate3d(0, 0, 0);
-  transition: background 0.2s ease;
+/* Hide custom cursor on mobile */
+@media (max-width: 767px) {
+  #cursor,
+  #cursor-follower {
+    display: none !important;
+  }
 }
 
 /* Navbar Transition */

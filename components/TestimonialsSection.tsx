@@ -161,6 +161,13 @@ export function TestimonialsSection() {
               ))}
             </div>
           </div>
+          
+          {/* Mobile: Scroll Indicator Dots */}
+          <div className="md:hidden flex justify-center gap-2 mt-4">
+            <div className="w-2 h-2 rounded-full bg-gray-400"></div>
+            <div className="w-2 h-2 rounded-full bg-gray-400"></div>
+            <div className="w-2 h-2 rounded-full bg-gray-400"></div>
+          </div>
 
           {/* Desktop: Arrow Navigation */}
           <div className="hidden md:flex items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8">
