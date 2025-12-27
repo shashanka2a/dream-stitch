@@ -9,10 +9,10 @@ export function PartnersSection() {
         <div className="md:col-span-7 reveal">
           <span className="uppercase tracking-[0.3em] text-[10px] opacity-40 block mb-4 md:mb-8">THE PARTNER</span>
           <h2 
-            className="mb-4 sm:mb-6 md:mb-8 lg:mb-12"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 sm:mb-6 md:mb-8 lg:mb-12"
             style={{
               fontFamily: 'var(--font-cormorant)',
-              fontWeight: 600,
+              fontWeight: 400,
             }}
           >
             Your fashion partner from concept to launch.
