@@ -9,7 +9,7 @@ export function PartnersSection() {
         <div className="md:col-span-7 reveal">
           <span className="uppercase tracking-[0.3em] text-[10px] opacity-40 block mb-4 md:mb-8">THE PARTNER</span>
           <h2 
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 sm:mb-6 md:mb-8 lg:mb-12"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 md:mb-8 lg:mb-12"
             style={{
               fontFamily: 'var(--font-cormorant)',
               fontWeight: 500,
@@ -19,10 +19,10 @@ export function PartnersSection() {
           </h2>
           <div className="space-y-4 sm:space-y-6 md:space-y-10 max-w-xl" style={{ textAlign: 'left', color: '#6B7280' }}>
             <p
+              className="text-sm sm:text-base md:text-lg lg:text-xl"
               style={{
                 fontFamily: 'var(--font-poppins)',
                 fontWeight: 300,
-                fontSize: 'clamp(14px, 3vw, 20px)',
                 lineHeight: '1.5',
                 letterSpacing: '0%',
               }}
@@ -30,10 +30,10 @@ export function PartnersSection() {
               DreamStich supports fashion startups, emerging designers, and established brands at every stage. We provide flexible, customizable solutions whether you need designs created from scratch, professional sample development, reliable manufacturing, or help bringing your collection to market.
             </p>
             <p
+              className="text-sm sm:text-base md:text-lg lg:text-xl"
               style={{
                 fontFamily: 'var(--font-poppins)',
                 fontWeight: 300,
-                fontSize: 'clamp(14px, 3vw, 20px)',
                 lineHeight: '1.5',
                 letterSpacing: '0%',
               }}

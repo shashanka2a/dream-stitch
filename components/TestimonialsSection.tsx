@@ -102,7 +102,7 @@ export function TestimonialsSection() {
             <div className="flex-1 text-center md:text-left">
               <span className="uppercase tracking-[0.3em] text-[9px] sm:text-[10px] opacity-40 block mb-3 sm:mb-4 md:mb-6">REVIEWS</span>
               <h2 
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
                 style={{
                   fontFamily: 'var(--font-cormorant)',
                   fontWeight: 600,

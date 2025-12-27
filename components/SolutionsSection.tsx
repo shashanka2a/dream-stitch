@@ -18,7 +18,7 @@ export function SolutionsSection() {
               />
             </div>
             <h3 
-              className="text-2xl md:text-3xl lg:text-4xl mb-4 md:mb-6 text-gray-900"
+              className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 md:mb-6 text-gray-900"
               style={{
                 fontFamily: 'var(--font-cormorant)',
                 fontWeight: 600,
@@ -48,7 +48,7 @@ export function SolutionsSection() {
               />
             </div>
             <h3 
-              className="text-2xl md:text-3xl lg:text-4xl mb-4 md:mb-6 text-gray-900"
+              className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 md:mb-6 text-gray-900"
               style={{
                 fontFamily: 'var(--font-cormorant)',
                 fontWeight: 600,
