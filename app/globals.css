@@ -241,7 +241,7 @@ html, body {
   }
   
   /* Better spacing on mobile */
-  section {
+  section:not(#testimonials) {
     overflow-x: hidden;
   }
   
@@ -277,5 +277,10 @@ input[type="checkbox"]:checked::after {
 input[type="checkbox"]:focus {
   outline: none;
   box-shadow: none;
+}
+
+/* Hide scrollbar for testimonials horizontal scroll */
+.overflow-x-auto::-webkit-scrollbar {
+  display: none;
 }
 

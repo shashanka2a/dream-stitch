@@ -6,6 +6,7 @@ export function Footer() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    email: '',
     message: '',
     agree: false
   })
@@ -94,6 +95,16 @@ export function Footer() {
                 placeholder="Phone*"
               />
             </div>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="w-full bg-transparent border border-white px-4 py-3 text-white placeholder-white focus:outline-none focus:border-white transition-colors"
+              placeholder="Email*"
+            />
             <textarea
               id="message"
               name="message"
