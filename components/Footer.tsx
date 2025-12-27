@@ -123,7 +123,7 @@ export function Footer() {
                 checked={formData.agree}
                 onChange={handleChange}
                 required
-                className="w-5 h-5 bg-transparent border-2 border-white rounded-lg checked:bg-white checked:border-white focus:outline-none focus:ring-0 cursor-pointer flex-shrink-0"
+                className="w-5 h-5 bg-transparent border-2 border-white/30 rounded-lg checked:bg-white checked:border-white focus:outline-none focus:ring-0 cursor-pointer flex-shrink-0"
                 style={{
                   borderRadius: '8px',
                   appearance: 'none',
@@ -132,13 +132,13 @@ export function Footer() {
                   accentColor: 'transparent',
                 }}
               />
-              <label htmlFor="agree" className="text-sm font-light text-white leading-relaxed">
+              <label htmlFor="agree" className="text-sm font-light text-white/70 leading-relaxed">
                 I agree that my submitted data is being collected and stored.
               </label>
             </div>
             <button
               type="submit"
-              className="px-8 py-3 border border-white text-white text-sm uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all"
+              className="px-8 py-3 border border-white text-white text-sm uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all mt-4"
             >
               Send
             </button>
