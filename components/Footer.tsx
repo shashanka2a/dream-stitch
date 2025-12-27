@@ -39,7 +39,13 @@ export function Footer() {
               />
             </div>
           </div>
-          <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-light mb-8 sm:mb-12 md:mb-16 lg:mb-20 leading-tight">
+          <h3 
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl mb-8 sm:mb-12 md:mb-16 lg:mb-20 leading-tight"
+            style={{
+              fontFamily: 'var(--font-cormorant)',
+              fontWeight: 600,
+            }}
+          >
             Ready to launch<br /><span className="italic">your brand?</span>
           </h3>
           <div className="space-y-4 md:space-y-6">

@@ -13,9 +13,6 @@ export function PartnersSection() {
             style={{
               fontFamily: 'var(--font-cormorant)',
               fontWeight: 600,
-              fontSize: '40px',
-              lineHeight: '60px',
-              letterSpacing: '0%',
             }}
           >
             Your fashion partner from concept to launch.

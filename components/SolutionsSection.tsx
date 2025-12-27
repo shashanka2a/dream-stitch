@@ -17,7 +17,15 @@ export function SolutionsSection() {
                 className="w-full aspect-[3/2] object-cover rounded-lg border border-gray-100 shadow-sm"
               />
             </div>
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-light mb-4 md:mb-6 text-gray-900">Flexible Services</h3>
+            <h3 
+              className="text-2xl md:text-3xl lg:text-4xl mb-4 md:mb-6 text-gray-900"
+              style={{
+                fontFamily: 'var(--font-cormorant)',
+                fontWeight: 600,
+              }}
+            >
+              Flexible Services
+            </h3>
             <p 
               className="text-gray-500 text-sm md:text-base lg:text-lg leading-relaxed"
               style={{
@@ -38,7 +46,15 @@ export function SolutionsSection() {
                 className="w-full aspect-[3/2] object-cover rounded-lg border border-gray-100 shadow-sm"
               />
             </div>
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-light mb-4 md:mb-6 text-gray-900">Startup-Friendly</h3>
+            <h3 
+              className="text-2xl md:text-3xl lg:text-4xl mb-4 md:mb-6 text-gray-900"
+              style={{
+                fontFamily: 'var(--font-cormorant)',
+                fontWeight: 600,
+              }}
+            >
+              Startup-Friendly
+            </h3>
             <p 
               className="text-gray-500 text-sm md:text-base lg:text-lg leading-relaxed"
               style={{
