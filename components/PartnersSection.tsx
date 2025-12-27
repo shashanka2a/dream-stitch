@@ -20,11 +20,27 @@ export function PartnersSection() {
           >
             Your fashion partner from concept to launch.
           </h2>
-          <div className="space-y-6 md:space-y-10 text-base md:text-lg lg:text-xl leading-relaxed text-gray-600 max-w-xl font-light">
-            <p>
+          <div className="space-y-6 md:space-y-10 text-gray-600 max-w-xl" style={{ textAlign: 'left' }}>
+            <p
+              style={{
+                fontFamily: 'var(--font-poppins)',
+                fontWeight: 400,
+                fontSize: '20px',
+                lineHeight: '30px',
+                letterSpacing: '0%',
+              }}
+            >
               DreamStich supports fashion startups, emerging designers, and established brands at every stage. We provide flexible, customizable solutions whether you need designs created from scratch, professional sample development, reliable manufacturing, or help bringing your collection to market.
             </p>
-            <p>
+            <p
+              style={{
+                fontFamily: 'var(--font-poppins)',
+                fontWeight: 400,
+                fontSize: '20px',
+                lineHeight: '30px',
+                letterSpacing: '0%',
+              }}
+            >
               Low minimum order quantities, transparent processes, and complete support including photoshoots and marketing make fashion production accessible and scalable for brands ready to grow.
             </p>
           </div>
