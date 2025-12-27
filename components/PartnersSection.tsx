@@ -4,11 +4,11 @@ import Image from 'next/image'
 
 export function PartnersSection() {
   return (
-    <section id="about" className="py-16 md:py-32 lg:py-56 px-4 md:px-8 max-w-7xl mx-auto">
-      <div className="grid md:grid-cols-12 gap-8 md:gap-16 items-center">
+    <section id="about" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px] px-4 sm:px-6 md:px-8 max-w-7xl mx-auto">
+      <div className="grid md:grid-cols-12 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center">
         <div className="md:col-span-7 reveal">
           <span className="uppercase tracking-[0.3em] text-[10px] opacity-40 block mb-4 md:mb-8">THE PARTNER</span>
-          <h2 className="text-3xl md:text-4xl lg:text-7xl mb-6 md:mb-12 leading-[1.1] font-light">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl mb-4 sm:mb-6 md:mb-8 lg:mb-12 leading-[1.1] font-light">
             Your fashion partner from concept to launch.
           </h2>
           <div className="space-y-6 md:space-y-10 text-base md:text-lg lg:text-xl leading-relaxed text-gray-600 max-w-xl font-light">

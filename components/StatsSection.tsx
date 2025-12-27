@@ -53,15 +53,15 @@ export function StatsSection() {
   }, [])
 
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-[#efeeea] px-4 md:px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 text-center">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px] bg-[#efeeea] px-4 sm:px-6 md:px-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 md:gap-14 lg:gap-16 text-center">
         {stats.map((stat, index) => (
           <div 
             key={stat.label} 
             className={`${index < stats.length - 1 ? 'stats-border' : ''} reveal group`}
             style={{ transitionDelay: stat.delay }}
           >
-            <div className="text-5xl md:text-6xl lg:text-7xl serif mb-3 md:mb-4 transition-transform group-hover:scale-105 duration-700">
+            <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl serif mb-2 sm:mb-3 md:mb-4 transition-transform group-hover:scale-105 duration-700">
               <span 
                 ref={(el) => { countersRef.current[index] = el }}
                 className="counter" 

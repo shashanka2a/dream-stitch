@@ -26,8 +26,8 @@ export function Footer() {
   }
 
   return (
-    <footer id="contact" className="bg-[#111] text-white pt-16 md:pt-24 lg:pt-40 pb-8 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-24 border-b border-white/5 pb-12 md:pb-16">
+    <footer id="contact" className="bg-[#111] text-white pt-12 sm:pt-16 md:pt-20 lg:pt-24 xl:pt-[120px] pb-6 sm:pb-8 px-4 sm:px-6 md:px-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-14 lg:gap-20 xl:gap-24 border-b border-white/5 pb-8 sm:pb-12 md:pb-16">
         <div>
           <div className="mb-8 md:mb-16">
             <div className="relative w-[120px] h-[35px] md:w-[150px] md:h-[45px]">
@@ -39,7 +39,7 @@ export function Footer() {
               />
             </div>
           </div>
-          <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-light mb-12 md:mb-20 leading-tight">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-light mb-8 sm:mb-12 md:mb-16 lg:mb-20 leading-tight">
             Ready to launch<br /><span className="italic">your brand?</span>
           </h3>
           <div className="space-y-4 md:space-y-6">

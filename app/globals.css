@@ -71,9 +71,23 @@ nav.scrolled {
 
 .slider-container {
   height: 100vh;
+  min-height: 600px;
+  max-height: 100vh;
   position: relative;
   overflow: hidden;
   background: #000;
+}
+
+@media (max-height: 800px) {
+  .slider-container {
+    min-height: 500px;
+  }
+}
+
+@media (max-height: 600px) {
+  .slider-container {
+    min-height: 400px;
+  }
 }
 
 .slide {
@@ -159,11 +173,12 @@ nav.scrolled {
 .stats-border {
   border-right: 1px solid rgba(0,0,0,0.08);
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .stats-border {
     border-right: none;
     border-bottom: 1px solid rgba(0,0,0,0.08);
-    padding-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -177,5 +192,32 @@ nav.scrolled {
   z-index: 10000;
   width: 0%;
   transition: width 0.1s ease;
+}
+
+/* Responsive improvements for medium screens */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Better spacing for tablets and smaller laptops */
+  .max-w-7xl {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Prevent horizontal overflow */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Better text wrapping for smaller screens */
+@media (max-width: 1366px) {
+  h1, h2, h3 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
 }
 

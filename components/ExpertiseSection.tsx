@@ -41,14 +41,14 @@ const processes = [
 
 export function ExpertiseSection() {
   return (
-    <section id="expertise" className="bg-white py-16 md:py-32 lg:py-56 px-4 md:px-8">
+    <section id="expertise" className="bg-white py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px] px-4 sm:px-6 md:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16 md:mb-24 lg:mb-32 reveal text-center md:text-left">
-          <span className="uppercase tracking-[0.3em] text-[10px] opacity-40 block mb-4 md:mb-6">The Process</span>
-          <h2 className="text-3xl md:text-4xl lg:text-6xl font-light">Your Complete Journey</h2>
+        <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-32 reveal text-center md:text-left">
+          <span className="uppercase tracking-[0.3em] text-[9px] sm:text-[10px] opacity-40 block mb-3 sm:mb-4 md:mb-6">The Process</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light">Your Complete Journey</h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 md:gap-x-12 md:gap-y-16 lg:gap-x-16 lg:gap-y-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 sm:gap-x-8 md:gap-x-12 gap-y-10 sm:gap-y-12 md:gap-y-16 lg:gap-y-20 xl:gap-y-24">
           {processes.map((process) => (
             <div 
               key={process.number} 

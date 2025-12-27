@@ -41,32 +41,33 @@ export function HeroSlider() {
         />
       ))}
       
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4 md:px-8">
-        <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 reveal active hero-text-shadow">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4 md:px-8 py-8 md:py-12">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:gap-4 reveal active hero-text-shadow max-w-[95%] md:max-w-none">
           <h1 
             className="overflow-hidden"
             style={{
               fontFamily: 'var(--font-cormorant)',
               fontWeight: 600,
-              fontSize: 'clamp(48px, 8vw, 128px)',
-              lineHeight: 1,
+              fontSize: 'clamp(36px, 6vw, 128px)',
+              lineHeight: 1.1,
               letterSpacing: '0%',
             }}
           >
-            <span className="inline-block translate-y-full transition-transform duration-1000 delay-300">From Idea</span>
-            <span className="inline-block italic translate-y-full transition-transform duration-1000 delay-500 ml-2 md:ml-3">to Market.</span>
+            <span className="inline-block translate-y-full transition-transform duration-1000 delay-300 whitespace-nowrap">From Idea</span>
+            <span className="inline-block italic translate-y-full transition-transform duration-1000 delay-500 ml-1 sm:ml-2 md:ml-3 whitespace-nowrap">to Market.</span>
           </h1>
           <p 
-            className="text-[9px] sm:text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase font-light opacity-90" 
+            className="text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.5em] uppercase font-light opacity-90" 
             style={{ transitionDelay: '800ms' }}
           >
-            End-to-end fashion design, production, and brand support
+            <span className="hidden sm:inline">End-to-end fashion design, production, and brand support</span>
+            <span className="sm:hidden">End-to-end fashion design & production</span>
           </p>
         </div>
-        <div className="mt-8 md:mt-16 reveal active" style={{ transitionDelay: '1000ms' }}>
+        <div className="mt-6 sm:mt-8 md:mt-12 lg:mt-16 reveal active" style={{ transitionDelay: '1000ms' }}>
             <a 
             href="#contact" 
-            className="px-8 md:px-12 py-3 md:py-4 border border-white text-[9px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] hover:bg-white hover:text-black transition-all"
+            className="px-6 sm:px-8 md:px-12 py-2.5 sm:py-3 md:py-4 border border-white text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] hover:bg-white hover:text-black transition-all"
           >
             Start Your Journey
           </a>
