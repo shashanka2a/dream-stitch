@@ -71,11 +71,8 @@ export function Footer() {
         </div>
 
         <div>
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm uppercase tracking-[0.2em] mb-2 opacity-70">
-                Name*
-              </label>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
                 type="text"
                 id="name"
@@ -83,14 +80,9 @@ export function Footer() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full bg-transparent border-b border-white/20 pb-2 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors"
-                placeholder=""
+                className="w-full bg-transparent border border-white px-4 py-3 text-white placeholder-white focus:outline-none focus:border-white transition-colors"
+                placeholder="Name*"
               />
-            </div>
-            <div>
-              <label htmlFor="phone" className="block text-sm uppercase tracking-[0.2em] mb-2 opacity-70">
-                Phone*
-              </label>
               <input
                 type="tel"
                 id="phone"
@@ -98,25 +90,20 @@ export function Footer() {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="w-full bg-transparent border-b border-white/20 pb-2 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors"
-                placeholder=""
+                className="w-full bg-transparent border border-white px-4 py-3 text-white placeholder-white focus:outline-none focus:border-white transition-colors"
+                placeholder="Phone*"
               />
             </div>
-            <div>
-              <label htmlFor="message" className="block text-sm uppercase tracking-[0.2em] mb-2 opacity-70">
-                Message*
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={4}
-                className="w-full bg-transparent border-b border-white/20 pb-2 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors resize-none"
-                placeholder=""
-              />
-            </div>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              rows={4}
+              className="w-full bg-transparent border border-white px-4 py-3 text-white placeholder-white focus:outline-none focus:border-white transition-colors resize-none"
+              placeholder="Message*"
+            />
             <div className="flex items-center gap-3">
               <input
                 type="checkbox"
@@ -125,7 +112,7 @@ export function Footer() {
                 checked={formData.agree}
                 onChange={handleChange}
                 required
-                className="w-5 h-5 bg-transparent border-2 border-white/30 rounded-lg checked:bg-white checked:border-white focus:outline-none focus:ring-0 cursor-pointer"
+                className="w-5 h-5 bg-transparent border-2 border-white rounded-lg checked:bg-white checked:border-white focus:outline-none focus:ring-0 cursor-pointer flex-shrink-0"
                 style={{
                   borderRadius: '8px',
                   appearance: 'none',
@@ -134,16 +121,18 @@ export function Footer() {
                   accentColor: 'transparent',
                 }}
               />
-              <label htmlFor="agree" className="text-sm font-light opacity-70 leading-relaxed">
+              <label htmlFor="agree" className="text-sm font-light text-white leading-relaxed">
                 I agree that my submitted data is being collected and stored.
               </label>
             </div>
-            <button
-              type="submit"
-              className="px-8 py-3 border border-white text-sm uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all mt-4"
-            >
-              Send
-            </button>
+            <div className="flex justify-center">
+              <button
+                type="submit"
+                className="px-8 py-3 border border-white text-white text-sm uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all"
+              >
+                Send
+              </button>
+            </div>
           </form>
         </div>
       </div>
