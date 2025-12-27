@@ -96,20 +96,23 @@ export function TestimonialsSection() {
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px] px-4 sm:px-6 md:px-8 bg-[#F8F7F4]">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 reveal text-center md:text-left">
-          <span className="uppercase tracking-[0.3em] text-[9px] sm:text-[10px] opacity-40 block mb-3 sm:mb-4 md:mb-6">REVIEWS</span>
-          <h2 
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
-            style={{
-              fontFamily: 'var(--font-cormorant)',
-              fontWeight: 600,
-            }}
-          >
-            Testimonials
-          </h2>
-        </div>
-        
         <div className="relative reveal">
+          <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 flex items-start gap-2 sm:gap-4 md:gap-6 lg:gap-8">
+            <div className="flex-shrink-0 w-5 h-5 md:w-6 md:h-6"></div>
+            <div className="flex-1 text-center md:text-left">
+              <span className="uppercase tracking-[0.3em] text-[9px] sm:text-[10px] opacity-40 block mb-3 sm:mb-4 md:mb-6">REVIEWS</span>
+              <h2 
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
+                style={{
+                  fontFamily: 'var(--font-cormorant)',
+                  fontWeight: 600,
+                }}
+              >
+                Testimonials
+              </h2>
+            </div>
+          </div>
+          
           <div className="flex items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8">
             <button
               onClick={prevTestimonial}
