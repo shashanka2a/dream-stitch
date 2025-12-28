@@ -7,6 +7,7 @@ export interface ProcessDetail {
   idealFor: string
   slug: string
   delay: string
+  images: string[]
 }
 
 export const processes: ProcessDetail[] = [
@@ -27,6 +28,12 @@ export const processes: ProcessDetail[] = [
     idealFor: 'Brands starting from scratch or refining an existing concept.',
     slug: 'design-development',
     delay: '0ms',
+    images: [
+      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800',
+    ],
   },
   {
     number: '02',
@@ -45,6 +52,12 @@ export const processes: ProcessDetail[] = [
     idealFor: 'Brands looking for the right materials without supplier hassles.',
     slug: 'fabric-sourcing',
     delay: '100ms',
+    images: [
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?auto=format&fit=crop&q=80&w=800',
+    ],
   },
   {
     number: '03',
@@ -63,6 +76,12 @@ export const processes: ProcessDetail[] = [
     idealFor: 'Brands with designs that need professional execution.',
     slug: 'sample-development',
     delay: '200ms',
+    images: [
+      'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800',
+    ],
   },
   {
     number: '04',
@@ -81,6 +100,12 @@ export const processes: ProcessDetail[] = [
     idealFor: 'Brands ready to produce without rigid MOQ pressure.',
     slug: 'manufacturing',
     delay: '300ms',
+    images: [
+      'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800',
+    ],
   },
   {
     number: '05',
@@ -98,6 +123,12 @@ export const processes: ProcessDetail[] = [
     idealFor: 'Brands preparing for launches or online sales.',
     slug: 'photoshoots-content',
     delay: '400ms',
+    images: [
+      'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80&w=800',
+    ],
   },
   {
     number: '06',
@@ -115,6 +146,12 @@ export const processes: ProcessDetail[] = [
     idealFor: 'Startups and brands building visibility and traction.',
     slug: 'marketing-support',
     delay: '500ms',
+    images: [
+      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80&w=800',
+    ],
   },
 ]
 

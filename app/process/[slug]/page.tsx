@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useEffect, use } from 'react'
 import { processes } from '@/data/processes'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
@@ -47,6 +48,14 @@ export default function ProcessPage({ params }: ProcessPageProps) {
     window.scrollTo(0, 0)
   }, [])
 
+  // Default images if not provided
+  const processImages = process.images || [
+    'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800',
+    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800',
+    'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80&w=800',
+    'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800',
+  ]
+
   return (
     <main className="bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px]">
@@ -64,67 +73,69 @@ export default function ProcessPage({ params }: ProcessPageProps) {
           Back to Process
         </Link>
 
-        {/* Header */}
-        <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 reveal">
-          <div className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[12rem] font-thin opacity-10 serif italic mb-6 sm:mb-8">
-            {process.number}
-          </div>
-          <h1 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 leading-tight"
-            style={{
-              fontFamily: 'var(--font-cormorant)',
-              fontWeight: 600,
-            }}
-          >
-            {process.title}
-          </h1>
-          <p 
-            className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed"
-            style={{
-              fontFamily: 'var(--font-poppins)',
-              fontWeight: 300,
-            }}
-          >
-            {process.subtitle}
-          </p>
-        </div>
-
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 sm:gap-16 md:gap-20 lg:gap-24">
-          {/* What's Included Section */}
-          <div className="lg:col-span-2 reveal">
-            <h2 
-              className="text-2xl sm:text-3xl md:text-4xl mb-8 sm:mb-10 md:mb-12"
+        {/* Main Content Grid - Left: Text, Right: Images */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 md:gap-20 lg:gap-24 mb-16 sm:mb-20 md:mb-24">
+          {/* Left Column - Text Content */}
+          <div className="reveal">
+            {/* Section Number */}
+            <div className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-thin opacity-20 serif italic mb-6 sm:mb-8">
+              {process.number}
+            </div>
+            
+            {/* Title */}
+            <h1 
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 leading-tight"
               style={{
                 fontFamily: 'var(--font-cormorant)',
                 fontWeight: 600,
               }}
             >
-              What's included:
-            </h2>
-            <ul className="space-y-4 sm:space-y-5 md:space-y-6">
-              {process.included.map((item, index) => (
-                <li 
-                  key={index}
-                  className="flex items-start gap-4 text-base sm:text-lg md:text-xl leading-relaxed"
-                  style={{
-                    fontFamily: 'var(--font-poppins)',
-                    fontWeight: 300,
-                    color: '#4B5563',
-                  }}
-                >
-                  <span className="text-gray-400 mt-2 flex-shrink-0">—</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+              {process.title}
+            </h1>
+            
+            {/* Description */}
+            <p 
+              className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-8 sm:mb-10 md:mb-12"
+              style={{
+                fontFamily: 'var(--font-poppins)',
+                fontWeight: 300,
+              }}
+            >
+              {process.description}
+            </p>
 
-          {/* Ideal For Section */}
-          <div className="lg:col-span-1 reveal">
-            <div className="sticky top-24">
+            {/* What's Included Section */}
+            <div className="mb-8 sm:mb-10 md:mb-12">
               <h2 
-                className="text-2xl sm:text-3xl md:text-4xl mb-6 sm:mb-8 md:mb-10"
+                className="text-xl sm:text-2xl md:text-3xl mb-6 sm:mb-8 uppercase tracking-[0.1em]"
+                style={{
+                  fontFamily: 'var(--font-cormorant)',
+                  fontWeight: 600,
+                }}
+              >
+                What's included:
+              </h2>
+              <ul className="space-y-3 sm:space-y-4">
+                {process.included.map((item, index) => (
+                  <li 
+                    key={index}
+                    className="text-sm sm:text-base md:text-lg leading-relaxed"
+                    style={{
+                      fontFamily: 'var(--font-poppins)',
+                      fontWeight: 300,
+                      color: '#374151',
+                    }}
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Ideal For Section */}
+            <div>
+              <h2 
+                className="text-xl sm:text-2xl md:text-3xl mb-4 sm:mb-6 uppercase tracking-[0.1em]"
                 style={{
                   fontFamily: 'var(--font-cormorant)',
                   fontWeight: 600,
@@ -133,15 +144,35 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                 Ideal for:
               </h2>
               <p 
-                className="text-base sm:text-lg md:text-xl leading-relaxed"
+                className="text-sm sm:text-base md:text-lg leading-relaxed"
                 style={{
                   fontFamily: 'var(--font-poppins)',
                   fontWeight: 300,
-                  color: '#4B5563',
+                  color: '#374151',
                 }}
               >
                 {process.idealFor}
               </p>
+            </div>
+          </div>
+
+          {/* Right Column - Image Grid */}
+          <div className="reveal">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6">
+              {processImages.slice(0, 4).map((image, index) => (
+                <div 
+                  key={index}
+                  className="relative aspect-square overflow-hidden bg-gray-100 group cursor-pointer"
+                >
+                  <Image
+                    src={image}
+                    alt={`${process.title} - Image ${index + 1}`}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 40vw"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
