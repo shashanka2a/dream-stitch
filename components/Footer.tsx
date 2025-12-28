@@ -28,7 +28,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-14 lg:gap-20 xl:gap-24 border-b border-white/5 pb-8 sm:pb-12 md:pb-16">
         <div>
           <h3 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-8 sm:mb-10 md:mb-12 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-5 md:mb-6 leading-tight"
             style={{
               fontFamily: 'var(--font-cormorant)',
               fontWeight: 600,
@@ -36,6 +36,15 @@ export function Footer() {
           >
             Get in touch
           </h3>
+          <p 
+            className="text-base sm:text-lg md:text-xl text-white/70 mb-8 sm:mb-10 md:mb-12 leading-relaxed"
+            style={{
+              fontFamily: 'var(--font-poppins)',
+              fontWeight: 300,
+            }}
+          >
+            Ready to launch your brand?
+          </p>
           <h4 
             className="text-xl sm:text-2xl md:text-3xl mb-6 sm:mb-8 md:mb-10"
             style={{
@@ -139,15 +148,6 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 
-            className="text-xl sm:text-2xl md:text-3xl mb-6 sm:mb-8 md:mb-10"
-            style={{
-              fontFamily: 'var(--font-cormorant)',
-              fontWeight: 600,
-            }}
-          >
-            Send a Message
-          </h4>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label 
