@@ -31,7 +31,17 @@ export function ExpertiseSection() {
               <div className="text-4xl md:text-5xl mb-8 md:mb-12 font-thin opacity-10 serif italic transition-opacity group-hover:opacity-30">
                 {process.number}
               </div>
-              <h4 className="text-sm md:text-base uppercase tracking-[0.3em] mb-4 md:mb-6 font-medium transition-colors group-hover:text-gray-900">{process.title}</h4>
+              <div className="flex items-start justify-between gap-4 mb-4 md:mb-6">
+                <h4 className="text-sm md:text-base uppercase tracking-[0.3em] font-medium transition-colors group-hover:text-gray-900 flex-1">{process.title}</h4>
+                <svg 
+                  className="w-4 h-4 md:w-5 md:h-5 text-gray-400 group-hover:text-gray-900 transition-all group-hover:translate-x-1 flex-shrink-0 mt-0.5" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
               <p 
                 className="text-sm md:text-base leading-relaxed transition-colors group-hover:text-gray-700"
                 style={{

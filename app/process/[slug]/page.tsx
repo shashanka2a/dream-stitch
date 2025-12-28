@@ -70,7 +70,7 @@ export default function ProcessPage({ params }: ProcessPageProps) {
             {process.number}
           </div>
           <h1 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-4 sm:mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 leading-tight"
             style={{
               fontFamily: 'var(--font-cormorant)',
               fontWeight: 600,
