@@ -79,10 +79,10 @@ export default function ProcessPage({ params }: ProcessPageProps) {
           <div className="reveal">
             {/* Section Number */}
             <div 
-              className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-bold opacity-20 mb-8 sm:mb-10 md:mb-12"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-medium opacity-20 mb-6 sm:mb-8"
               style={{
                 fontFamily: 'var(--font-cormorant)',
-                fontWeight: 700,
+                fontWeight: 500,
               }}
             >
               {process.number}
@@ -90,7 +90,7 @@ export default function ProcessPage({ params }: ProcessPageProps) {
             
             {/* Title */}
             <h1 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-6 sm:mb-8 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 leading-tight"
               style={{
                 fontFamily: 'var(--font-cormorant)',
                 fontWeight: 600,
@@ -102,7 +102,7 @@ export default function ProcessPage({ params }: ProcessPageProps) {
             
             {/* Description */}
             <p 
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-900 leading-relaxed mb-10 sm:mb-12 md:mb-16"
+              className="text-sm sm:text-base md:text-lg text-gray-900 leading-relaxed mb-8 sm:mb-10 md:mb-12"
               style={{
                 fontFamily: 'var(--font-poppins)',
                 fontWeight: 400,
@@ -113,23 +113,23 @@ export default function ProcessPage({ params }: ProcessPageProps) {
             </p>
 
             {/* What's Included Section */}
-            <div className="mb-10 sm:mb-12 md:mb-16">
+            <div className="mb-8 sm:mb-10 md:mb-12">
               <h2 
-                className="text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] mb-6 sm:mb-8 font-medium"
+                className="text-xs sm:text-sm md:text-base uppercase tracking-[0.15em] mb-4 sm:mb-6"
                 style={{
                   fontFamily: 'var(--font-poppins)',
-                  fontWeight: 500,
+                  fontWeight: 400,
                   color: '#1a1a1a',
-                  letterSpacing: '0.2em',
+                  letterSpacing: '0.15em',
                 }}
               >
                 What's included:
               </h2>
-              <ul className="space-y-3 sm:space-y-4">
+              <ul className="space-y-2 sm:space-y-3">
                 {process.included.map((item, index) => (
                   <li 
                     key={index}
-                    className="text-base sm:text-lg md:text-xl leading-relaxed"
+                    className="text-sm sm:text-base md:text-lg leading-relaxed"
                     style={{
                       fontFamily: 'var(--font-poppins)',
                       fontWeight: 400,
@@ -145,18 +145,18 @@ export default function ProcessPage({ params }: ProcessPageProps) {
             {/* Ideal For Section */}
             <div>
               <h2 
-                className="text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] mb-4 sm:mb-6 font-medium"
+                className="text-xs sm:text-sm md:text-base uppercase tracking-[0.15em] mb-3 sm:mb-4"
                 style={{
                   fontFamily: 'var(--font-poppins)',
-                  fontWeight: 500,
+                  fontWeight: 400,
                   color: '#1a1a1a',
-                  letterSpacing: '0.2em',
+                  letterSpacing: '0.15em',
                 }}
               >
                 Ideal for:
               </h2>
               <p 
-                className="text-base sm:text-lg md:text-xl leading-relaxed"
+                className="text-sm sm:text-base md:text-lg leading-relaxed"
                 style={{
                   fontFamily: 'var(--font-poppins)',
                   fontWeight: 400,
@@ -169,8 +169,8 @@ export default function ProcessPage({ params }: ProcessPageProps) {
           </div>
 
           {/* Right Column - Image Grid */}
-          <div className="reveal">
-            <div className="grid grid-cols-2 gap-4 sm:gap-5 md:gap-6">
+          <div className="reveal flex items-start justify-center lg:justify-start">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 w-full max-w-md lg:max-w-full">
               {processImages.slice(0, 4).map((image, index) => (
                 <div 
                   key={index}
