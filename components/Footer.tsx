@@ -6,6 +6,7 @@ export function Footer() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: '',
   })
 
@@ -192,6 +193,29 @@ export function Footer() {
                 required
                 className="w-full bg-white/5 border-[0.5px] border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors"
                 placeholder="Your email address"
+                style={{
+                  fontFamily: 'var(--font-poppins)',
+                }}
+              />
+            </div>
+            <div>
+              <label 
+                htmlFor="phone" 
+                className="block mb-2 text-sm sm:text-base font-light opacity-80"
+                style={{
+                  fontFamily: 'var(--font-poppins)',
+                }}
+              >
+                Phone number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full bg-white/5 border-[0.5px] border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors"
+                placeholder="Your phone number"
                 style={{
                   fontFamily: 'var(--font-poppins)',
                 }}
