@@ -38,6 +38,15 @@ export function Footer() {
           >
             Ready to launch<br /><span className="italic">your brand?</span>
           </h3>
+          <h4 
+            className="text-xl sm:text-2xl md:text-3xl mb-4 sm:mb-6 md:mb-8"
+            style={{
+              fontFamily: 'var(--font-cormorant)',
+              fontWeight: 600,
+            }}
+          >
+            Contact Us
+          </h4>
           <div className="space-y-4 md:space-y-6">
             <a 
               href="mailto:hello@dreamstitch.com" 
@@ -72,6 +81,15 @@ export function Footer() {
         </div>
 
         <div>
+          <h4 
+            className="text-xl sm:text-2xl md:text-3xl mb-4 sm:mb-6 md:mb-8"
+            style={{
+              fontFamily: 'var(--font-cormorant)',
+              fontWeight: 600,
+            }}
+          >
+            Send a Message
+          </h4>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
