@@ -74,20 +74,27 @@ export default function ProcessPage({ params }: ProcessPageProps) {
         </Link>
 
         {/* Main Content Grid - Left: Text, Right: Images */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 md:gap-20 lg:gap-24 mb-16 sm:mb-20 md:mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 sm:gap-20 md:gap-24 lg:gap-28 mb-16 sm:mb-20 md:mb-24">
           {/* Left Column - Text Content */}
           <div className="reveal">
             {/* Section Number */}
-            <div className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-thin opacity-20 serif italic mb-6 sm:mb-8">
+            <div 
+              className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-bold opacity-20 mb-8 sm:mb-10 md:mb-12"
+              style={{
+                fontFamily: 'var(--font-cormorant)',
+                fontWeight: 700,
+              }}
+            >
               {process.number}
             </div>
             
             {/* Title */}
             <h1 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-6 sm:mb-8 leading-tight"
               style={{
                 fontFamily: 'var(--font-cormorant)',
                 fontWeight: 600,
+                color: '#1a1a1a',
               }}
             >
               {process.title}
@@ -95,22 +102,25 @@ export default function ProcessPage({ params }: ProcessPageProps) {
             
             {/* Description */}
             <p 
-              className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-8 sm:mb-10 md:mb-12"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-900 leading-relaxed mb-10 sm:mb-12 md:mb-16"
               style={{
                 fontFamily: 'var(--font-poppins)',
-                fontWeight: 300,
+                fontWeight: 400,
+                color: '#1a1a1a',
               }}
             >
               {process.description}
             </p>
 
             {/* What's Included Section */}
-            <div className="mb-8 sm:mb-10 md:mb-12">
+            <div className="mb-10 sm:mb-12 md:mb-16">
               <h2 
-                className="text-xl sm:text-2xl md:text-3xl mb-6 sm:mb-8 uppercase tracking-[0.1em]"
+                className="text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] mb-6 sm:mb-8 font-medium"
                 style={{
-                  fontFamily: 'var(--font-cormorant)',
-                  fontWeight: 600,
+                  fontFamily: 'var(--font-poppins)',
+                  fontWeight: 500,
+                  color: '#1a1a1a',
+                  letterSpacing: '0.2em',
                 }}
               >
                 What's included:
@@ -119,11 +129,11 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                 {process.included.map((item, index) => (
                   <li 
                     key={index}
-                    className="text-sm sm:text-base md:text-lg leading-relaxed"
+                    className="text-base sm:text-lg md:text-xl leading-relaxed"
                     style={{
                       fontFamily: 'var(--font-poppins)',
-                      fontWeight: 300,
-                      color: '#374151',
+                      fontWeight: 400,
+                      color: '#1a1a1a',
                     }}
                   >
                     {item}
@@ -135,20 +145,22 @@ export default function ProcessPage({ params }: ProcessPageProps) {
             {/* Ideal For Section */}
             <div>
               <h2 
-                className="text-xl sm:text-2xl md:text-3xl mb-4 sm:mb-6 uppercase tracking-[0.1em]"
+                className="text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] mb-4 sm:mb-6 font-medium"
                 style={{
-                  fontFamily: 'var(--font-cormorant)',
-                  fontWeight: 600,
+                  fontFamily: 'var(--font-poppins)',
+                  fontWeight: 500,
+                  color: '#1a1a1a',
+                  letterSpacing: '0.2em',
                 }}
               >
                 Ideal for:
               </h2>
               <p 
-                className="text-sm sm:text-base md:text-lg leading-relaxed"
+                className="text-base sm:text-lg md:text-xl leading-relaxed"
                 style={{
                   fontFamily: 'var(--font-poppins)',
-                  fontWeight: 300,
-                  color: '#374151',
+                  fontWeight: 400,
+                  color: '#1a1a1a',
                 }}
               >
                 {process.idealFor}
@@ -158,7 +170,7 @@ export default function ProcessPage({ params }: ProcessPageProps) {
 
           {/* Right Column - Image Grid */}
           <div className="reveal">
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6">
+            <div className="grid grid-cols-2 gap-4 sm:gap-5 md:gap-6">
               {processImages.slice(0, 4).map((image, index) => (
                 <div 
                   key={index}
