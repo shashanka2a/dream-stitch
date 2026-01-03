@@ -297,6 +297,13 @@ input[type="checkbox"]:focus {
   display: none;
 }
 
+/* Image Stack Tilt - Desktop Only */
+@media (min-width: 1024px) {
+  .img-stack-1 { transform: rotate(-2deg); z-index: 20; }
+  .img-stack-2 { transform: rotate(3deg); z-index: 10; }
+  .img-stack-3 { transform: rotate(-1deg); z-index: 30; }
+}
+
 /* Hand-drawn icon effect */
 .hand-drawn-icon {
   filter: url(#hand-drawn-filter);
