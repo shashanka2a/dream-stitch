@@ -29,34 +29,30 @@ export function ExpertiseSection() {
               className="reveal process-card block group"
               style={{ transitionDelay: process.delay }}
             >
-              <div className="flex items-start gap-4 mb-5 md:mb-6">
-                <div className="w-[34px] h-[34px] md:w-[39px] md:h-[39px] flex-shrink-0 opacity-15 transition-opacity group-hover:opacity-30 text-gray-400 mt-0.5">
-                  <ProcessIcon slug={process.slug} />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-start justify-between gap-3 mb-3 md:mb-4">
-                    <h4 className="text-sm md:text-base uppercase tracking-[0.3em] font-medium transition-colors group-hover:text-gray-900 flex-1 leading-tight">{process.title}</h4>
-                    <svg 
-                      className="w-4 h-4 md:w-5 md:h-5 text-gray-400 group-hover:text-gray-900 transition-all group-hover:translate-x-1 flex-shrink-0 mt-0.5 opacity-0 group-hover:opacity-100" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                  <p 
-                    className="text-sm md:text-base leading-relaxed transition-colors group-hover:text-gray-700"
-                    style={{
-                      fontFamily: 'var(--font-poppins)',
-                      fontWeight: 300,
-                      color: '#6B7280',
-                    }}
-                  >
-                    {process.description}
-                  </p>
-                </div>
+              <div className="w-[34px] h-[34px] md:w-[39px] md:h-[39px] mb-6 md:mb-6 opacity-15 transition-opacity group-hover:opacity-30 text-gray-400">
+                <ProcessIcon slug={process.slug} />
               </div>
+              <div className="flex items-start justify-between gap-4 mb-6 md:mb-6">
+                <h4 className="text-sm md:text-base uppercase tracking-[0.3em] font-medium transition-colors group-hover:text-gray-900 flex-1 leading-tight">{process.title}</h4>
+                <svg 
+                  className="w-4 h-4 md:w-5 md:h-5 text-gray-400 group-hover:text-gray-900 transition-all group-hover:translate-x-1 flex-shrink-0 mt-0.5 opacity-0 group-hover:opacity-100" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+              <p 
+                className="text-sm md:text-base leading-relaxed transition-colors group-hover:text-gray-700"
+                style={{
+                  fontFamily: 'var(--font-poppins)',
+                  fontWeight: 300,
+                  color: '#6B7280',
+                }}
+              >
+                {process.description}
+              </p>
             </Link>
           ))}
         </div>
