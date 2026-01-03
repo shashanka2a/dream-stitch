@@ -304,22 +304,27 @@ input[type="checkbox"]:focus {
   .img-stack-3 { transform: rotate(-1deg); z-index: 30; }
 }
 
-/* Hand-drawn icon effect */
+/* Light, subtle icon styling */
 .hand-drawn-icon {
-  filter: url(#hand-drawn-filter);
   color: currentColor;
 }
 
 .hand-drawn-icon svg {
-  filter: url(#hand-drawn-filter);
   width: 100%;
   height: 100%;
 }
 
-/* Enhance Material outlined icons for hand-drawn look */
-.hand-drawn-icon svg path {
-  stroke-width: 1.5 !important;
+/* Thin, light stroke for subtle icons */
+.hand-drawn-icon svg path,
+.hand-drawn-icon svg circle,
+.hand-drawn-icon svg rect,
+.hand-drawn-icon svg line,
+.hand-drawn-icon svg polyline,
+.hand-drawn-icon svg polygon {
+  stroke-width: 1 !important;
   stroke-linecap: round !important;
   stroke-linejoin: round !important;
+  stroke: currentColor !important;
+  fill: none !important;
 }
 

@@ -29,7 +29,7 @@ export function ExpertiseSection() {
               className="reveal process-card block group"
               style={{ transitionDelay: process.delay }}
             >
-              <div className="w-16 h-16 md:w-20 md:h-20 mb-8 md:mb-12 opacity-20 transition-opacity group-hover:opacity-40 text-gray-900">
+              <div className="w-16 h-16 md:w-20 md:h-20 mb-8 md:mb-12 opacity-15 transition-opacity group-hover:opacity-30 text-gray-400">
                 <ProcessIcon slug={process.slug} />
               </div>
               <div className="flex items-start justify-between gap-4 mb-4 md:mb-6">

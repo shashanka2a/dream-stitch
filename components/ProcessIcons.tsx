@@ -11,7 +11,7 @@ interface ProcessIconProps {
   className?: string
 }
 
-// Custom Stitching Machine Icon
+// Custom Stitching Machine Icon - Light and subtle
 function StitchingMachineIcon({ className }: { className?: string }) {
   return (
     <svg 
@@ -21,18 +21,18 @@ function StitchingMachineIcon({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
     >
       {/* Machine base */}
-      <rect x="4" y="16" width="16" height="4" rx="1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <rect x="4" y="16" width="16" height="4" rx="1" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
       {/* Needle arm */}
-      <path d="M12 4V16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M12 4V16" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
       {/* Needle */}
-      <path d="M12 16L10 18M12 16L14 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M12 16L10 18M12 16L14 18" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
       {/* Thread spool */}
-      <circle cx="8" cy="8" r="2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      <circle cx="8" cy="8" r="1" fill="currentColor"/>
+      <circle cx="8" cy="8" r="2.5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="8" cy="8" r="1" stroke="currentColor" strokeWidth="1" fill="none"/>
       {/* Control panel */}
-      <rect x="14" y="6" width="4" height="6" rx="0.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      <circle cx="15.5" cy="8" r="0.5" fill="currentColor"/>
-      <circle cx="17.5" cy="8" r="0.5" fill="currentColor"/>
+      <rect x="14" y="6" width="4" height="6" rx="0.5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="15.5" cy="8" r="0.5" stroke="currentColor" strokeWidth="1" fill="none"/>
+      <circle cx="17.5" cy="8" r="0.5" stroke="currentColor" strokeWidth="1" fill="none"/>
     </svg>
   )
 }
