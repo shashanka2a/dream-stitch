@@ -61,11 +61,11 @@ export default function ProcessPage({ params }: ProcessPageProps) {
 
   return (
     <main className="bg-white min-h-screen">
-      {/* Back to Home Button */}
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 pt-8 md:pt-12">
+      {/* Back to Home Button - Below Navigation */}
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 pt-24 md:pt-28 lg:pt-32 pb-8">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-sm md:text-base opacity-60 hover:opacity-100 transition-opacity mb-8"
+          className="inline-flex items-center gap-2 text-sm md:text-base opacity-60 hover:opacity-100 transition-opacity"
           style={{
             fontFamily: 'var(--font-poppins)',
           }}
@@ -78,21 +78,8 @@ export default function ProcessPage({ params }: ProcessPageProps) {
       </div>
 
       {/* Hero Section */}
-      <section className="relative max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24 lg:min-h-screen flex flex-col lg:flex-row items-center gap-16">
+      <section className="relative max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 py-8 md:py-12 lg:py-16 lg:min-h-screen flex flex-col lg:flex-row items-center gap-16">
         
-        {/* Ghost Number */}
-        <div 
-          className="absolute top-10 lg:top-20 left-6 lg:left-20 text-[120px] md:text-[200px] lg:text-[280px] leading-none pointer-events-none"
-          style={{
-            fontFamily: 'var(--font-playfair)',
-            fontStyle: 'italic',
-            opacity: 0.08,
-            color: '#1A1A1A',
-          }}
-        >
-          {process.number}
-        </div>
-
         {/* Content */}
         <div className="relative z-10 w-full lg:w-1/2 reveal">
           <h1 
