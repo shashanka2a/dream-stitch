@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useEffect, use } from 'react'
 import { processes } from '@/data/processes'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
+import { ProcessIcon } from '@/components/ProcessIcons'
 
 interface ProcessPageProps {
   params: Promise<{
@@ -77,15 +78,9 @@ export default function ProcessPage({ params }: ProcessPageProps) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 sm:gap-20 md:gap-24 lg:gap-28 mb-16 sm:mb-20 md:mb-24">
           {/* Left Column - Text Content */}
           <div className="reveal">
-            {/* Section Number */}
-            <div 
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-medium opacity-20 mb-6 sm:mb-8"
-              style={{
-                fontFamily: 'var(--font-cormorant)',
-                fontWeight: 500,
-              }}
-            >
-              {process.number}
+            {/* Section Icon */}
+            <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 mb-6 sm:mb-8 opacity-20 text-gray-900">
+              <ProcessIcon slug={process.slug} />
             </div>
             
             {/* Title */}
@@ -200,18 +195,17 @@ export default function ProcessPage({ params }: ProcessPageProps) {
           >
             Explore Other Services
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 sm:gap-8">
             {processes
               .filter((p) => p.slug !== process.slug)
-              .slice(0, 3)
               .map((relatedProcess) => (
                 <Link
                   key={relatedProcess.slug}
                   href={`/process/${relatedProcess.slug}`}
                   className="group block p-6 sm:p-8 border border-gray-200 hover:border-gray-900 transition-colors"
                 >
-                  <div className="text-3xl sm:text-4xl font-thin opacity-10 serif italic mb-4 sm:mb-6 group-hover:opacity-20 transition-opacity">
-                    {relatedProcess.number}
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 mb-4 sm:mb-6 opacity-20 group-hover:opacity-40 transition-opacity text-gray-900">
+                    <ProcessIcon slug={relatedProcess.slug} />
                   </div>
                   <h4 className="text-sm sm:text-base uppercase tracking-[0.3em] mb-3 sm:mb-4 font-medium">
                     {relatedProcess.title}
