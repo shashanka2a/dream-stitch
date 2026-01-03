@@ -51,10 +51,10 @@ export default function ProcessPage({ params }: ProcessPageProps) {
 
   // Default images if not provided
   const processImages = process.images || [
-    'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800',
-    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800',
-    'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80&w=800',
-    'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800',
+    'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=1000&fit=crop',
+    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=800&fit=crop',
+    'https://images.unsplash.com/photo-1562157873-818bc0726f68?w=800&h=800&fit=crop',
+    'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop',
   ]
 
   const otherProcesses = processes.filter((p) => p.slug !== process.slug)
@@ -110,13 +110,14 @@ export default function ProcessPage({ params }: ProcessPageProps) {
             {process.description}
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+          <div className="space-y-12 mb-12">
             <div>
               <h3 
-                className="text-[11px] font-semibold uppercase mb-6 opacity-40"
+                className="text-sm md:text-base font-bold uppercase mb-6 opacity-60"
                 style={{
                   fontFamily: 'var(--font-inter)',
                   letterSpacing: '0.3em',
+                  fontWeight: 600,
                 }}
               >
                 What's Included
@@ -129,10 +130,11 @@ export default function ProcessPage({ params }: ProcessPageProps) {
             </div>
             <div>
               <h3 
-                className="text-[11px] font-semibold uppercase mb-6 opacity-40"
+                className="text-sm md:text-base font-bold uppercase mb-6 opacity-60"
                 style={{
                   fontFamily: 'var(--font-inter)',
                   letterSpacing: '0.3em',
+                  fontWeight: 600,
                 }}
               >
                 Ideal For
@@ -150,37 +152,28 @@ export default function ProcessPage({ params }: ProcessPageProps) {
           </div>
         </div>
 
-        {/* Responsive Image Gallery */}
-        <div className="relative w-full lg:w-1/2 h-[450px] md:h-[600px] reveal">
-          {/* Background Image (Large) */}
-          <div className="absolute top-0 right-0 w-[70%] lg:w-[350px] aspect-[3/4] overflow-hidden shadow-2xl lg:rotate-[3deg]">
-            <Image
-              src={processImages[0] || processImages[1]}
-              alt={`${process.title} - Image 1`}
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 70vw, 350px"
-            />
-          </div>
-          {/* Mid Image (Horizontal) */}
-          <div className="absolute top-1/4 left-0 w-[60%] lg:w-[320px] aspect-video overflow-hidden shadow-2xl border-4 border-white lg:rotate-[-2deg]">
-            <Image
-              src={processImages[1] || processImages[2]}
-              alt={`${process.title} - Image 2`}
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 60vw, 320px"
-            />
-          </div>
-          {/* Small Image (Detail) */}
-          <div className="absolute bottom-0 right-1/4 w-[120px] md:w-[180px] aspect-square overflow-hidden shadow-2xl border-4 md:border-8 border-white lg:rotate-[-1deg]">
-            <Image
-              src={processImages[2] || processImages[3]}
-              alt={`${process.title} - Image 3`}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 120px, 180px"
-            />
+        {/* Google Photos Style Image Grid */}
+        <div className="w-full lg:w-1/2 reveal">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5">
+            {processImages.slice(0, 4).map((image, index) => (
+              <div 
+                key={index}
+                className={`relative overflow-hidden bg-gray-100 group cursor-pointer ${
+                  index === 0 ? 'aspect-[4/5]' : 
+                  index === 1 ? 'aspect-square' : 
+                  index === 2 ? 'aspect-square' : 
+                  'aspect-[4/3]'
+                }`}
+              >
+                <Image
+                  src={image}
+                  alt={`${process.title} - Image ${index + 1}`}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 40vw"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
