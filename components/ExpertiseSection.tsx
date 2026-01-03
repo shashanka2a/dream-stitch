@@ -29,13 +29,13 @@ export function ExpertiseSection() {
               className="reveal process-card block group"
               style={{ transitionDelay: process.delay }}
             >
-              <div className="w-16 h-16 md:w-20 md:h-20 mb-8 md:mb-12 opacity-15 transition-opacity group-hover:opacity-30 text-gray-400">
+              <div className="w-12 h-12 md:w-14 md:h-14 mb-6 md:mb-8 opacity-15 transition-opacity group-hover:opacity-30 text-gray-400">
                 <ProcessIcon slug={process.slug} />
               </div>
               <div className="flex items-start justify-between gap-4 mb-4 md:mb-6">
                 <h4 className="text-sm md:text-base uppercase tracking-[0.3em] font-medium transition-colors group-hover:text-gray-900 flex-1">{process.title}</h4>
                 <svg 
-                  className="w-4 h-4 md:w-5 md:h-5 text-gray-400 group-hover:text-gray-900 transition-all group-hover:translate-x-1 flex-shrink-0 mt-0.5" 
+                  className="w-4 h-4 md:w-5 md:h-5 text-gray-400 group-hover:text-gray-900 transition-all group-hover:translate-x-1 flex-shrink-0 mt-0.5 opacity-0 group-hover:opacity-100" 
                   fill="none" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
