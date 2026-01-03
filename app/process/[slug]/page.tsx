@@ -84,7 +84,7 @@ export default function ProcessPage({ params }: ProcessPageProps) {
         {/* Content */}
         <div className="relative z-10 w-full lg:w-1/2 reveal">
           <h1 
-            className="text-4xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-8"
+            className="text-4xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-8 pb-4 md:pb-6"
             style={{
               fontFamily: 'var(--font-cormorant)',
               fontWeight: 600,
