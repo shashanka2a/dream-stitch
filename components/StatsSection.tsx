@@ -75,7 +75,7 @@ export function StatsSection() {
               className="uppercase tracking-[0.3em] text-[10px]"
               style={{
                 fontFamily: 'var(--font-poppins)',
-                fontWeight: 400,
+                fontWeight: 300,
                 color: '#6B7280',
                 opacity: 1,
               }}

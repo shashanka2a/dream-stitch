@@ -30,7 +30,7 @@ export function SolutionsSection() {
               className="text-sm md:text-base lg:text-lg leading-relaxed"
               style={{
                 fontFamily: 'var(--font-poppins)',
-                fontWeight: 400,
+                fontWeight: 300,
                 color: '#6B7280',
               }}
             >
@@ -60,7 +60,7 @@ export function SolutionsSection() {
               className="text-sm md:text-base lg:text-lg leading-relaxed"
               style={{
                 fontFamily: 'var(--font-poppins)',
-                fontWeight: 400,
+                fontWeight: 300,
                 color: '#6B7280',
               }}
             >

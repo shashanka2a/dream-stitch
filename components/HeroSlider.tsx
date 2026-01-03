@@ -65,7 +65,7 @@ export function HeroSlider() {
             style={{ 
               transitionDelay: '400ms',
               fontFamily: 'var(--font-poppins)',
-              fontWeight: 400,
+              fontWeight: 300,
             }}
           >
             <span className="hidden sm:inline">End-to-end fashion design, production, and brand support</span>

@@ -169,7 +169,7 @@ export function TestimonialsSection() {
                     className="text-sm leading-relaxed mb-4 text-left"
                     style={{
                       fontFamily: 'var(--font-poppins)',
-                      fontWeight: 400,
+                      fontWeight: 300,
                       color: '#6B7280',
                     }}
                   >
@@ -243,7 +243,7 @@ export function TestimonialsSection() {
                     className="text-sm md:text-base leading-relaxed mb-4 md:mb-6 text-left"
                     style={{
                       fontFamily: 'var(--font-poppins)',
-                      fontWeight: 400,
+                      fontWeight: 300,
                       color: '#6B7280',
                     }}
                   >

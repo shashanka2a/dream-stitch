@@ -47,7 +47,7 @@ export function ExpertiseSection() {
                 className="text-sm md:text-base leading-relaxed transition-colors group-hover:text-gray-700"
                 style={{
                   fontFamily: 'var(--font-poppins)',
-                  fontWeight: 400,
+                  fontWeight: 300,
                   color: '#6B7280',
                 }}
               >
