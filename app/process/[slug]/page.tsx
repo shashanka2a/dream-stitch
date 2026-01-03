@@ -201,14 +201,14 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                 className={`group p-8 md:p-12 flex flex-col justify-between min-h-[320px] border border-gray-200 hover:border-gray-900 transition-all duration-500 hover:bg-white hover:-translate-y-1 ${index === 4 ? 'lg:col-span-2' : ''}`}
               >
                 <div 
-                  className="w-[34px] h-[34px] md:w-[39px] md:h-[39px] mb-4 md:mb-4 pointer-events-none"
+                  className="w-[34px] h-[34px] md:w-[39px] md:h-[39px] mb-4 pointer-events-none"
                   style={{ opacity: 0.08 }}
                 >
                   <ProcessIcon slug={relatedProcess.slug} />
                 </div>
                 <div className={index === 4 ? 'max-w-md' : ''}>
                   <h4 
-                    className="text-sm font-semibold uppercase mb-4 md:mb-4"
+                    className="text-sm font-semibold uppercase mb-4"
                     style={{
                       fontFamily: 'var(--font-inter)',
                       letterSpacing: '0.3em',
