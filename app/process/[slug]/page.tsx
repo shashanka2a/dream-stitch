@@ -180,10 +180,10 @@ export default function ProcessPage({ params }: ProcessPageProps) {
       </section>
 
       {/* Expanded Other Services Section */}
-      <section className="bg-white py-24 md:py-32 border-t border-gray-100">
+      <section className="bg-white py-16 md:py-24 lg:py-32 border-t border-gray-100">
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
           <h2 
-            className="text-4xl md:text-6xl font-bold mb-20"
+            className="text-4xl md:text-6xl font-bold mb-12 md:mb-20"
             style={{
               fontFamily: 'var(--font-cormorant)',
               fontWeight: 700,
@@ -198,7 +198,7 @@ export default function ProcessPage({ params }: ProcessPageProps) {
               <Link
                 key={relatedProcess.slug}
                 href={`/process/${relatedProcess.slug}`}
-                className={`group p-8 md:p-12 flex flex-col justify-between min-h-[320px] border border-gray-200 hover:border-gray-900 transition-all duration-500 hover:bg-white hover:-translate-y-1 ${index === 4 ? 'lg:col-span-2' : ''}`}
+                className={`group p-6 md:p-8 lg:p-12 flex flex-col justify-between min-h-[280px] md:min-h-[320px] border border-gray-200 hover:border-gray-900 transition-all duration-500 hover:bg-white hover:-translate-y-1 ${index === 4 ? 'lg:col-span-2' : ''}`}
               >
                 <div 
                   className="w-[34px] h-[34px] md:w-[39px] md:h-[39px] mb-4 pointer-events-none"
