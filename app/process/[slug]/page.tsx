@@ -6,6 +6,7 @@ import { useEffect, use } from 'react'
 import { processes } from '@/data/processes'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { Footer } from '@/components/Footer'
+import { ProcessIcon } from '@/components/ProcessIcons'
 
 interface ProcessPageProps {
   params: Promise<{
@@ -199,17 +200,12 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                 href={`/process/${relatedProcess.slug}`}
                 className={`group p-8 md:p-12 flex flex-col justify-between min-h-[320px] border border-gray-200 hover:border-gray-900 transition-all duration-500 hover:bg-white hover:-translate-y-1 ${index === 4 ? 'lg:col-span-2' : ''}`}
               >
-                <span 
-                  className="text-5xl leading-none pointer-events-none"
-                  style={{
-                    fontFamily: 'var(--font-playfair)',
-                    fontStyle: 'italic',
-                    opacity: 0.08,
-                    color: '#1A1A1A',
-                  }}
+                <div 
+                  className="w-12 h-12 md:w-14 md:h-14 mb-4 pointer-events-none"
+                  style={{ opacity: 0.08 }}
                 >
-                  {relatedProcess.number}
-                </span>
+                  <ProcessIcon slug={relatedProcess.slug} />
+                </div>
                 <div className={index === 4 ? 'max-w-md' : ''}>
                   <h4 
                     className="text-sm font-semibold uppercase mb-4"
