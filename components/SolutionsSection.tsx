@@ -34,7 +34,7 @@ export function SolutionsSection() {
                 color: '#6B7280',
               }}
             >
-              Choose full end-to-end support or individual services: design, sample development, fabric sourcing, manufacturing, or marketing. We adapt to your needs, not the other way around.
+              Choose full end-to-end support or individual services: design, sample development, fabric sourcing, manufacturing, or marketing.
             </p>
           </div>
           <div className="reveal">
