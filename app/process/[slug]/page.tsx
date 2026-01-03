@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useEffect, use } from 'react'
 import { processes } from '@/data/processes'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
+import { Footer } from '@/components/Footer'
 
 interface ProcessPageProps {
   params: Promise<{
@@ -60,6 +61,22 @@ export default function ProcessPage({ params }: ProcessPageProps) {
 
   return (
     <main className="bg-white min-h-screen">
+      {/* Back to Home Button */}
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 pt-8 md:pt-12">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-sm md:text-base opacity-60 hover:opacity-100 transition-opacity mb-8"
+          style={{
+            fontFamily: 'var(--font-poppins)',
+          }}
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Home
+        </Link>
+      </div>
+
       {/* Hero Section */}
       <section className="relative max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24 lg:min-h-screen flex flex-col lg:flex-row items-center gap-16">
         
@@ -239,6 +256,9 @@ export default function ProcessPage({ params }: ProcessPageProps) {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </main>
   )
 }
