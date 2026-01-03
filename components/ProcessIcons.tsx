@@ -1,4 +1,6 @@
-import Image from 'next/image'
+'use client'
+
+import { useEffect, useState } from 'react'
 
 interface ProcessIconProps {
   slug: string
@@ -17,20 +19,29 @@ export function ProcessIcon({ slug, className = '' }: ProcessIconProps) {
   }
 
   const iconNumber = iconMap[slug]
-  
-  if (!iconNumber) {
+  const [svgContent, setSvgContent] = useState<string>('')
+
+  useEffect(() => {
+    if (!iconNumber) return
+
+    fetch(`/icons/${iconNumber}.svg`)
+      .then((res) => res.text())
+      .then((text) => {
+        // Replace fill color from #E8E8E8 to #1A1A1A
+        const updatedSvg = text.replace(/#E8E8E8/g, '#1A1A1A')
+        setSvgContent(updatedSvg)
+      })
+      .catch((err) => console.error('Error loading icon:', err))
+  }, [iconNumber])
+
+  if (!iconNumber || !svgContent) {
     return null
   }
 
   return (
-    <div className={`w-full h-full ${className}`}>
-      <Image
-        src={`/icons/${iconNumber}.svg`}
-        alt={`${slug} icon`}
-        width={64}
-        height={64}
-        className="w-full h-full object-contain"
-      />
-    </div>
+    <div 
+      className={`w-full h-full ${className}`}
+      dangerouslySetInnerHTML={{ __html: svgContent }}
+    />
   )
 }
