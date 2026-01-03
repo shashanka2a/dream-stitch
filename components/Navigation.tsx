@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
@@ -31,7 +32,7 @@ export function Navigation() {
       id="main-nav" 
       className="fixed top-0 w-full z-50 mix-blend-difference text-white px-3 sm:px-4 md:px-8 py-4 sm:py-6 md:py-10 flex justify-between items-center"
     >
-      <div className="w-[120px] h-[28px] sm:w-[140px] sm:h-[32px] md:w-[180px] md:h-[40px] relative transition-opacity duration-500 hover:opacity-80">
+      <Link href="/" className="w-[120px] h-[28px] sm:w-[140px] sm:h-[32px] md:w-[180px] md:h-[40px] relative transition-opacity duration-500 hover:opacity-80">
         <Image
           src="/logo.svg"
           alt="DreamStich"
@@ -39,7 +40,7 @@ export function Navigation() {
           className="object-contain"
           style={{ filter: scrolled ? 'brightness(0)' : 'brightness(0) invert(1)' }}
         />
-      </div>
+      </Link>
       <div className="hidden sm:flex space-x-6 md:space-x-8 lg:space-x-12 text-[9px] sm:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] font-light">
         <a href="#about" className="nav-link whitespace-nowrap">Partners</a>
         <a href="#expertise" className="nav-link whitespace-nowrap">Expertise</a>
