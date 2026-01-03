@@ -1,11 +1,11 @@
 import { 
-  PencilSimple, 
-  Package, 
-  Scissors, 
-  Factory, 
-  Camera, 
-  Megaphone 
-} from '@phosphor-icons/react'
+  DesignServicesOutlined,
+  Inventory2Outlined,
+  ContentCutOutlined,
+  FactoryOutlined,
+  CameraAltOutlined,
+  CampaignOutlined
+} from '@mui/icons-material'
 
 interface ProcessIconProps {
   slug: string
@@ -18,49 +18,49 @@ export function ProcessIcon({ slug, className = '' }: ProcessIconProps) {
   switch (slug) {
     case 'design-development':
       return (
-        <PencilSimple 
-          className={iconClass} 
-          weight="regular"
+        <DesignServicesOutlined 
+          className={iconClass}
+          sx={{ fontSize: 'inherit' }}
         />
       )
     
     case 'fabric-sourcing':
       return (
-        <Package 
-          className={iconClass} 
-          weight="regular"
+        <Inventory2Outlined 
+          className={iconClass}
+          sx={{ fontSize: 'inherit' }}
         />
       )
     
     case 'sample-development':
       return (
-        <Scissors 
-          className={iconClass} 
-          weight="regular"
+        <ContentCutOutlined 
+          className={iconClass}
+          sx={{ fontSize: 'inherit' }}
         />
       )
     
     case 'manufacturing':
       return (
-        <Factory 
-          className={iconClass} 
-          weight="regular"
+        <FactoryOutlined 
+          className={iconClass}
+          sx={{ fontSize: 'inherit' }}
         />
       )
     
     case 'photoshoots-content':
       return (
-        <Camera 
-          className={iconClass} 
-          weight="regular"
+        <CameraAltOutlined 
+          className={iconClass}
+          sx={{ fontSize: 'inherit' }}
         />
       )
     
     case 'marketing-support':
       return (
-        <Megaphone 
-          className={iconClass} 
-          weight="regular"
+        <CampaignOutlined 
+          className={iconClass}
+          sx={{ fontSize: 'inherit' }}
         />
       )
     
