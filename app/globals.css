@@ -297,3 +297,24 @@ input[type="checkbox"]:focus {
   display: none;
 }
 
+/* Hand-drawn icon effect */
+.hand-drawn-icon {
+  filter: url(#hand-drawn-filter);
+}
+
+.hand-drawn-icon svg {
+  filter: url(#hand-drawn-filter);
+}
+
+/* Enhance stroke for hand-drawn look on Phosphor icons */
+.hand-drawn-icon svg path,
+.hand-drawn-icon svg circle,
+.hand-drawn-icon svg rect,
+.hand-drawn-icon svg line,
+.hand-drawn-icon svg polyline,
+.hand-drawn-icon svg polygon {
+  stroke-width: 1.5 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+

@@ -79,6 +79,25 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${cormorant.variable} ${poppins.variable}`}>
       <body>
+        <svg className="absolute w-0 h-0">
+          <defs>
+            <filter id="hand-drawn-filter" x="-50%" y="-50%" width="200%" height="200%">
+              <feTurbulence 
+                baseFrequency="0.04" 
+                numOctaves="3" 
+                result="noise"
+                type="fractalNoise"
+              />
+              <feDisplacementMap 
+                in="SourceGraphic" 
+                in2="noise" 
+                scale="1.2"
+                xChannelSelector="R"
+                yChannelSelector="G"
+              />
+            </filter>
+          </defs>
+        </svg>
         <CustomCursor />
         <ScrollProgress />
         <Navigation />
