@@ -195,7 +195,7 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                 className={`group p-6 md:p-8 lg:p-12 flex flex-col min-h-[280px] md:min-h-[320px] border border-gray-200 hover:border-gray-900 transition-all duration-500 hover:bg-white hover:-translate-y-1 ${index === 4 ? 'lg:col-span-2' : ''}`}
               >
                 <div 
-                  className="w-[34px] h-[34px] md:w-[39px] md:h-[39px] mb-12 pointer-events-none"
+                  className="w-[24px] h-[24px] md:w-[28px] md:h-[28px] mb-12 pointer-events-none"
                   style={{ opacity: 0.08 }}
                 >
                   <ProcessIcon slug={relatedProcess.slug} />
