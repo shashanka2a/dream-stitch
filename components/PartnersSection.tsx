@@ -7,7 +7,7 @@ export function PartnersSection() {
     <section id="about" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px] px-4 sm:px-6 md:px-8 max-w-7xl mx-auto">
       <div className="grid md:grid-cols-12 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center">
         <div className="md:col-span-7 reveal">
-          <span className="uppercase tracking-[0.3em] text-[10px] opacity-40 block mb-4 md:mb-8">THE PARTNER</span>
+          <span className="uppercase tracking-[0.3em] text-[11px] sm:text-[12px] md:text-[13px] opacity-40 block mb-4 md:mb-8 font-medium">THE PARTNER</span>
           <h2 
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 md:mb-8 lg:mb-12"
             style={{

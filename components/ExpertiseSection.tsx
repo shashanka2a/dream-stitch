@@ -9,7 +9,7 @@ export function ExpertiseSection() {
     <section id="expertise" className="bg-white py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px] px-4 sm:px-6 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="mb-6 sm:mb-8 md:mb-10 lg:mb-12 reveal text-left">
-          <span className="uppercase tracking-[0.3em] text-[9px] sm:text-[10px] opacity-40 block mb-3 sm:mb-4 md:mb-6">The Process</span>
+          <span className="uppercase tracking-[0.3em] text-[11px] sm:text-[12px] md:text-[13px] opacity-40 block mb-3 sm:mb-4 md:mb-6 font-medium">The Process</span>
           <h2 
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-8 sm:mb-10 md:mb-12"
             style={{

@@ -121,7 +121,7 @@ export function TestimonialsSection() {
           <div className="mb-8 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-24 flex items-start gap-2 sm:gap-4 md:gap-6 lg:gap-8">
             <div className="hidden md:block flex-shrink-0 w-5 h-5 md:w-6 md:h-6"></div>
             <div className="flex-1 text-center md:text-left">
-              <span className="uppercase tracking-[0.3em] text-[9px] sm:text-[10px] opacity-40 block mb-3 sm:mb-4 md:mb-6">REVIEWS</span>
+              <span className="uppercase tracking-[0.3em] text-[11px] sm:text-[12px] md:text-[13px] opacity-40 block mb-3 sm:mb-4 md:mb-6 font-medium">REVIEWS</span>
               <h2 
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
                 style={{
