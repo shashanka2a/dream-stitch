@@ -103,11 +103,15 @@ export default function ProcessPage({ params }: ProcessPageProps) {
               {/* Left column - description + sections */}
               <div className="flex-1">
                 <p 
-                  className="text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 max-w-[520px]"
+                  className="text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 max-w-[580px] line-clamp-2"
                   style={{
                     fontFamily: 'var(--font-poppins)',
                     fontWeight: 400,
                     color: '#6B7280',
+                    display: '-webkit-box',
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden',
                   }}
                 >
                   {process.description}
@@ -170,59 +174,51 @@ export default function ProcessPage({ params }: ProcessPageProps) {
               </div>
 
               {/* Right column - image grid, right aligned under title */}
-              <div className="w-full lg:w-auto lg:flex-shrink-0 lg:ml-auto lg:max-w-lg">
+              <div className="w-full lg:w-auto lg:flex-shrink-0 lg:ml-auto">
                 <div className="reveal">
-                  <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 w-full max-w-sm lg:max-w-md ml-auto">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 w-full lg:w-[400px]">
                     {/* Image 1 - Top Left (Design Sketching) */}
-                    <div className="relative aspect-square overflow-hidden bg-gray-100 group cursor-pointer">
-                      {processImages[0] && (
-                        <Image
-                          src={processImages[0]}
-                          alt={`${process.title} - Design Sketching`}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 40vw, 32vw"
-                        />
-                      )}
+                    <div className="relative w-full aspect-square overflow-hidden bg-gray-100 group cursor-pointer">
+                      <Image
+                        src={processImages[0] || 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=400&h=400'}
+                        alt={`${process.title} - Design Sketching`}
+                        width={400}
+                        height={400}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
                     </div>
                     
                     {/* Image 2 - Top Right (Fabric Sourcing) */}
-                    <div className="relative aspect-square overflow-hidden bg-gray-100 group cursor-pointer">
-                      {processImages[1] && (
-                        <Image
-                          src={processImages[1]}
-                          alt={`${process.title} - Fabric Sourcing`}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 40vw, 32vw"
-                        />
-                      )}
+                    <div className="relative w-full aspect-square overflow-hidden bg-gray-100 group cursor-pointer">
+                      <Image
+                        src={processImages[1] || 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=400&h=400'}
+                        alt={`${process.title} - Fabric Sourcing`}
+                        width={400}
+                        height={400}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
                     </div>
                     
                     {/* Image 3 - Bottom Left (Manufacturing) */}
-                    <div className="relative aspect-square overflow-hidden bg-gray-100 group cursor-pointer">
-                      {processImages[2] && (
-                        <Image
-                          src={processImages[2]}
-                          alt={`${process.title} - Manufacturing`}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 40vw, 32vw"
-                        />
-                      )}
+                    <div className="relative w-full aspect-square overflow-hidden bg-gray-100 group cursor-pointer">
+                      <Image
+                        src={processImages[2] || 'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80&w=400&h=400'}
+                        alt={`${process.title} - Manufacturing`}
+                        width={400}
+                        height={400}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
                     </div>
                     
                     {/* Image 4 - Bottom Right (Photoshoot) */}
-                    <div className="relative aspect-square overflow-hidden bg-gray-100 group cursor-pointer">
-                      {processImages[3] && (
-                        <Image
-                          src={processImages[3]}
-                          alt={`${process.title} - Photoshoot`}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 40vw, 32vw"
-                        />
-                      )}
+                    <div className="relative w-full aspect-square overflow-hidden bg-gray-100 group cursor-pointer">
+                      <Image
+                        src={processImages[3] || 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=400&h=400'}
+                        alt={`${process.title} - Photoshoot`}
+                        width={400}
+                        height={400}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
                     </div>
                   </div>
                 </div>

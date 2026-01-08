@@ -37,6 +37,13 @@ export function ProcessIcon({ slug, className = '' }: ProcessIconProps) {
         // Replace fixed width and height with 100% to respect container size
         updatedSvg = updatedSvg.replace(/width="[^"]*"/g, 'width="100%"')
         updatedSvg = updatedSvg.replace(/height="[^"]*"/g, 'height="100%"')
+        // Ensure viewBox is preserved for proper scaling
+        if (!updatedSvg.includes('viewBox') && text.includes('viewBox')) {
+          const viewBoxMatch = text.match(/viewBox="[^"]*"/)
+          if (viewBoxMatch) {
+            updatedSvg = updatedSvg.replace(/<svg/, `<svg ${viewBoxMatch[0]}`)
+          }
+        }
         setSvgContent(updatedSvg)
       })
       .catch((err) => {
