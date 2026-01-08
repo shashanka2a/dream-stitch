@@ -59,10 +59,10 @@ export default function ProcessPage({ params }: ProcessPageProps) {
 
   return (
     <main className="bg-white min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px]">
+      <div className="max-w-6xl mx-auto px-5 sm:px-7 md:px-10 lg:px-14 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px]">
         {/* Back Button */}
         <Link
-          href="/#expertise"
+          href="/"
           className="inline-flex items-center gap-2 mb-8 sm:mb-12 text-sm md:text-base opacity-60 hover:opacity-100 transition-opacity"
           style={{
             fontFamily: 'var(--font-poppins)',
@@ -71,7 +71,7 @@ export default function ProcessPage({ params }: ProcessPageProps) {
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
           </svg>
-          Back to Process
+          Back to Home
         </Link>
 
         {/* Main Content */}
@@ -97,7 +97,7 @@ export default function ProcessPage({ params }: ProcessPageProps) {
             </h1>
 
             {/* Content row: description on left, images right-aligned just under title */}
-            <div className="mt-6 sm:mt-8 flex flex-col lg:flex-row gap-10 lg:items-start">
+            <div className="mt-8 sm:mt-10 lg:mt-12 flex flex-col lg:flex-row lg:items-start gap-12 lg:gap-16">
               {/* Left column - description + sections */}
               <div className="flex-1">
                 <p 
@@ -168,7 +168,7 @@ export default function ProcessPage({ params }: ProcessPageProps) {
               </div>
 
               {/* Right column - image grid, right aligned under title */}
-              <div className="w-full lg:w-auto lg:flex-shrink-0 lg:ml-auto">
+              <div className="w-full lg:w-auto lg:flex-shrink-0 lg:ml-auto lg:max-w-lg">
                 <div className="reveal">
                   <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 w-full max-w-sm lg:max-w-md ml-auto">
                     {/* Image 1 - Top Left (Design Sketching) */}
