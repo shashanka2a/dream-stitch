@@ -59,8 +59,9 @@ export default function ProcessPage({ params }: ProcessPageProps) {
   ]
 
   return (
-    <main className="bg-white min-h-screen">
-      <div className="max-w-6xl mx-auto px-5 sm:px-7 md:px-10 lg:px-14 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px]">
+    <>
+      <main className="bg-white min-h-screen">
+        <div className="max-w-6xl mx-auto px-5 sm:px-7 md:px-10 lg:px-14 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px]">
         {/* Back Button */}
         <Link
           href="/"
@@ -275,9 +276,9 @@ export default function ProcessPage({ params }: ProcessPageProps) {
               ))}
           </div>
         </div>
-      </div>
-    </main>
-    <Footer />
+      </main>
+      <Footer />
+    </>
   )
 }
 
