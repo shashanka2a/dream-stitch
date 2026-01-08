@@ -62,33 +62,28 @@ export default function ProcessPage({ params }: ProcessPageProps) {
     <>
       <main className="bg-white min-h-screen">
         <div className="max-w-6xl mx-auto px-5 sm:px-7 md:px-10 lg:px-14 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px]">
-        {/* Back Button */}
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 mb-8 sm:mb-12 text-sm md:text-base opacity-60 hover:opacity-100 transition-opacity"
-          style={{
-            fontFamily: 'var(--font-poppins)',
-          }}
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
-          </svg>
-          Back to Home
-        </Link>
-
         {/* Main Content */}
         <div className="mb-16 sm:mb-20 md:mb-24">
-          <div className="reveal">
-            {/* Section Icon */}
+          <div className="reveal relative">
+            {/* Background Icon - Large, faded, behind heading */}
             <div 
-              className="w-[64px] h-[64px] sm:w-[80px] sm:h-[80px] md:w-[96px] md:h-[96px] lg:w-[112px] lg:h-[112px] xl:w-[128px] xl:h-[128px] mb-6 sm:mb-8 opacity-10"
+              className="absolute -left-4 -top-8 sm:-left-6 sm:-top-10 md:-left-8 md:-top-12 lg:-left-10 lg:-top-14 pointer-events-none"
+              style={{
+                fontFamily: 'var(--font-cormorant)',
+                fontSize: '200px',
+                lineHeight: '1',
+                fontWeight: 300,
+                color: '#1A1A1A',
+                opacity: 0.08,
+                zIndex: 0,
+              }}
             >
-              <ProcessIcon slug={process.slug} />
+              {process.number}
             </div>
             
-            {/* Title */}
+            {/* Title - Positioned above background icon */}
             <h1 
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight relative z-10"
               style={{
                 fontFamily: 'var(--font-cormorant)',
                 fontWeight: 600,
@@ -173,12 +168,18 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                 </div>
               </div>
 
-              {/* Right column - image grid, right aligned under title */}
+              {/* Right column - overlapping image grid, right aligned under title */}
               <div className="w-full lg:w-auto lg:flex-shrink-0 lg:ml-auto flex self-stretch">
                 <div className="reveal w-full h-full">
-                  <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 w-full lg:w-[500px] xl:w-[550px] h-full" style={{ gridTemplateRows: 'repeat(3, 1fr)' }}>
-                    {/* Image 1 - Top Left (Design Sketching) - Tall, spans 2 rows */}
-                    <div className="relative w-full row-span-2 overflow-hidden bg-gray-100 group cursor-pointer">
+                  <div className="relative w-full lg:w-[500px] xl:w-[550px] h-full" style={{ minHeight: '600px' }}>
+                    {/* Image 1 - Top Left (Design Sketching) - Overlaps downward */}
+                    <div 
+                      className="absolute top-0 left-0 w-[48%] h-[48%] overflow-hidden bg-gray-100 group cursor-pointer z-20"
+                      style={{
+                        boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
+                        transform: 'translateY(8px)',
+                      }}
+                    >
                       <Image
                         src={processImages[0] || 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=400&h=400'}
                         alt={`${process.title} - Design Sketching`}
@@ -188,8 +189,13 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                       />
                     </div>
                     
-                    {/* Image 2 - Top Right (Fabric Sourcing) - Taller to match first image start */}
-                    <div className="relative w-full row-span-2 overflow-hidden bg-gray-100 group cursor-pointer">
+                    {/* Image 2 - Top Right (Fabric Sourcing) - Standard position */}
+                    <div 
+                      className="absolute top-0 right-0 w-[48%] h-[48%] overflow-hidden bg-gray-100 group cursor-pointer z-10"
+                      style={{
+                        boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
+                      }}
+                    >
                       <Image
                         src={processImages[1] || 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=400&h=400'}
                         alt={`${process.title} - Fabric Sourcing`}
@@ -199,8 +205,14 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                       />
                     </div>
                     
-                    {/* Image 3 - Bottom Left (Manufacturing) */}
-                    <div className="relative w-full row-span-1 overflow-hidden bg-gray-100 group cursor-pointer">
+                    {/* Image 3 - Bottom Left (Manufacturing) - Overlaps upward with top-left */}
+                    <div 
+                      className="absolute bottom-0 left-0 w-[48%] h-[48%] overflow-hidden bg-gray-100 group cursor-pointer z-30"
+                      style={{
+                        boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
+                        transform: 'translateY(-8px)',
+                      }}
+                    >
                       <Image
                         src={processImages[2] || 'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80&w=400&h=400'}
                         alt={`${process.title} - Manufacturing`}
@@ -210,8 +222,14 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                       />
                     </div>
                     
-                    {/* Image 4 - Bottom Right (Photoshoot) */}
-                    <div className="relative w-full row-span-1 overflow-hidden bg-gray-100 group cursor-pointer">
+                    {/* Image 4 - Bottom Right (Photoshoot) - Slight overlap with bottom-left */}
+                    <div 
+                      className="absolute bottom-0 right-0 w-[48%] h-[48%] overflow-hidden bg-gray-100 group cursor-pointer z-20"
+                      style={{
+                        boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
+                        transform: 'translateX(-4px)',
+                      }}
+                    >
                       <Image
                         src={processImages[3] || 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=400&h=400'}
                         alt={`${process.title} - Photoshoot`}
