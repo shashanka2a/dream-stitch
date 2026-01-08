@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useEffect, use } from 'react'
 import { processes } from '@/data/processes'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
+import { ProcessIcon } from '@/components/ProcessIcons'
 
 interface ProcessPageProps {
   params: Promise<{
@@ -77,16 +78,11 @@ export default function ProcessPage({ params }: ProcessPageProps) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 sm:gap-20 md:gap-24 lg:gap-28 mb-16 sm:mb-20 md:mb-24">
           {/* Left Column - Text Content */}
           <div className="reveal">
-            {/* Section Number */}
+            {/* Section Icon */}
             <div 
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-thin opacity-10 mb-6 sm:mb-8"
-              style={{
-                fontFamily: 'var(--font-cormorant)',
-                fontWeight: 300,
-                fontStyle: 'italic',
-              }}
+              className="w-[64px] h-[64px] sm:w-[80px] sm:h-[80px] md:w-[96px] md:h-[96px] lg:w-[112px] lg:h-[112px] xl:w-[128px] xl:h-[128px] mb-6 sm:mb-8 opacity-10"
             >
-              {process.number}
+              <ProcessIcon slug={process.slug} />
             </div>
             
             {/* Title */}
@@ -215,8 +211,8 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                   href={`/process/${relatedProcess.slug}`}
                   className="group block p-6 sm:p-8 border border-gray-200 hover:border-gray-900 transition-colors"
                 >
-                  <div className="text-3xl sm:text-4xl font-thin opacity-10 serif italic mb-4 sm:mb-6 group-hover:opacity-20 transition-opacity">
-                    {relatedProcess.number}
+                  <div className="w-[48px] h-[48px] sm:w-[56px] sm:h-[56px] opacity-10 mb-4 sm:mb-6 group-hover:opacity-20 transition-opacity">
+                    <ProcessIcon slug={relatedProcess.slug} />
                   </div>
                   <h4 
                     className="text-sm sm:text-base uppercase tracking-[0.3em] mb-3 sm:mb-4 font-medium"
