@@ -246,10 +246,10 @@ export default function ProcessPage({ params }: ProcessPageProps) {
         {/* Navigation to Other Processes */}
         <div className="mt-20 sm:mt-24 md:mt-32 lg:mt-40 pt-12 sm:pt-16 md:pt-20 border-t border-gray-200 reveal">
           <h3 
-            className="text-5xl sm:text-6xl md:text-7xl mb-12 sm:mb-16 md:mb-20"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-12 sm:mb-16 md:mb-20"
             style={{
               fontFamily: 'var(--font-cormorant)',
-              fontWeight: 700,
+              fontWeight: 600,
               color: '#1A1A1A',
             }}
           >
