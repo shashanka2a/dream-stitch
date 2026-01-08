@@ -6,8 +6,8 @@ import { ProcessIcon } from './ProcessIcons'
 
 export function ExpertiseSection() {
   return (
-    <section id="expertise" className="bg-white py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px] px-4 sm:px-6 md:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="expertise" className="bg-white py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px]">
+      <div className="max-w-7xl mx-auto px-5 sm:px-7 md:px-10 lg:px-14">
         <div className="mb-6 sm:mb-8 md:mb-10 lg:mb-12 reveal text-left">
           <span className="uppercase tracking-[0.3em] text-[11px] sm:text-[12px] md:text-[13px] opacity-40 block mb-3 sm:mb-4 md:mb-6 font-medium">The Process</span>
           <h2 
