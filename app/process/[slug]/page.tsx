@@ -99,9 +99,9 @@ export default function ProcessPage({ params }: ProcessPageProps) {
             </h1>
 
             {/* Content row: description on left, images right-aligned just under title */}
-            <div className="mt-8 sm:mt-10 lg:mt-12 flex flex-col lg:flex-row lg:items-start gap-12 lg:gap-16">
+            <div className="mt-8 sm:mt-10 lg:mt-12 flex flex-col lg:flex-row lg:items-stretch gap-12 lg:gap-16">
               {/* Left column - description + sections */}
-              <div className="flex-1">
+              <div className="flex-1 flex flex-col">
                 <p 
                   className="text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 max-w-[580px] line-clamp-2"
                   style={{
@@ -174,50 +174,50 @@ export default function ProcessPage({ params }: ProcessPageProps) {
               </div>
 
               {/* Right column - image grid, right aligned under title */}
-              <div className="w-full lg:w-auto lg:flex-shrink-0 lg:ml-auto">
-                <div className="reveal">
-                  <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 w-full lg:w-[400px]">
+              <div className="w-full lg:w-auto lg:flex-shrink-0 lg:ml-auto flex">
+                <div className="reveal w-full">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 w-full lg:w-[400px] h-full" style={{ gridAutoRows: '1fr' }}>
                     {/* Image 1 - Top Left (Design Sketching) */}
-                    <div className="relative w-full aspect-square overflow-hidden bg-gray-100 group cursor-pointer">
+                    <div className="relative w-full h-full min-h-[150px] overflow-hidden bg-gray-100 group cursor-pointer">
                       <Image
                         src={processImages[0] || 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=400&h=400'}
                         alt={`${process.title} - Design Sketching`}
-                        width={400}
-                        height={400}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 40vw, 32vw"
                       />
                     </div>
                     
                     {/* Image 2 - Top Right (Fabric Sourcing) */}
-                    <div className="relative w-full aspect-square overflow-hidden bg-gray-100 group cursor-pointer">
+                    <div className="relative w-full h-full min-h-[150px] overflow-hidden bg-gray-100 group cursor-pointer">
                       <Image
                         src={processImages[1] || 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=400&h=400'}
                         alt={`${process.title} - Fabric Sourcing`}
-                        width={400}
-                        height={400}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 40vw, 32vw"
                       />
                     </div>
                     
                     {/* Image 3 - Bottom Left (Manufacturing) */}
-                    <div className="relative w-full aspect-square overflow-hidden bg-gray-100 group cursor-pointer">
+                    <div className="relative w-full h-full min-h-[150px] overflow-hidden bg-gray-100 group cursor-pointer">
                       <Image
                         src={processImages[2] || 'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80&w=400&h=400'}
                         alt={`${process.title} - Manufacturing`}
-                        width={400}
-                        height={400}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 40vw, 32vw"
                       />
                     </div>
                     
                     {/* Image 4 - Bottom Right (Photoshoot) */}
-                    <div className="relative w-full aspect-square overflow-hidden bg-gray-100 group cursor-pointer">
+                    <div className="relative w-full h-full min-h-[150px] overflow-hidden bg-gray-100 group cursor-pointer">
                       <Image
                         src={processImages[3] || 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=400&h=400'}
                         alt={`${process.title} - Photoshoot`}
-                        width={400}
-                        height={400}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 40vw, 32vw"
                       />
                     </div>
                   </div>
@@ -238,20 +238,20 @@ export default function ProcessPage({ params }: ProcessPageProps) {
           >
             Explore Other Services
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" style={{ gridAutoColumns: 'minmax(280px, 1fr)' }}>
             {processes
               .filter((p) => p.slug !== process.slug)
               .map((relatedProcess) => (
                 <Link
                   key={relatedProcess.slug}
                   href={`/process/${relatedProcess.slug}`}
-                  className="group block p-6 sm:p-8 border border-gray-200 hover:border-gray-900 transition-colors"
+                  className="group block p-6 sm:p-8 border border-gray-200 hover:border-gray-900 transition-colors min-w-0"
                 >
                   <div className="w-[48px] h-[48px] sm:w-[56px] sm:h-[56px] opacity-10 mb-4 sm:mb-6 group-hover:opacity-20 transition-opacity">
                     <ProcessIcon slug={relatedProcess.slug} />
                   </div>
                   <h4 
-                    className="text-sm sm:text-base uppercase tracking-[0.3em] mb-3 sm:mb-4 font-medium"
+                    className="text-sm sm:text-base uppercase tracking-[0.3em] mb-3 sm:mb-4 font-medium whitespace-nowrap"
                     style={{
                       fontFamily: 'var(--font-poppins)',
                       fontWeight: 500,
