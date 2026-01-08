@@ -176,9 +176,9 @@ export default function ProcessPage({ params }: ProcessPageProps) {
               {/* Right column - image grid, right aligned under title */}
               <div className="w-full lg:w-auto lg:flex-shrink-0 lg:ml-auto flex">
                 <div className="reveal w-full">
-                  <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 w-full lg:w-[400px] h-full" style={{ gridAutoRows: '1fr' }}>
-                    {/* Image 1 - Top Left (Design Sketching) */}
-                    <div className="relative w-full h-full min-h-[150px] overflow-hidden bg-gray-100 group cursor-pointer">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 w-full lg:w-[420px] h-full" style={{ gridTemplateRows: 'repeat(3, 1fr)' }}>
+                    {/* Image 1 - Top Left (Design Sketching) - Tall, spans 2 rows */}
+                    <div className="relative w-full row-span-2 overflow-hidden bg-gray-100 group cursor-pointer">
                       <Image
                         src={processImages[0] || 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=400&h=400'}
                         alt={`${process.title} - Design Sketching`}
@@ -188,8 +188,8 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                       />
                     </div>
                     
-                    {/* Image 2 - Top Right (Fabric Sourcing) */}
-                    <div className="relative w-full h-full min-h-[150px] overflow-hidden bg-gray-100 group cursor-pointer">
+                    {/* Image 2 - Top Right (Fabric Sourcing) - Taller to match first image start */}
+                    <div className="relative w-full row-span-2 overflow-hidden bg-gray-100 group cursor-pointer">
                       <Image
                         src={processImages[1] || 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=400&h=400'}
                         alt={`${process.title} - Fabric Sourcing`}
@@ -200,7 +200,7 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                     </div>
                     
                     {/* Image 3 - Bottom Left (Manufacturing) */}
-                    <div className="relative w-full h-full min-h-[150px] overflow-hidden bg-gray-100 group cursor-pointer">
+                    <div className="relative w-full row-span-1 overflow-hidden bg-gray-100 group cursor-pointer">
                       <Image
                         src={processImages[2] || 'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80&w=400&h=400'}
                         alt={`${process.title} - Manufacturing`}
@@ -211,7 +211,7 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                     </div>
                     
                     {/* Image 4 - Bottom Right (Photoshoot) */}
-                    <div className="relative w-full h-full min-h-[150px] overflow-hidden bg-gray-100 group cursor-pointer">
+                    <div className="relative w-full row-span-1 overflow-hidden bg-gray-100 group cursor-pointer">
                       <Image
                         src={processImages[3] || 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=400&h=400'}
                         alt={`${process.title} - Photoshoot`}
@@ -250,15 +250,25 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                   <div className="w-[48px] h-[48px] sm:w-[56px] sm:h-[56px] opacity-10 mb-4 sm:mb-6 group-hover:opacity-20 transition-opacity">
                     <ProcessIcon slug={relatedProcess.slug} />
                   </div>
-                  <h4 
-                    className="text-sm sm:text-base uppercase tracking-[0.3em] mb-3 sm:mb-4 font-medium whitespace-nowrap"
-                    style={{
-                      fontFamily: 'var(--font-poppins)',
-                      fontWeight: 500,
-                    }}
-                  >
-                    {relatedProcess.title}
-                  </h4>
+                  <div className="flex items-start justify-between gap-4 mb-3 sm:mb-4">
+                    <h4 
+                      className="text-sm sm:text-base uppercase tracking-[0.3em] font-medium whitespace-nowrap flex-1"
+                      style={{
+                        fontFamily: 'var(--font-poppins)',
+                        fontWeight: 500,
+                      }}
+                    >
+                      {relatedProcess.title}
+                    </h4>
+                    <svg 
+                      className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-gray-900 transition-all group-hover:translate-x-1 flex-shrink-0 mt-0.5 opacity-0 group-hover:opacity-100" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                   <p 
                     className="text-sm sm:text-base leading-relaxed text-gray-600 group-hover:text-gray-900 transition-colors"
                     style={{

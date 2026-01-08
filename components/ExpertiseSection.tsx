@@ -35,7 +35,7 @@ export function ExpertiseSection() {
               <div className="flex items-start justify-between gap-4 mb-4 md:mb-6">
                 <h4 className="text-sm md:text-base uppercase tracking-[0.3em] font-medium transition-colors group-hover:text-gray-900 flex-1 whitespace-nowrap overflow-hidden text-ellipsis min-w-0">{process.title}</h4>
                 <svg 
-                  className="w-4 h-4 md:w-5 md:h-5 text-gray-400 group-hover:text-gray-900 transition-all group-hover:translate-x-1 flex-shrink-0 mt-0.5" 
+                  className="w-4 h-4 md:w-5 md:h-5 text-gray-400 group-hover:text-gray-900 transition-all group-hover:translate-x-1 flex-shrink-0 mt-0.5 opacity-0 group-hover:opacity-100" 
                   fill="none" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
