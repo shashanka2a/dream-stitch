@@ -84,9 +84,9 @@ export default function ProcessPage({ params }: ProcessPageProps) {
               <ProcessIcon slug={process.slug} />
             </div>
             
-            {/* Title - One Line */}
+            {/* Title */}
             <h1 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight whitespace-nowrap overflow-hidden text-ellipsis"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight"
               style={{
                 fontFamily: 'var(--font-cormorant)',
                 fontWeight: 600,
@@ -186,6 +186,9 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                           index === 2 ? 'row-span-1' : 
                           'col-span-2 row-span-1'
                         }`}
+                        style={{
+                          minHeight: index === 0 ? '100%' : 'auto',
+                        }}
                       >
                         <Image
                           src={image}

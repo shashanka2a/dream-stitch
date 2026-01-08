@@ -25,7 +25,12 @@ export function ProcessIcon({ slug, className = '' }: ProcessIconProps) {
     if (!iconNumber) return
 
     fetch(`/icons/${iconNumber}.svg`)
-      .then((res) => res.text())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Failed to load icon ${iconNumber}.svg`)
+        }
+        return res.text()
+      })
       .then((text) => {
         // Replace fill and stroke colors from #E8E8E8 to #1a1a1a
         let updatedSvg = text.replace(/#E8E8E8/g, '#1a1a1a')
@@ -34,11 +39,23 @@ export function ProcessIcon({ slug, className = '' }: ProcessIconProps) {
         updatedSvg = updatedSvg.replace(/height="[^"]*"/g, 'height="100%"')
         setSvgContent(updatedSvg)
       })
-      .catch((err) => console.error('Error loading icon:', err))
+      .catch((err) => {
+        console.error('Error loading icon:', err)
+        // Don't set svgContent on error, will show fallback
+      })
   }, [iconNumber])
 
-  if (!iconNumber || !svgContent) {
+  if (!iconNumber) {
     return null
+  }
+
+  if (!svgContent) {
+    // Show loading state or fallback
+    return (
+      <div className={`w-full h-full ${className}`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div className="w-full h-full bg-gray-200 animate-pulse" />
+      </div>
+    )
   }
 
   return (
