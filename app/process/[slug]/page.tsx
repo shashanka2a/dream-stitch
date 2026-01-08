@@ -276,6 +276,7 @@ export default function ProcessPage({ params }: ProcessPageProps) {
               ))}
           </div>
         </div>
+        </div>
       </main>
       <Footer />
     </>
