@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { processes } from '@/data/processes'
+import { ProcessIcon } from './ProcessIcons'
 
 export function ExpertiseSection() {
   return (
@@ -28,8 +29,8 @@ export function ExpertiseSection() {
               className="reveal process-card block group"
               style={{ transitionDelay: process.delay }}
             >
-              <div className="text-4xl md:text-5xl mb-8 md:mb-12 font-thin opacity-10 serif italic transition-opacity group-hover:opacity-30">
-                {process.number}
+              <div className="w-[48px] h-[48px] md:w-[56px] md:h-[56px] mb-8 md:mb-12 opacity-10 transition-opacity group-hover:opacity-30">
+                <ProcessIcon slug={process.slug} />
               </div>
               <div className="flex items-start justify-between gap-4 mb-4 md:mb-6">
                 <h4 className="text-sm md:text-base uppercase tracking-[0.3em] font-medium transition-colors group-hover:text-gray-900 flex-1">{process.title}</h4>

@@ -74,9 +74,8 @@ export default function ProcessPage({ params }: ProcessPageProps) {
           Back to Process
         </Link>
 
-        {/* Main Content Grid - Left: Text, Right: Images */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 sm:gap-20 md:gap-24 lg:gap-28 mb-16 sm:mb-20 md:mb-24">
-          {/* Left Column - Text Content */}
+        {/* Main Content */}
+        <div className="mb-16 sm:mb-20 md:mb-24">
           <div className="reveal">
             {/* Section Icon */}
             <div 
@@ -85,9 +84,9 @@ export default function ProcessPage({ params }: ProcessPageProps) {
               <ProcessIcon slug={process.slug} />
             </div>
             
-            {/* Title */}
+            {/* Title - One Line */}
             <h1 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 leading-tight whitespace-nowrap overflow-hidden text-ellipsis"
               style={{
                 fontFamily: 'var(--font-cormorant)',
                 fontWeight: 600,
@@ -97,17 +96,56 @@ export default function ProcessPage({ params }: ProcessPageProps) {
               {process.title}
             </h1>
             
-            {/* Description */}
+            {/* Description Start */}
             <p 
-              className="text-sm sm:text-base md:text-lg leading-relaxed mb-8 sm:mb-10 md:mb-12"
+              className="text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-6"
               style={{
                 fontFamily: 'var(--font-poppins)',
                 fontWeight: 400,
                 color: '#1a1a1a',
               }}
             >
-              {process.description}
+              {process.description.split('. ')[0] + (process.description.includes('.') ? '.' : '')}
             </p>
+
+            {/* Image Grid - Between Description Parts */}
+            <div className="reveal my-8 sm:my-10 md:my-12">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 w-full max-w-2xl">
+                {processImages.slice(0, 4).map((image, index) => (
+                  <div 
+                    key={index}
+                    className={`relative overflow-hidden bg-gray-100 group cursor-pointer ${
+                      index === 0 ? 'aspect-[4/5]' : 
+                      index === 1 ? 'aspect-square' : 
+                      index === 2 ? 'aspect-square' : 
+                      'aspect-[4/3]'
+                    }`}
+                  >
+                    <Image
+                      src={image}
+                      alt={`${process.title} - Image ${index + 1}`}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 40vw"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Description End */}
+            {process.description.split('. ').length > 1 && (
+              <p 
+                className="text-sm sm:text-base md:text-lg leading-relaxed mb-8 sm:mb-10 md:mb-12"
+                style={{
+                  fontFamily: 'var(--font-poppins)',
+                  fontWeight: 400,
+                  color: '#1a1a1a',
+                }}
+              >
+                {process.description.split('. ').slice(1).join('. ')}
+              </p>
+            )}
 
             {/* What's Included Section */}
             <div className="mb-8 sm:mb-10 md:mb-12">
@@ -162,31 +200,6 @@ export default function ProcessPage({ params }: ProcessPageProps) {
               >
                 {process.idealFor}
               </p>
-            </div>
-          </div>
-
-          {/* Right Column - Image Grid */}
-          <div className="reveal flex items-start justify-center lg:justify-start">
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 w-full max-w-md lg:max-w-full">
-              {processImages.slice(0, 4).map((image, index) => (
-                <div 
-                  key={index}
-                  className={`relative overflow-hidden bg-gray-100 group cursor-pointer ${
-                    index === 0 ? 'aspect-[4/5]' : 
-                    index === 1 ? 'aspect-square' : 
-                    index === 2 ? 'aspect-square' : 
-                    'aspect-[4/3]'
-                  }`}
-                >
-                  <Image
-                    src={image}
-                    alt={`${process.title} - Image ${index + 1}`}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 40vw"
-                  />
-                </div>
-              ))}
             </div>
           </div>
         </div>
