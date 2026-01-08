@@ -62,28 +62,26 @@ export default function ProcessPage({ params }: ProcessPageProps) {
     <>
       <main className="bg-white min-h-screen">
         <div className="max-w-6xl mx-auto px-5 sm:px-7 md:px-10 lg:px-14 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[120px]">
+        {/* Back Button */}
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 mb-8 sm:mb-12 text-sm md:text-base opacity-60 hover:opacity-100 transition-opacity"
+          style={{
+            fontFamily: 'var(--font-poppins)',
+          }}
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Home
+        </Link>
+
         {/* Main Content */}
         <div className="mb-16 sm:mb-20 md:mb-24">
-          <div className="reveal relative">
-            {/* Background Icon - Large, faded, behind heading */}
-            <div 
-              className="absolute -left-4 -top-8 sm:-left-6 sm:-top-10 md:-left-8 md:-top-12 lg:-left-10 lg:-top-14 pointer-events-none"
-              style={{
-                fontFamily: 'var(--font-cormorant)',
-                fontSize: '200px',
-                lineHeight: '1',
-                fontWeight: 300,
-                color: '#1A1A1A',
-                opacity: 0.08,
-                zIndex: 0,
-              }}
-            >
-              {process.number}
-            </div>
-            
-            {/* Title - Positioned above background icon */}
+          <div className="reveal">
+            {/* Title */}
             <h1 
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight relative z-10"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight"
               style={{
                 fontFamily: 'var(--font-cormorant)',
                 fontWeight: 600,
@@ -264,38 +262,32 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                 <Link
                   key={relatedProcess.slug}
                   href={`/process/${relatedProcess.slug}`}
-                  className="group block relative border border-[#E5E7EB] hover:border-gray-900 transition-colors"
+                  className="group block relative border border-[#E5E7EB] hover:border-gray-900 transition-colors overflow-hidden"
                   style={{
                     width: '100%',
                     maxWidth: '456px',
-                    height: '242px',
+                    minHeight: '242px',
                     padding: '33px',
                   }}
                 >
-                  {/* Number - Playfair Display, italic, 36px, opacity 0.10 */}
+                  {/* Icon - Replace number with icon */}
                   <div 
-                    className="absolute"
+                    className="absolute opacity-10 group-hover:opacity-20 transition-opacity"
                     style={{
                       left: '33px',
                       top: '33px',
-                      fontFamily: 'var(--font-playfair)',
-                      fontSize: '36px',
-                      fontStyle: 'italic',
-                      fontWeight: 400,
-                      lineHeight: '40px',
-                      color: '#1A1A1A',
-                      opacity: 0.10,
+                      width: '40px',
+                      height: '40px',
                     }}
                   >
-                    {relatedProcess.number}
+                    <ProcessIcon slug={relatedProcess.slug} />
                   </div>
                   
                   {/* Title - Inter, 16px, uppercase, letter-spacing 4.80px */}
                   <h4 
-                    className="absolute uppercase whitespace-nowrap"
+                    className="uppercase mb-3"
                     style={{
-                      left: '33px',
-                      top: '97px',
+                      marginTop: '64px',
                       fontFamily: 'var(--font-inter)',
                       fontSize: '16px',
                       fontWeight: 500,
@@ -309,11 +301,8 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                   
                   {/* Description - Poppins, 16px, font-weight 300, color #4B5563 */}
                   <p 
-                    className="absolute"
+                    className="leading-relaxed"
                     style={{
-                      left: '33px',
-                      top: '137px',
-                      width: 'calc(100% - 66px)',
                       fontFamily: 'var(--font-poppins)',
                       fontSize: '16px',
                       fontWeight: 300,
