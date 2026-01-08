@@ -101,7 +101,7 @@ export default function ProcessPage({ params }: ProcessPageProps) {
               {/* Left column - description + sections */}
               <div className="flex-1">
                 <p 
-                  className="text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8"
+                  className="text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 max-w-[520px]"
                   style={{
                     fontFamily: 'var(--font-poppins)',
                     fontWeight: 400,
