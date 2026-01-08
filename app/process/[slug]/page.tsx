@@ -248,50 +248,77 @@ export default function ProcessPage({ params }: ProcessPageProps) {
         {/* Navigation to Other Processes */}
         <div className="mt-20 sm:mt-24 md:mt-32 lg:mt-40 pt-12 sm:pt-16 md:pt-20 border-t border-gray-200 reveal">
           <h3 
-            className="text-2xl sm:text-3xl md:text-4xl mb-8 sm:mb-10 md:mb-12"
+            className="text-5xl sm:text-6xl md:text-7xl mb-12 sm:mb-16 md:mb-20"
             style={{
               fontFamily: 'var(--font-cormorant)',
-              fontWeight: 600,
+              fontWeight: 700,
+              color: '#1A1A1A',
             }}
           >
             Explore Other Services
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" style={{ gridAutoColumns: 'minmax(280px, 1fr)' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-6">
             {processes
               .filter((p) => p.slug !== process.slug)
               .map((relatedProcess) => (
                 <Link
                   key={relatedProcess.slug}
                   href={`/process/${relatedProcess.slug}`}
-                  className="group block p-6 sm:p-8 border border-gray-200 hover:border-gray-900 transition-colors min-w-0"
+                  className="group block relative border border-[#E5E7EB] hover:border-gray-900 transition-colors"
+                  style={{
+                    width: '100%',
+                    maxWidth: '456px',
+                    height: '242px',
+                    padding: '33px',
+                  }}
                 >
-                  <div className="w-[48px] h-[48px] sm:w-[56px] sm:h-[56px] opacity-10 mb-4 sm:mb-6 group-hover:opacity-20 transition-opacity">
-                    <ProcessIcon slug={relatedProcess.slug} />
-                  </div>
-                  <div className="flex items-start justify-between gap-4 mb-3 sm:mb-4">
-                    <h4 
-                      className="text-sm sm:text-base uppercase tracking-[0.3em] font-medium whitespace-nowrap flex-1"
-                      style={{
-                        fontFamily: 'var(--font-poppins)',
-                        fontWeight: 500,
-                      }}
-                    >
-                      {relatedProcess.title}
-                    </h4>
-                    <svg 
-                      className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-gray-900 transition-all group-hover:translate-x-1 flex-shrink-0 mt-0.5 opacity-0 group-hover:opacity-100" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                  <p 
-                    className="text-sm sm:text-base leading-relaxed text-gray-600 group-hover:text-gray-900 transition-colors"
+                  {/* Number - Playfair Display, italic, 36px, opacity 0.10 */}
+                  <div 
+                    className="absolute"
                     style={{
-                      fontFamily: 'var(--font-poppins)',
+                      left: '33px',
+                      top: '33px',
+                      fontFamily: 'var(--font-playfair)',
+                      fontSize: '36px',
+                      fontStyle: 'italic',
                       fontWeight: 400,
+                      lineHeight: '40px',
+                      color: '#1A1A1A',
+                      opacity: 0.10,
+                    }}
+                  >
+                    {relatedProcess.number}
+                  </div>
+                  
+                  {/* Title - Inter, 16px, uppercase, letter-spacing 4.80px */}
+                  <h4 
+                    className="absolute uppercase whitespace-nowrap"
+                    style={{
+                      left: '33px',
+                      top: '97px',
+                      fontFamily: 'var(--font-inter)',
+                      fontSize: '16px',
+                      fontWeight: 500,
+                      lineHeight: '24px',
+                      letterSpacing: '4.80px',
+                      color: '#1A1A1A',
+                    }}
+                  >
+                    {relatedProcess.title}
+                  </h4>
+                  
+                  {/* Description - Poppins, 16px, font-weight 300, color #4B5563 */}
+                  <p 
+                    className="absolute"
+                    style={{
+                      left: '33px',
+                      top: '137px',
+                      width: 'calc(100% - 66px)',
+                      fontFamily: 'var(--font-poppins)',
+                      fontSize: '16px',
+                      fontWeight: 300,
+                      lineHeight: '24px',
+                      color: '#4B5563',
                     }}
                   >
                     {relatedProcess.description}
