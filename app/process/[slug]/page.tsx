@@ -174,9 +174,9 @@ export default function ProcessPage({ params }: ProcessPageProps) {
               </div>
 
               {/* Right column - image grid, right aligned under title */}
-              <div className="w-full lg:w-auto lg:flex-shrink-0 lg:ml-auto flex">
-                <div className="reveal w-full">
-                  <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 w-full lg:w-[420px] h-full" style={{ gridTemplateRows: 'repeat(3, 1fr)' }}>
+              <div className="w-full lg:w-auto lg:flex-shrink-0 lg:ml-auto flex self-stretch">
+                <div className="reveal w-full h-full">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 w-full lg:w-[500px] xl:w-[550px] h-full" style={{ gridTemplateRows: 'repeat(3, 1fr)' }}>
                     {/* Image 1 - Top Left (Design Sketching) - Tall, spans 2 rows */}
                     <div className="relative w-full row-span-2 overflow-hidden bg-gray-100 group cursor-pointer">
                       <Image

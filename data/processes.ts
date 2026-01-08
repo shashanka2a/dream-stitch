@@ -110,7 +110,7 @@ export const processes: ProcessDetail[] = [
   {
     number: '05',
     title: 'Photoshoots',
-    description: 'Bringing your collection to market with professional photoshoots, lookbooks, and visual content that captures your brand identity.',
+    description: 'Bringing your collection to market with professional photoshoots and visual content that captures your brand identity.',
     subtitle: 'Showcase your collection with strong visuals',
     included: [
       'Product photoshoots',
