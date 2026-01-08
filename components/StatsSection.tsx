@@ -3,9 +3,9 @@
 import { useEffect, useRef } from 'react'
 
 const stats = [
-  { value: 22, suffix: '+', label: 'Brands Supported', delay: '0ms' },
+  { value: 10, suffix: '+', label: 'Brands Supported', delay: '0ms' },
   { value: 10, suffix: '', label: 'Low MOQ Units', delay: '200ms' },
-  { value: 2, suffix: '', label: 'Service Categories', delay: '400ms' },
+  { value: 4, suffix: '', label: 'Service Categories', delay: '400ms' },
 ]
 
 export function StatsSection() {
