@@ -88,7 +88,7 @@ export default function ProcessPage({ params }: ProcessPageProps) {
             
             {/* Title */}
             <h1 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight"
               style={{
                 fontFamily: 'var(--font-cormorant)',
                 fontWeight: 600,
