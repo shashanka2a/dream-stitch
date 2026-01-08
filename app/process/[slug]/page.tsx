@@ -79,10 +79,11 @@ export default function ProcessPage({ params }: ProcessPageProps) {
           <div className="reveal">
             {/* Section Number */}
             <div 
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-medium opacity-20 mb-6 sm:mb-8"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-thin opacity-10 mb-6 sm:mb-8"
               style={{
                 fontFamily: 'var(--font-cormorant)',
-                fontWeight: 500,
+                fontWeight: 300,
+                fontStyle: 'italic',
               }}
             >
               {process.number}
@@ -102,7 +103,7 @@ export default function ProcessPage({ params }: ProcessPageProps) {
             
             {/* Description */}
             <p 
-              className="text-sm sm:text-base md:text-lg text-gray-900 leading-relaxed mb-8 sm:mb-10 md:mb-12"
+              className="text-sm sm:text-base md:text-lg leading-relaxed mb-8 sm:mb-10 md:mb-12"
               style={{
                 fontFamily: 'var(--font-poppins)',
                 fontWeight: 400,
@@ -118,12 +119,12 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                 className="text-xs sm:text-sm md:text-base uppercase tracking-[0.15em] mb-4 sm:mb-6"
                 style={{
                   fontFamily: 'var(--font-poppins)',
-                  fontWeight: 400,
+                  fontWeight: 600,
                   color: '#1a1a1a',
                   letterSpacing: '0.15em',
                 }}
               >
-                What's included:
+                What's Included
               </h2>
               <ul className="space-y-2 sm:space-y-3">
                 {process.included.map((item, index) => (
@@ -148,12 +149,12 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                 className="text-xs sm:text-sm md:text-base uppercase tracking-[0.15em] mb-3 sm:mb-4"
                 style={{
                   fontFamily: 'var(--font-poppins)',
-                  fontWeight: 400,
+                  fontWeight: 600,
                   color: '#1a1a1a',
                   letterSpacing: '0.15em',
                 }}
               >
-                Ideal for:
+                Ideal For
               </h2>
               <p 
                 className="text-sm sm:text-base md:text-lg leading-relaxed"
@@ -174,7 +175,12 @@ export default function ProcessPage({ params }: ProcessPageProps) {
               {processImages.slice(0, 4).map((image, index) => (
                 <div 
                   key={index}
-                  className="relative aspect-square overflow-hidden bg-gray-100 group cursor-pointer"
+                  className={`relative overflow-hidden bg-gray-100 group cursor-pointer ${
+                    index === 0 ? 'aspect-[4/5]' : 
+                    index === 1 ? 'aspect-square' : 
+                    index === 2 ? 'aspect-square' : 
+                    'aspect-[4/3]'
+                  }`}
                 >
                   <Image
                     src={image}
@@ -203,7 +209,6 @@ export default function ProcessPage({ params }: ProcessPageProps) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {processes
               .filter((p) => p.slug !== process.slug)
-              .slice(0, 3)
               .map((relatedProcess) => (
                 <Link
                   key={relatedProcess.slug}
@@ -213,14 +218,20 @@ export default function ProcessPage({ params }: ProcessPageProps) {
                   <div className="text-3xl sm:text-4xl font-thin opacity-10 serif italic mb-4 sm:mb-6 group-hover:opacity-20 transition-opacity">
                     {relatedProcess.number}
                   </div>
-                  <h4 className="text-sm sm:text-base uppercase tracking-[0.3em] mb-3 sm:mb-4 font-medium">
+                  <h4 
+                    className="text-sm sm:text-base uppercase tracking-[0.3em] mb-3 sm:mb-4 font-medium"
+                    style={{
+                      fontFamily: 'var(--font-poppins)',
+                      fontWeight: 500,
+                    }}
+                  >
                     {relatedProcess.title}
                   </h4>
                   <p 
                     className="text-sm sm:text-base leading-relaxed text-gray-600 group-hover:text-gray-900 transition-colors"
                     style={{
                       fontFamily: 'var(--font-poppins)',
-                      fontWeight: 300,
+                      fontWeight: 400,
                     }}
                   >
                     {relatedProcess.description}
