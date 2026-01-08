@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useEffect, use } from 'react'
 import { processes } from '@/data/processes'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
+import { Footer } from '@/components/Footer'
 import { ProcessIcon } from '@/components/ProcessIcons'
 
 interface ProcessPageProps {
@@ -276,6 +277,7 @@ export default function ProcessPage({ params }: ProcessPageProps) {
         </div>
       </div>
     </main>
+    <Footer />
   )
 }
 
