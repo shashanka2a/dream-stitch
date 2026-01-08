@@ -170,35 +170,58 @@ export default function ProcessPage({ params }: ProcessPageProps) {
               {/* Right column - image grid, right aligned under title */}
               <div className="w-full lg:w-auto lg:flex-shrink-0 lg:ml-auto">
                 <div className="reveal">
-                  <div 
-                    className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 w-full max-w-sm lg:max-w-md ml-auto"
-                    style={{ 
-                      gridTemplateRows: 'repeat(3, minmax(0, 1fr))',
-                      height: '500px',
-                    }}
-                  >
-                    {processImages.slice(0, 4).map((image, index) => (
-                      <div 
-                        key={index}
-                        className={`relative overflow-hidden bg-gray-100 group cursor-pointer ${
-                          index === 0 ? 'row-span-3' : 
-                          index === 1 ? 'row-span-1' : 
-                          index === 2 ? 'row-span-1' : 
-                          'col-span-2 row-span-1'
-                        }`}
-                        style={{
-                          minHeight: index === 0 ? '100%' : 'auto',
-                        }}
-                      >
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 w-full max-w-sm lg:max-w-md ml-auto">
+                    {/* Image 1 - Top Left (Design Sketching) */}
+                    <div className="relative aspect-square overflow-hidden bg-gray-100 group cursor-pointer">
+                      {processImages[0] && (
                         <Image
-                          src={image}
-                          alt={`${process.title} - Image ${index + 1}`}
+                          src={processImages[0]}
+                          alt={`${process.title} - Design Sketching`}
                           fill
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
                           sizes="(max-width: 768px) 50vw, (max-width: 1024px) 40vw, 32vw"
                         />
-                      </div>
-                    ))}
+                      )}
+                    </div>
+                    
+                    {/* Image 2 - Top Right (Fabric Sourcing) */}
+                    <div className="relative aspect-square overflow-hidden bg-gray-100 group cursor-pointer">
+                      {processImages[1] && (
+                        <Image
+                          src={processImages[1]}
+                          alt={`${process.title} - Fabric Sourcing`}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 40vw, 32vw"
+                        />
+                      )}
+                    </div>
+                    
+                    {/* Image 3 - Bottom Left (Manufacturing) */}
+                    <div className="relative aspect-square overflow-hidden bg-gray-100 group cursor-pointer">
+                      {processImages[2] && (
+                        <Image
+                          src={processImages[2]}
+                          alt={`${process.title} - Manufacturing`}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 40vw, 32vw"
+                        />
+                      )}
+                    </div>
+                    
+                    {/* Image 4 - Bottom Right (Photoshoot) */}
+                    <div className="relative aspect-square overflow-hidden bg-gray-100 group cursor-pointer">
+                      {processImages[3] && (
+                        <Image
+                          src={processImages[3]}
+                          alt={`${process.title} - Photoshoot`}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 40vw, 32vw"
+                        />
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
