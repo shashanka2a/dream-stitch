@@ -86,120 +86,119 @@ export default function ProcessPage({ params }: ProcessPageProps) {
             
             {/* Title - One Line */}
             <h1 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 leading-tight whitespace-nowrap overflow-hidden text-ellipsis"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight whitespace-nowrap overflow-hidden text-ellipsis"
               style={{
                 fontFamily: 'var(--font-cormorant)',
                 fontWeight: 600,
-                color: '#1a1a1a',
+                color: '#1A1A1A',
               }}
             >
               {process.title}
             </h1>
-            
-            {/* Description Start */}
-            <p 
-              className="text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-6"
-              style={{
-                fontFamily: 'var(--font-poppins)',
-                fontWeight: 400,
-                color: '#1a1a1a',
-              }}
-            >
-              {process.description.split('. ')[0] + (process.description.includes('.') ? '.' : '')}
-            </p>
 
-            {/* Image Grid - Between Description Parts */}
-            <div className="reveal my-8 sm:my-10 md:my-12">
-              <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 w-full max-w-2xl">
-                {processImages.slice(0, 4).map((image, index) => (
-                  <div 
-                    key={index}
-                    className={`relative overflow-hidden bg-gray-100 group cursor-pointer ${
-                      index === 0 ? 'aspect-[4/5]' : 
-                      index === 1 ? 'aspect-square' : 
-                      index === 2 ? 'aspect-square' : 
-                      'aspect-[4/3]'
-                    }`}
+            {/* Content row: description on left, images right-aligned just under title */}
+            <div className="mt-6 sm:mt-8 flex flex-col lg:flex-row gap-10 lg:items-start">
+              {/* Left column - description + sections */}
+              <div className="flex-1">
+                <p 
+                  className="text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8"
+                  style={{
+                    fontFamily: 'var(--font-poppins)',
+                    fontWeight: 400,
+                    color: '#6B7280',
+                  }}
+                >
+                  {process.description}
+                </p>
+
+                {/* What's Included Section */}
+                <div className="mb-8 sm:mb-10 md:mb-12">
+                  <h2 
+                    className="text-xs sm:text-sm md:text-base uppercase tracking-[0.15em] mb-4 sm:mb-6"
+                    style={{
+                      fontFamily: 'var(--font-poppins)',
+                      fontWeight: 600,
+                      color: '#1a1a1a',
+                      letterSpacing: '0.15em',
+                    }}
                   >
-                    <Image
-                      src={image}
-                      alt={`${process.title} - Image ${index + 1}`}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 40vw"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
+                    What's Included
+                  </h2>
+                  <ul className="space-y-2 sm:space-y-3">
+                    {process.included.map((item, index) => (
+                      <li 
+                        key={index}
+                        className="text-sm sm:text-base md:text-lg leading-relaxed"
+                        style={{
+                          fontFamily: 'var(--font-poppins)',
+                          fontWeight: 400,
+                          color: '#6B7280',
+                        }}
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-            {/* Description End */}
-            {process.description.split('. ').length > 1 && (
-              <p 
-                className="text-sm sm:text-base md:text-lg leading-relaxed mb-8 sm:mb-10 md:mb-12"
-                style={{
-                  fontFamily: 'var(--font-poppins)',
-                  fontWeight: 400,
-                  color: '#1a1a1a',
-                }}
-              >
-                {process.description.split('. ').slice(1).join('. ')}
-              </p>
-            )}
-
-            {/* What's Included Section */}
-            <div className="mb-8 sm:mb-10 md:mb-12">
-              <h2 
-                className="text-xs sm:text-sm md:text-base uppercase tracking-[0.15em] mb-4 sm:mb-6"
-                style={{
-                  fontFamily: 'var(--font-poppins)',
-                  fontWeight: 600,
-                  color: '#1a1a1a',
-                  letterSpacing: '0.15em',
-                }}
-              >
-                What's Included
-              </h2>
-              <ul className="space-y-2 sm:space-y-3">
-                {process.included.map((item, index) => (
-                  <li 
-                    key={index}
+                {/* Ideal For Section */}
+                <div>
+                  <h2 
+                    className="text-xs sm:text-sm md:text-base uppercase tracking-[0.15em] mb-3 sm:mb-4"
+                    style={{
+                      fontFamily: 'var(--font-poppins)',
+                      fontWeight: 600,
+                      color: '#1a1a1a',
+                      letterSpacing: '0.15em',
+                    }}
+                  >
+                    Ideal For
+                  </h2>
+                  <p 
                     className="text-sm sm:text-base md:text-lg leading-relaxed"
                     style={{
                       fontFamily: 'var(--font-poppins)',
                       fontWeight: 400,
-                      color: '#1a1a1a',
+                      color: '#6B7280',
                     }}
                   >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+                    {process.idealFor}
+                  </p>
+                </div>
+              </div>
 
-            {/* Ideal For Section */}
-            <div>
-              <h2 
-                className="text-xs sm:text-sm md:text-base uppercase tracking-[0.15em] mb-3 sm:mb-4"
-                style={{
-                  fontFamily: 'var(--font-poppins)',
-                  fontWeight: 600,
-                  color: '#1a1a1a',
-                  letterSpacing: '0.15em',
-                }}
-              >
-                Ideal For
-              </h2>
-              <p 
-                className="text-sm sm:text-base md:text-lg leading-relaxed"
-                style={{
-                  fontFamily: 'var(--font-poppins)',
-                  fontWeight: 400,
-                  color: '#1a1a1a',
-                }}
-              >
-                {process.idealFor}
-              </p>
+              {/* Right column - image grid, right aligned under title */}
+              <div className="w-full lg:w-auto lg:flex-shrink-0 lg:ml-auto">
+                <div className="reveal">
+                  <div 
+                    className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 w-full max-w-sm lg:max-w-md ml-auto"
+                    style={{ 
+                      gridTemplateRows: 'repeat(3, minmax(0, 1fr))',
+                      height: '500px',
+                    }}
+                  >
+                    {processImages.slice(0, 4).map((image, index) => (
+                      <div 
+                        key={index}
+                        className={`relative overflow-hidden bg-gray-100 group cursor-pointer ${
+                          index === 0 ? 'row-span-3' : 
+                          index === 1 ? 'row-span-1' : 
+                          index === 2 ? 'row-span-1' : 
+                          'col-span-2 row-span-1'
+                        }`}
+                      >
+                        <Image
+                          src={image}
+                          alt={`${process.title} - Image ${index + 1}`}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 40vw, 32vw"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
